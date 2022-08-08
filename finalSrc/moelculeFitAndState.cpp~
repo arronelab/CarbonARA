@@ -1,0 +1,203 @@
+#ifndef ALG_ROUTE
+#define ALG_ROUTE
+
+#include "ktlMoleculeRandom.h"
+#include "hydrationShellRandom.h"
+#include "localWrithe.h"
+#include "experimentalData.h"
+
+class moleculeFitAndState{
+public:
+  moleculeFitAndState(std::vector<ktlmolecule> &mol);
+  void calculateInitialWrithes(std::vector<ktlmolecule> &mol);
+;
+  double calculateScattering(experimentalData &ed,double &kmin,double &kmax,std::vector<double> &mixtureVals);
+  double getOverlapPenalty(double &closestApproachDist,std::vector<double> &overlapDists);
+  double applyOverlapPenalty();
+  double applyDistanceConstraints(std::vector<ktlmolecule> &mol);
+  void calcuateMoleculDistances(std::vector<ktlmolecule> &mol);
+  void alterWritheSet(std::vector<ktlmolecule> &mol,index &i);
+  double getOverallFit(std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,std::vector<ktlmolecule> &mol,double &kmin,double &kmax);
+private:
+  std::vector<std::vector<double> > molDists;
+  std::vector<std::vector<double> > solDists;
+  std::vector<std::vector<double> > solMolDists;
+  std::vector<std::vector<double> > overlapDistSet;
+  std::vector<int> molSize;
+  std::vector<int> noSol;
+  double maxDist;
+  double hydroPhobicPacking;
+  std::vector<double> originalWrithes;
+  std::vector<double> currWrithes;
+  double writhePenalty;
+  double Rin,Rout,RShell,ntrivs;
+};
+
+#endif
+
+
+
+moleculeFitAndState::moleculeFitAndState(std::vector<ktlmolecule> &mol,double &RinSv,double &RoutSv,double &RShellSv,int &intrivsSv){
+  //define the number of structures
+  molDists.resize(mol.size());
+  solDists.resize(mol.size());
+  solMolDists.resize(mol.size());
+  molSize.resize(mol.size());
+  noSol.resize(mol.size());
+  writhePenalty=0.0;
+  // set the fixed fitting parameters
+  double Rin= RinSv;
+  double Rout=RoutSv;
+  double RShell = RShellSv;
+  int ntrivs=ntrivsSv;
+  
+}
+
+// calculate writhe lists
+void moleculeFitAndState::calculateInitialWrithes(std::vector<ktlmolecule> &mol){
+  for(int i=0;i<mol.size();i++){
+   localWrithe lw;
+   std::vector<std::vector<point> > crds =mol[i].getCoordinates();
+   std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
+   originalWrithes.push_back(wrFingerPrint[wrFingerPrint.size()-1].second);
+  }
+  currWrithes =originalWrithes;
+}
+
+void moleculeFitAndState::calcuateMoleculeDistances(std::vector<ktlmolecule> &mol){
+  for(int i=0;i<mol.size();i++){
+    //calculate distances
+    molDists[i] = mol[i].getDistSet();
+    //get number of amino acids
+    molSize[i]  = mol[i].getNoAminos();
+    //sort the distances from largest to smallest for binning.
+    std::sort(molDists[i].begin(),molDist[i].end());
+    // calculate any overlap distances
+    std::vector<double> overlapDists= mol[i].checkOverlapWithRad(closestApproachDist);
+    overlapDistSet.push_back(overlapDists)
+  }
+}
+
+
+void moleculeFitAndState::calcuateHydrationDistances(hydrationShellminimal &hs,index &i){
+  // we are filling the sol mol distance and sol distance vectors, to prevent double counting we empty it first
+  solMolDists[i].clear();
+  solDists[i].clear();
+  hydrationShell.solventMoleculeDistances(solMolDists[i],solDists[i]);
+  std::vector<std::vector<point> > solptsin = hs.returnFlatSolList();
+  // calculate solvent-solvent distances
+  std::sort(solDists[i].begin(),solDists[i].end());
+  maxDist = solDists[i][solDistsin.size()-1];
+  /* double solMax=5.5;
+  hydroPhobicPacking =0.0;
+  std::vector<double> meanHydrophilicDists = molin.getHydrophobicDistance(solptsin,solMax);
+  for(int i=0;i<meanHydrophilicDists.size();i++){
+    hydroPhobicPacking  =  hydroPhobicPacking  + meanHydrophilicDists[i];
+  }*/
+  //std::cout<<"how much hydro "<<totalHydroOverlap<<"\n";
+  noSol[i]=0;
+  for(int i=0;i<solptsin.size();i++){
+    noSol[i] = noSol[i] + solptsin[i].size();
+  }
+  //std::cout<<"no amino acis "<<molSizein<<" no solvents "<<noSolin<<"\n";
+  std::sort(solMolDistsin.begin(),solMolDistsin.end());
+}
+
+
+
+// Here we loop over the mixture list (i.e. we do  0.5% monomer, then 0.5% dimer)
+// then for each mixture we loop over all hyrdation shell density parametrs, the higher this is, well, the more solvent molcules in the layer
+// finall we move over all molecules themselves
+
+double moleculeFitAndSate::calculateScattering(experimentalData &ed,double &kmin,double &kmax,std::vector<double> &mixtureVals){
+  
+}
+
+
+double getOverlapPenalty(double &closestApproachDist,std::vector<double> &overlapDists){
+  double distSumCurr=0.0;
+  for(int l=0;l<overlapDists.size();l++){
+    distSumCurr = distSumCurr + std::exp(std::abs(closestApproachDist-overlapDists[l]))-1.0;
+  }
+  if(overlapDists.size()>0){
+    distSumCurr =0.1*(1.0/overlapDists.size())*distSumCurr;
+  }
+  return distSumCurr;
+}
+
+double moleculeFitAndState::applyOverlapPenalty(){
+   double overlapPenalty = 0.0;
+   for(int i=0;i<mol.size();i++){
+     // calculate any overlap distances
+     overlapPenalty = overlapPenalty + getOverlapPenalty(closestApproachDist,overlapDistSet[i]);
+  }
+}
+
+
+double moleculeFitAndState::applyDistanceConstraints(std::vector<ktlmolecule> &mol){
+ double contactPredPen=0.0;
+  for(int i=0;i<mol.size();i++){
+    contactPredPen =contactPredPen + mol[i].getLennardJonesContact();
+  }
+  return contactPredPen;
+}
+
+
+void moleculeFitAndState::alterWritheSet(std::vector<ktlmolecule> &mol,index &i){
+  localWrithe lw;
+   std::vector<std::vector<point> > crds =mol[i].getCoordinates();
+   std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
+   currWrithes[i] = wrFingerPrint[wrFingerPrint.size()-1].second;
+}
+
+// calculate writhe lists
+void moleculeFitAndState::applyWritheConstraint(std::vector<ktlmolecule> &mol){
+  for(int i=0;i<mol.size();i++){
+   double newWrithe =currWrithes[i];
+   double wrPenDen =std::abs((originalWrithes[l]-newWrithe)/originalWrithes[l]);
+   double wrPen = 1.0-std::exp(-30.0*wrPenDen*wrPenDen*wrPenDen*wrPenDen*wrPenDen*wrPenDen);
+   writhePenalty=  writhePenalty+wrPen;
+  }
+}
+
+
+double moleculeFitAndState::applyWritheConstraint(ktlmolecule &mol){
+
+}
+
+
+double moleculeFitAndState::getOverallFit(std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,std::vector<ktlmolecule> &mol,double &kmin,double &kmax){
+  double scatterAndHydrationConstraint;
+  for(int m=0;m<mixtureList.size();m++){
+    for(int j=0;j<helRatList.size();j++){
+      for(int i=0;i<mol.size();i++){
+	//generate the hydration shell
+	hydrationShellMinimal hydrationShellTmp(mol[i],Rin,Rout,RShell,ntrivs,helRatList[j],solventsPerLink,closestApproachDist,rmin,rmax,lmin);
+	hydrationShellTmp.generateHydrationLayer();
+	//calclate the distances associated with the shell
+	calcuateHydrationDistances(hydrationShellTmp,i);
+      }
+      // get the scattering value
+      double tempScat =  calculateScattering(ed,kmin,kmax,mixtureList[m]);
+      //check what is best
+      if(tempScat< scatterAndHydrationConstraint){
+        scatterAndHydrationConstraint= tempScat+tempHydrationConstraint;
+	percentageCombinations = mixtureList[i];
+      }
+    }  
+  }
+   /***************************************************************
+
+   apply penalties which are "un protein like". Currently we are using
+
+     i) a very strict overlap penalty which exponetiallp penalises non local sections coming close than 4 A.
+     ii) A distance constraint measure, which is only active if the user inputs a set of distance consrtrainst like contact predictions.
+     iii) A writhe penalty to ensure the moelule doesn't become too disentangled.
+  
+   **************************************************************/
+  double overlapPenalty = applyOverlapPenalty();
+  double distanceConstraints = applyDistanceConstraints(mol);
+  applyWritheConstraint(mol);
+  return scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
+  
+}
