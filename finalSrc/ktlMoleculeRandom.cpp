@@ -653,7 +653,6 @@ void ktlMolecule::readInMolWithBackboneLenJ(const char* filename,int chainNo,int
 void ktlMolecule::readInSequence(const char* filename,double &rmin,double &rmax,double &lmin){
   int npts;
   std::ifstream myfile;
-  std::cout<<"read in for whut "<<filename<<"\n";
   myfile.open(filename);
   std::string output;
   double val,prevval,X,Y,Z;

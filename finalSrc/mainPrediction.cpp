@@ -22,7 +22,6 @@
   argv[12] prediction file 
   argv[13] scattering output file
   argv[14] mixture list file, a list of sets of numbers indicatig the allowed set of mixture percentages of each species (e.g. dimer 20 monomer 80)
-  argv[14] mixture list file, a list of sets of numbers indicatig the allowed set of mixture percentages of each species (e.g. dimer 20 monomer 80)
   argv[15] target water ratio
 **********************************************/
 
@@ -91,12 +90,12 @@ int main( int argc, const char* argv[] )
   
   std::vector<ktlMolecule> mol;
   for(int i=0;i<noStructures;i++){
-    // read in the sequence and seocndary structure
+    // read in the sequence and secondary structure
     std::stringstream ss;
     ktlMolecule molTmp;
     int ind1=i+1;
     ss<<ind1;
-    std::cout<<ind1<<"\n";
+    //std::cout<<ind1<<"\n";
     const char* str = ss.str().c_str();
     char sequenceLoc[100];
     strcpy(sequenceLoc,argv[2]);
@@ -119,6 +118,7 @@ int main( int argc, const char* argv[] )
 
   
   bool doAll = false;
+  
   
   /*********************************
    
@@ -237,6 +237,7 @@ int main( int argc, const char* argv[] )
   // //set up loop parameters
   int k=0;
 
+
   
   // /* the vector noSections tells us how many subsections are in each moelcule
   //    e.g. for a monomer/dimer mixture noSections[0]=1,noSections[1]=2.
@@ -274,7 +275,7 @@ int main( int argc, const char* argv[] )
     std::binomial_distribution<> changeIndexProbability(noMoleculeHist-1,p);
     int index =  changeIndexProbability(generator);
     molFit = molFitAndStateSet[index];
-    std::cout<<"checking mol no "<<index<<"\n";
+    //std::cout<<"checking mol no "<<index<<"\n";
     mol = molFit.getMolecule();
     scatterFit = molFit.currFit;
     for(int l=0;l<mol.size();l++){

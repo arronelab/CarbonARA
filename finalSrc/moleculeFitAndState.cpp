@@ -25,7 +25,7 @@ moleculeFitAndState::moleculeFitAndState(std::vector<ktlMolecule> &molin,double 
    localWrithe lw;
    std::vector<std::vector<point> > crds =mol[i].getCoordinates();
    std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
-   std::cout<<"initial abs writhe "<<wrFingerPrint[wrFingerPrint.size()-1].second<<"\n";
+   //std::cout<<"initial abs writhe "<<wrFingerPrint[wrFingerPrint.size()-1].second<<"\n";
    originalWrithes.push_back(wrFingerPrint[wrFingerPrint.size()-1].second);
   }
   currWrithes =originalWrithes;
@@ -228,12 +228,12 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   
   **************************************************************/
   double overlapPenalty = applyOverlapPenalty();
-  std::cout<<"pen2 "<<overlapPenalty<<"\n";
+  //std::cout<<"pen2 "<<overlapPenalty<<"\n";
   double distanceConstraints = applyDistanceConstraints();
-  std::cout<<"pen3 "<<distanceConstraints<<"\n";
+  //std::cout<<"pen3 "<<distanceConstraints<<"\n";
   applyWritheConstraint();
-  std::cout<<"pen4 "<<writhePenalty<<"\n";
-  std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
+  //std::cout<<"pen4 "<<writhePenalty<<"\n";
+  //std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
   currFit = scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
   return currFit;
 }
@@ -277,13 +277,13 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   calcuateHydrationDistances(hydrationShellTmp,i);
   // apply penalties
    double overlapPenalty = applyOverlapPenalty();
-  std::cout<<"Overlap Penalty "<<overlapPenalty<<"\n";
+  //std::cout<<"Overlap Penalty "<<overlapPenalty<<"\n";
    double distanceConstraints = applyDistanceConstraints(molNew,i);
    //std::cout<<"pen3 "<<distanceConstraints<<"\n";
   alterWritheSet(molNew,i);
   applyWritheConstraint();
-  std::cout<<" writhe penalty  "<<writhePenalty<<"\n";
-  std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
+  //std::cout<<" writhe penalty  "<<writhePenalty<<"\n";
+  //std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
   currFit = scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
   return currFit;
 }
