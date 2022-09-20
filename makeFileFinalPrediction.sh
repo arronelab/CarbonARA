@@ -1,16 +1,17 @@
 #/bin/sh
 rm finalSrc/*.o
 
-g++ -c -O3 -std=gnu++14 -o finalSrc/point.o  finalSrc/point.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/optimizationPoint.o finalSrc/optimizationPoint.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/polyHelix.o finalSrc/polyHelix.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/randomMolGen.o finalSrc/randomMolGen.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/ktlMoleculeRandom.o finalSrc/ktlMoleculeRandom.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/experimentalData.o finalSrc/experimentalData.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/binaryFind.o finalSrc/binaryFind.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/mutualWind2.o finalSrc/mutualWind2.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/localWrithe.o finalSrc/localWrithe.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/moleculeFitAndState.o finalSrc/moleculeFitAndState.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/mainPrediction.o finalSrc/mainPrediction.cpp -fopenmp
-g++ -c -O3 -std=gnu++14 -o finalSrc/hydrationShellRandom.o finalSrc/hydrationShellRandom.cpp -fopenmp
-g++ -O3-std=gnu++14 -o predictStructure finalSrc/point.o finalSrc/optimizationPoint.o finalSrc/polyHelix.o finalSrc/randomMolGen.o finalSrc/ktlMoleculeRandom.o finalSrc/experimentalData.o finalSrc/hydrationShellRandom.o finalSrc/binaryFind.o finalSrc/mutualWind2.o finalSrc/localWrithe.o finalSrc/moleculeFitAndState.o finalSrc/mainPrediction.o -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/point.o  src/point.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/optimizationPoint.o src/optimizationPoint.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/polyHelix.o src/polyHelix.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/randomMolGen.o src/randomMolGen.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/ktlMoleculeRandom.o src/ktlMoleculeRandom.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/experimentalData.o src/experimentalData.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/hydrationShellRandom.o src/hydrationShellRandom.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/binaryFind.o src/binaryFind.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/getSections.o src/getSections.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/mutualWind2.o src/mutualWind2.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/localWrithe.o src/localWrithe.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/moleculeFitAndState.o src/moleculeFitAndState.cpp -fopenmp
+g++ -c -O3 -std=gnu++14 -o src/mainPredictionFinal.o src/mainPredictionFinal.cpp -fopenmp
+g++ -O3 -std=gnu++14 -o predictStructure src/point.o src/optimizationPoint.o src/polyHelix.o src/randomMolGen.o src/ktlMoleculeRandom.o src/experimentalData.o src/hydrationShellRandom.o src/binaryFind.o src/mutualWind2.o src/localWrithe.o src/moleculeFitAndState.o src/mainPredictionFinal.o -fopenmp

@@ -113,7 +113,8 @@ void  moleculeFitAndState::writeScatteringToFile(experimentalData &ed,double &km
 double moleculeFitAndState::getOverlapPenalty(double &closestApproachDist,std::vector<double> &overlapDists){
   double distSumCurr=0.0;
   for(int l=0;l<overlapDists.size();l++){
-    std::cout<<l<<" "<<overlapDists[l]<<"\n";
+    // Uncheck me to see what overalps we get...
+    //std::cout<<l<<" "<<overlapDists[l]<<"\n";
     distSumCurr = distSumCurr + std::exp(std::abs(closestApproachDist-overlapDists[l]))-1.0;
   }
   if(overlapDists.size()>0){
