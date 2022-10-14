@@ -50,6 +50,11 @@ public:
   std::vector<std::vector<point> > getBinormals();
   std::vector<std::vector<point> > getCoordinates();
   std::vector<point> getCoordinatesSection(int i);
+/**
+* Returns Size of Secondary Structure Element
+*
+*@param sec Index of Secondary Structure Element (Counting from 1)
+*/ 
   int getSubsecSize(int sec);
   std::vector<std::vector<point> > getSubsecCoordinates(int &sec);
   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(int &sec);
@@ -71,6 +76,9 @@ public:
   double getMaxDistChange();
   std::pair<double,double> getMaxPossibleLength();
   int molSize();
+/**
+* Returns Number of Chains
+*/
   int noChains();
   int noSecSize();
   int getNoAminos();
@@ -81,7 +89,27 @@ public:
   void readInMolNmerWithBackbone(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin);
   void readInMolNmerWithBackboneLenJ(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin,const char* filenameLenJ);
   void readInMolNmerWithSequenceLenJ(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin,const char* filenameLenJ);
+  /** 
+* Processes Sequence File
+* 
+* Reads in Number of Chains, Primary Sequence, and (Simplified) Secondary Sequence. Uses Secondary Sequence to partition the curve.
+*
+*@param filename Location of Sequence Fingerprint file 
+*
+*@param rmin Minimum distance between neighbouring cAlpha residues, default=3.7
+*
+*@param rmax  Maximum distance between neighbouring cAlpha residues, default=3.9
+*
+*@param lmin Closest distance two non adjactent local (same secondary structure) cAlpha residues can get, default=4.0
+*/
   void readInSequence(const char* filename,double &rmin,double &rmax,double &lmin);
+  /**
+* Processes Coordinate File
+*
+* Description
+*
+*@param filename Location of Coordinates file
+*/
   void readInCoordinates(const char* filename);
   void readInSequenceWBackbone(const char* filename,int chainNo,const char* backbonename);
   // void readInMolNmerSequence(const char* filename,std::vector<int> &molIndicies,double &rmin,double &rmax,double &lmin);
@@ -89,6 +117,11 @@ public:
   point binorm(point &T1,point &T2);
   point parallelTransport(point &tan1,point &tan2,point &norm1);
   std::vector<std::vector<point> > updateFrame(std::vector<point> &section,point &tangent,point &normal,point &binormal);
+  /**
+* Finds Hydrophobic Residues
+*
+* Stores the index of all Hydrophobic Residues (Amino Acids: A,I,L,M,F,V,P,G)
+*/
   void getHydrophobicResidues();
   std::vector<double> getHydrophobicDistance(std::vector<std::vector<point> > &solventList,double &maxSolDist);
   void getCoiledCoilResidues();
@@ -107,6 +140,11 @@ public:
   std::vector<double> checkOverlapWithRad(double &wRad);
   std::vector<double> getDistSet();
   double compareDistances(std::vector<std::vector<point> > &coords2);
+/**
+*
+*
+*
+*/
   bool checkCalphas(std::vector<std::vector<point> > &coordsIn);
   bool checkCalphas();
   bool checkCalphas(int &index);
@@ -118,7 +156,7 @@ public:
   void resetRandomMolecule();
   void getFrameForBackbone();
 
-  /** 
+/** 
 * Resampling of single molecule section
 * 
 * Some description of how that is done...
@@ -129,6 +167,15 @@ public:
 
 
   void changeMoleculeSet(std::vector<int> &indicies);
+/** 
+* Changes singe secondary structure element
+* 
+* Some description of how that is done...
+*
+*@param index Index of secondary structure element to be changed
+*
+*@param sec Chain number
+*/
   void changeMoleculeSingleMulti(int &index,int sec);
   void changeMoleculeSetMulti(std::vector<int>  &indicies,int sec);
   void changeMoleculeMultiRotate(double &angle,point &k,int secIn,point &transVec);
@@ -140,6 +187,15 @@ public:
   void rotateSection(std::vector<std::vector<point> >  &section,point &centre,point &k,double &angle,point &transVec);
   bool checkOverlapSbond(double &minDist);
   void changeMoleculeSingleCheckOverlap();
+/**
+* Outputs molecule as a coordinate file
+*
+* Multimers will be in one single file, with each chain separate by "End Chain i"
+*
+* @param filename Ouput coordinate file location
+*/
+
+
   void writeMoleculeToFile(const char* filename);
   void getBackboneStats();
   std::vector<std::pair<double,double> > getKapTauVals();
