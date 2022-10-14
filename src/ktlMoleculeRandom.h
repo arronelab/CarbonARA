@@ -1,3 +1,16 @@
+/**
+ * @file ktlMoleculeRandom.cpp
+ *
+ * @brief Primary Molecule Class: Reading, Writing, Manipulation, Generation
+ *
+ * @ingroup Generation
+ *
+ *
+ * @author Chris Prior
+ * Contact: christopher.prior@durham.ac.uk
+ *
+ */
+
 #ifndef KTL_MOL
 #define KTL_MOL
 
@@ -12,6 +25,15 @@
 #include "randomMolGen.h"
 #include <tuple>
 
+/**
+ * Big con
+ *
+ * Tracing is controlled on a per "component" basis, where a "component" is a
+ * name of the form aaa.bbb.ccc where aaa is the Most significant part; for
+ * example, the utilities library might be called "utils", the doubly-linked
+ * list "utils.dlist", and the code to destroy a list "utils.dlist.del"
+ *
+ */
 class ktlMolecule{
 public:
   ktlMolecule();
@@ -95,7 +117,17 @@ public:
   void removeOverlap();
   void resetRandomMolecule();
   void getFrameForBackbone();
+
+  /** 
+* Resampling of single molecule section
+* 
+* Some description of how that is done...
+*
+* @param index Index of protein section to be re-generated
+*/
   void changeMoleculeSingle(int &index);
+
+
   void changeMoleculeSet(std::vector<int> &indicies);
   void changeMoleculeSingleMulti(int &index,int sec);
   void changeMoleculeSetMulti(std::vector<int>  &indicies,int sec);
