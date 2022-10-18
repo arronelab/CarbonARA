@@ -56,6 +56,11 @@ public:
 *@param sec Index of Secondary Structure Element (Counting from 1)
 */ 
   int getSubsecSize(int sec);
+/**
+* Returns Coordinates of Secondary Structure Element
+*
+*@param sec Index of Secondary Structure Element (Counting from 1)
+*/ 
   std::vector<std::vector<point> > getSubsecCoordinates(int &sec);
   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(int &sec);
   //std::vector<point> getEulerAngles();
@@ -81,6 +86,9 @@ public:
 */
   int noChains();
   int noSecSize();
+/**
+ * Returns the number of residues in the chain.
+ */
   int getNoAminos();
   void createSyntheticMolecule(int nLinks);
   void readInFit(const char* filename,const char* fieldname);
@@ -194,8 +202,6 @@ public:
 *
 * @param filename Ouput coordinate file location
 */
-
-
   void writeMoleculeToFile(const char* filename);
   void getBackboneStats();
   std::vector<std::pair<double,double> > getKapTauVals();
