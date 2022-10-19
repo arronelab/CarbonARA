@@ -171,7 +171,7 @@ public:
   /**
 * Finds Hydrophobic Residues
 *
-* Stores the index of all Hydrophobic Residues (i.e. Amino Acid Letter Code: A,I,L,M,F,V,P,G)
+* Stores the index of all Hydrophobic Residues (here Amino Acid Letter Code: A,I,L,M,F,V,P,G)
 */
   void getHydrophobicResidues();
 /**
@@ -257,7 +257,7 @@ public:
 
   void changeMoleculeSet(std::vector<int> &indicies);
 /** 
-* Changes singe secondary structure element
+* Changes single secondary structure element
 * 
 * Some description of how that is done...
 *
@@ -295,6 +295,11 @@ public:
   std::vector<double> solMolDists(std::vector<std::vector<point> > &pts1);
   std::vector<double> getApproxDistSet(double &divFac);
   std::vector<double> getApproxDistSetFixed();
+/**
+ * Processes contact predictions file (optional functionality)
+ * 
+ * @param contactloc Location of contact predictions file.
+ */
   void loadContactPredictions(const char* contactloc);
   double getLennardJonesContact();
   void loadFixedSections(const char* fixedsecloc);
@@ -309,10 +314,30 @@ private:
   std::vector<std::pair<int,int> > chainList;
   std::vector<double> distChanges;
   std::vector<std::pair<std::string,int> > nameSizeList;
+/**
+ * Returns indices of hydrophobic residues (here Amino Acid Letter Code: A,I,L,M,F,V,P,G)
+ * 
+ */
   std::vector<std::pair<int,int> > hydroPhobicList;
+/**
+ * Stores indices of polar residues (here Amino Acid Letter Code: Q, N, H, S, T, Y, C)
+ * 
+ */
   std::vector<std::pair<int,int> > polarList;
+/**
+ * Stores indices of positively charged residues (here Amino Acid Letter Code: K, Y, R)
+ * 
+ */
   std::vector<std::pair<int,int> > posChargeList;
+/**
+ * Stores indices of negatively charged residues (here Amino Acid Letter Code: D, E)
+ * 
+ */
   std::vector<std::pair<int,int> > negChargeList;
+/**
+ * Assume no longer used, specific to coiled coil example from paper
+ * 
+ */
   std::vector<std::pair<int,int> > coiledCoilList;
   randomMol rmg;
   std::vector<std::vector<double> > distSetsSecs;

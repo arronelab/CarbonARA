@@ -123,14 +123,6 @@ void point::printPoint(){
   std::cout<<X<<" "<<Y<<" "<<Z<<"\n";
 }
 
-/*point point::operator+(point &p){
-  point pout;
-  pout.setX(X + p.getX());
-  pout.setY(Y + p.getY());
-  pout.setZ(Z + p.getZ());
-  return pout;
-  }*/
-
 point point::operator+(point p){
   point pout;
   pout.setX(X + p.getX());
@@ -138,14 +130,6 @@ point point::operator+(point p){
   pout.setZ(Z + p.getZ());
   return pout;
   }
-
-/*point point::operator-(point &p){
-  point pout;
-  pout.setX(X - p.getX());
-  pout.setY(Y - p.getY());
-  pout.setZ(Z - p.getZ());
-  return pout;
-  }*/
 
 point point::operator-(point p){
   point pout;
@@ -170,14 +154,6 @@ point point::operator/(double d){
   pout.setZ(Z/d);
   return pout;
 };
-
-/*point point::operator*(double d){
-  point pout;
-  pout.setX(d*X);
-  pout.setY(d*Y);
-  pout.setZ(d*Z);
-  return pout;
-  }*/
 
 double point::eDist(point &p2){
   double xd = X-p2.getX();
