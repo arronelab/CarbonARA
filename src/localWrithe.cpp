@@ -95,7 +95,6 @@ std::vector<point> localWrithe::derivListReturn(std::vector<point>& list){
   std::vector<point> dlistTemp;
   std::vector<point> tanlistTemp;
   int npts = list.size();
-  //std::cout<<dlist.size()<<" "<<arcLengthLst.size()<<" "<<tanlist.size()<<"\n";
   dlist.push_back(list[1].dif(list[0]));
   arcLengthLst.push_back(dlist[0].length());
   dlist[0].normalise();
@@ -123,16 +122,6 @@ std::vector<point> localWrithe::derivListReturn(std::vector<point>& list){
   return tanlist;
 }
 
-
-/*void localWrithe::checkTurn(point& n1,int n1pos,point& n2,int n2pos){
-      double prod = n1.getZ()*n2.getZ();
-      if(prod<=0){
-         turnlist.push_back(n1pos);
-         turnlist.push_back(n2pos);
-      }
-      }*/
-
-
 void localWrithe::checkTurn(point& n1,int n1pos,point& n2,int n2pos,std::vector<int> &turnlist,bool &wasPrev){
   double prod = n1.getZ()*n2.getZ();
   if(prod<0.0){
@@ -148,11 +137,8 @@ void localWrithe::checkTurn(point& n1,int n1pos,point& n2,int n2pos,std::vector<
 }
 
 void localWrithe::checkTurnWinding(point& nminus,point& nplus,point &ncurr,int &n,std::vector<int> &turnlist){
-  //std::cout<<nminus.getZ()<<" "<<ncurr.getZ()<<" "<<nplus.getZ()<<"\n";
   double prod = (nplus.getZ()-ncurr.getZ())*(ncurr.getZ()-nminus.getZ());
-  //std::cout<<prod<<"\n";
   if(prod<0.0){
-    //std::cout<<"here "<<n<<"\n";
     turnlist.push_back(n);
   }
 }
@@ -196,12 +182,10 @@ void localWrithe::addInterpolatedTan(point& tan1,double& den1, point tan2,double
 	double trap1,trap2,t,turnAng;
 	if(tan1.getZ()!= tan2.getZ()){
 		t= -tan1.getZ()/(tan2.getZ()-tan1.getZ());
-		//std::cout<<"t is "<<t<<"\n";
 		if(t<-1||t>1){t=0.5;}
 		double xnew = tan1.getX() + t*(tan2.getX()-tan1.getX());
 		double ynew = tan1.getY() + t*(tan2.getY()-tan1.getY());
 		turnAng = angle(xnew,ynew);
-		//std::cout<<turnAng<<"\n";
 		// multiply by -1 if a maxium
 		if(tan1.getZ()>0 || tan2.getZ()<0){
 			turnAng = -turnAng;
@@ -211,7 +195,6 @@ void localWrithe::addInterpolatedTan(point& tan1,double& den1, point tan2,double
 		double xnew = tan1.getX() + t*(tan2.getX()-tan1.getX());
 		double ynew = tan1.getY() + t*(tan2.getY()-tan1.getY());
 		turnAng = angle(xnew,ynew);
-		//std::cout<<"out o bounds "<<turnAng<<"\n";
 		// multiply by -1 if a maxium
 		if(tan1.getZ()>0 || tan2.getZ()<0){
 			turnAng = -turnAng;
@@ -277,25 +260,6 @@ void localWrithe::SimpsonsRule(int startval,int endval){
 		writhepl = writhepl+ 0.25*densityList[endval];
 	}
 }
-
-/*void localWrithe::makeTurnForNonLocal(std::vector<point>& list){
-	turnPts.push_back(0);
-	std::vector<point>::iterator it;
-	it = list.begin();
-	for(int i = 1;i<turnlist.size()-1;i=i+2){
-		double t= -tanlist[turnlist[i]].getZ()/(tanlist[turnlist[i+1]].getZ()-tanlist[turnlist[i]].getZ());
-		double xnew = list[turnlist[i]].getX() + t*(list[turnlist[i+1]].getX()-list[turnlist[i]].getX());
-		double ynew = list[turnlist[i]].getY() + t*(list[turnlist[i+1]].getY()-list[turnlist[i]].getY());
-		double znew = list[turnlist[i]].getZ() + t*(list[turnlist[i+1]].getZ()-list[turnlist[i]].getZ());
-		point newpoint(xnew,ynew,znew);
-		list.insert(it+turnlist[i+1],newpoint);
-		turnPts.push_back(turnlist[i+1]);
-		for(int j = i+2;j< turnlist.size();j++){
-			turnlist[j] = turnlist[j]+1;
-		}
-	}
-	turnPts.push_back(turnlist.back());
-}*/
 
 std::vector<std::pair<int,int> > localWrithe::makeTurnForNonLocal(){
   std::vector<std::pair<int,int> > turnPairs;
@@ -494,23 +458,13 @@ std::vector<double> localWrithe::getWritheGenClosed(std::vector<point>& list){
 	// get end anngle sign +1 or -1
 	point tan1 = tanlist[0];
 	point tan2 = tanlist[tanlist.size()-1];
-	//std::cout<<tanlist.size()<<"\n";
-	//tan1.printPoint();
-	//tan2.printPoint();
 	double turnAng,t;
-	//std::cout<<tan1.getZ()<<" "<<tan2.getZ()<<"\n";
 	t= -tan1.getZ()/(tan2.getZ()-tan1.getZ());
-	//std::cout<<"t is "<<t<<"\n";
 	if(t<-1||t>1){t=0.5;}
 	double xnew = tan1.getX() + t*(tan2.getX()-tan1.getX());
 	double ynew = tan1.getY() + t*(tan2.getY()-tan1.getY());
 	turnAng = angle(-1.0*xnew,-1.0*ynew);
-	//std::cout<<" turn angle "<<turnAng<<"\n";
-	/*if(turnAng<-0.0001){
-	  turnAng = 2.0*PI+turnAng;
-	  }*/
 	turnAng = -1.0*turnAng/(PI);;
-	//std::cout<<"angle writhe "<<writhepl-actualWrithepl<<"\n";
 	clearVecs();
 	double writhepnl=0.0; 
 	for(int i=0;i<integerWindings.size();i++){
@@ -567,12 +521,6 @@ std::vector<double> localWrithe::getWritheGenSmooth(std::vector<point>& list){
 	  };
 	};
 	reconstructCurve(list);
-	/*std::ofstream myfile;
-	myfile.open("curveFiles/testCurveSmooth.dat");
-        for(int i=0;i<list.size();i++){
-	  myfile<<list[i].getX()<<" "<<list[i].getY()<<" "<<list[i].getZ()<<"\n";
-	}
-	myfile.close();*/
 	// redo the turn pt fining
 	dlist.clear();
 	tanlist.clear();
@@ -735,12 +683,6 @@ std::vector<double> localWrithe::getWritheGenStandardSmooth(std::vector<point>& 
 	};
 	reconstructCurve(list);
 	// redo the turn pt fining
-	/*std::ofstream ofile;
-	ofile.open("testCurve.dat");
-	for(int i=0;i<list.size();i++){
-	  ofile<<list[i].getX()<<" "<<list[i].getY()<<" "<<list[i].getZ()<<"\n";
-	}
-	ofile.close();*/
 	dlist.clear();
 	tanlist.clear();
 	tderiv.clear();
@@ -776,7 +718,6 @@ std::vector<double> localWrithe::getWritheGenStandardSmooth(std::vector<point>& 
 	// add the start angles
 	double wrNoAngles = writhepl+writhepnl;
 	for(int i=0;i<startAngs.size();i++){
-	  //std::cout<<"start angles "<<startAngs[i]<<"\n";
 	  writhepnl = writhepnl + (1.0/(PI))*startAngs[i]; 
 	}
 	// add the end angles
@@ -829,7 +770,6 @@ double localWrithe::getEndAngles(std::vector<point> &curvelist1,std::vector<poin
       double xdif = interpPoint.getX()-curvelist1[0].getX();
       double ydif = interpPoint.getY()-curvelist1[0].getY();
       double ang = angle(xdif,ydif);
-      //std::cout<<"here angle "<<ang<<"\n";
       // now figure our the indicator function of the second curve sections
       double sigma2;
       if((sublist[1].getZ()-sublist[0].getZ())>=0.0){
@@ -870,7 +810,6 @@ double localWrithe::getEndAngles(std::vector<point> &curvelist1,std::vector<poin
       double xdif = interpPoint.getX()-curvelist2[0].getX();
       double ydif = interpPoint.getY()-curvelist2[0].getY();
       double ang = angle(xdif,ydif);
-      //std::cout<<"here angle 2 "<<ang<<"\n";
       // now figure our the indicator function of the second curve sections
       double sigma2;
       if((sublist[1].getZ()-sublist[0].getZ())>=0.0){
@@ -911,7 +850,6 @@ double localWrithe::getEndAngles(std::vector<point> &curvelist1,std::vector<poin
       double xdif = interpPoint.getX()-curvelist1[endCIndex1].getX();
       double ydif = interpPoint.getY()-curvelist1[endCIndex1].getY();
       double ang = angle(xdif,ydif);
-      //std::cout<<"here 3 "<<ang<<"\n";
       double sigma2;
       if(sigma1>=0.0){
 	sigma2 = 1.0;
@@ -949,7 +887,6 @@ double localWrithe::getEndAngles(std::vector<point> &curvelist1,std::vector<poin
       double xdif = interpPoint.getX()-curvelist2[endCIndex2].getX();
       double ydif = interpPoint.getY()-curvelist2[endCIndex2].getY();
       double ang = angle(xdif,ydif);
-      //std::cout<<"here 4 "<<ang<<"\n";
       double sigma2;
       if(sigma1>=0.0){
 	sigma2 = 1.0;
@@ -967,31 +904,6 @@ double localWrithe::getEndAngles(std::vector<point> &curvelist1,std::vector<poin
   }
 return outsum*(1.0/(2.0*PI));
 }
-
-/*double localWrithe::getWinding(std::vector<point>& list1,std::vector<point>& list2){
-        std::vector<point> tangent1 = derivListReturn(list1);
-	std::vector<int> turnList1 = getListTurnPtsReturn(tangent1);
-	std::vector<point> tangent2 = derivListReturn(list2);
-	std::vector<int> turnList2 = getListTurnPtsReturn(tangent2);
-	std::vector<std::pair<int,int> > pairedTurnList1 = makeTurnForNonLocal(turnList1);
-	std::vector<std::pair<int,int> > pairedTurnList2 = makeTurnForNonLocal(turnList2);
-	// first calculate the integer part
-	std::cout<<pairedTurnList1.size()<<"\n";
-	std::cout<<pairedTurnList2.size()<<"\n";
-	for(int i=0;i<pairedTurnList1.size();i++){
-	  std::cout<<pairedTurnList1[i].first<<" "<<pairedTurnList1[i].second<<"\n";
-	}
-	for(int i=0;i<pairedTurnList2.size();i++){
-	  std::cout<<pairedTurnList2[i].first<<" "<<pairedTurnList2[i].second<<"\n";
-	}
-	mutualWind2 mw;
-	int integerWindings=0;
-	//integerWindings = mw.getWindingInteger(list1,list2,tangent1,tangent2,pairedTurnList1,pairedTurnList2);
-	// next the end angle contributions, several cases
-	double endSum = getEndAngles(list1,list2,tangent1,tangent2);
-	clearVecs();
-	return endSum + double(integerWindings); 
-	}*/
 
 double localWrithe::getWinding(std::vector<point>& list1,std::vector<point>& list2){
   std::vector<int> turnList1 = getListTurnPtsReturn(list1);
@@ -1119,7 +1031,6 @@ double localWrithe::wij(std::vector<point>& pointList,int size,int i,int j){
 
 
 double localWrithe::DI(std::vector<point>& pointList){
-  //pointList.push_back(pointList[0]);
   int listSize = pointList.size();
   double sigsum=0.0;
   for(int i=0;i<listSize-1;i++){
@@ -1131,7 +1042,6 @@ double localWrithe::DI(std::vector<point>& pointList){
 }
 
 double localWrithe::DIAbs(std::vector<point>& pointList){
-  //pointList.push_back(pointList[0]);
   int listSize = pointList.size();
   double sigsum=0.0;
   for(int i=0;i<listSize-1;i++){
@@ -1141,27 +1051,6 @@ double localWrithe::DIAbs(std::vector<point>& pointList){
   }
   return sigsum/(2*PI);
 }
-
-/*
-std::vector<double> localWrithe::DI(std::vector<point>& pointList){
-  //pointList.push_back(pointList[0]);
-  int listSize = pointList.size();
-  std::vector<double> writhes;
-  double sigsum=0.0;
-  double sigsumLoc =0.0;
-  double sigsumNonLoc =0.0;
-  for(int i=0;i<listSize-1;i++){
-    for(int j=i+1;j< listSize-1;j++){
-      sigsum = sigsum +wij(pointList,listSize,i,j);
-     }
-  }
-  sigsum = sigsum/(2*PI);
-  ...
-  writhes.push_back(sigsum);
-  /// 
-  return writhes;
-}
-*/
 
 double localWrithe::DIClosed(std::vector<point>& pointList){
   pointList.push_back(pointList[0]);
@@ -1175,10 +1064,6 @@ double localWrithe::DIClosed(std::vector<point>& pointList){
   return sigsum/(2*PI);
 }
 
-
-
-
-
 double localWrithe::DIClosedLk(std::vector<point>& pointList,std::vector<point>& pointList2){
   int listSize = pointList.size();
   int listSize2 = pointList2.size();
@@ -1190,7 +1075,6 @@ double localWrithe::DIClosedLk(std::vector<point>& pointList,std::vector<point>&
   }
   return sigsum/(4*PI);
 }
-
 
 std::vector<std::pair<std::pair<int,int>,double> > localWrithe::DIDownSample(std::vector<std::vector<point> >& pointListIn){
   // first downsample

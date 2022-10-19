@@ -49,7 +49,6 @@ public:
   double acosC(double temp);
   double DI(std::vector<point>& pointList);
   double DIAbs(std::vector<point>& pointList);
-  //std::vector<double>  DI(std::vector<point>& pointList);
   double DIClosed(std::vector<point>& pointList);
   double muLink(std::vector<point>& pointList,std::vector<point>& pointList2,int size,int size2,int i, int j);
   double DIClosedLk(std::vector<point>& pointList,std::vector<point>& pointList2);
