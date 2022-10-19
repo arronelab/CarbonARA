@@ -45,8 +45,20 @@ public:
   void readInMolWithBackboneLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
   void readInMolWithSequenceLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
   std::vector<int> getUnitNos();
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   std::vector<std::vector<point> > getTangents();
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   std::vector<std::vector<point> > getNormals();
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   std::vector<std::vector<point> > getBinormals();
   std::vector<std::vector<point> > getCoordinates();
   std::vector<point> getCoordinatesSection(int i);
@@ -65,13 +77,33 @@ public:
   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(int &sec);
   //std::vector<point> getEulerAngles();
   std::vector<double> getDistChanges();
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   double getCurvatureJoined(int index);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   double getTorsionJoined(int index);
   double getLengthJoined(int index);
   int getUnitNo(int index);
   double maxNeighbourDistSec(int &sec);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   point getTangent(int mindex,int subindex);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   point getNormal(int mindex,int subindex);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   point getBinormal(int mindex,int subindex);
   point getCoordinate(int mindex,int subindex);
   double getAlbeadJoined(int index);
@@ -120,24 +152,69 @@ public:
 */
   void readInCoordinates(const char* filename);
   void readInSequenceWBackbone(const char* filename,int chainNo,const char* backbonename);
-  // void readInMolNmerSequence(const char* filename,std::vector<int> &molIndicies,double &rmin,double &rmax,double &lmin);
   void readInMolNmerSequenceWBackbone(const char* filename,const char* backboneName,std::vector<int> &molIndicies,double &rmin,double &rmax,double &lmin);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   point binorm(point &T1,point &T2);
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   point parallelTransport(point &tan1,point &tan2,point &norm1);
+  /**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   std::vector<std::vector<point> > updateFrame(std::vector<point> &section,point &tangent,point &normal,point &binormal);
   /**
 * Finds Hydrophobic Residues
 *
-* Stores the index of all Hydrophobic Residues (Amino Acids: A,I,L,M,F,V,P,G)
+* Stores the index of all Hydrophobic Residues (i.e. Amino Acid Letter Code: A,I,L,M,F,V,P,G)
 */
   void getHydrophobicResidues();
+/**
+ * Checks for the average distance between a hydrophobic residue and solvent molceules (within some cut off distance)
+ * 
+ * @param solventList List of coordinates of all solvent molecules.
+ * @param maxSolDist Cut off distance to check for solvent molecules. 
+ */
   std::vector<double> getHydrophobicDistance(std::vector<std::vector<point> > &solventList,double &maxSolDist);
+/**
+ * Assume no longer used, specific to coiled coil example from paper
+ * 
+ */
   void getCoiledCoilResidues();
+/**
+ * Returns indices of positively charged residues (here Amino Acid Letter Code: K, Y, R)
+ * 
+ */
   void getPositiveResidues();
+/**
+ * Returns indices of negatively charged residues (here Amino Acid Letter Code: D, E)
+ * 
+ */
   void getNegativeResidues();
+/**
+ * Returns indices of polar residues (here Amino Acid Letter Code: Q, N, H, S, T, Y, C)
+ * 
+ */
   void getPolarResidues();
+/**
+ * Assume no longer used, specific to coiled coil example from paper
+ * 
+ */
   double coiledCoilPotential();
+/**
+ * Assume no longer used, specific to coiled coil example from paper
+ * 
+ */
   double coiledCoilPotentialBetween(int &secNo);
+/**
+ * Assume no longer used, specific to coiled coil example from paper
+ * 
+ */
   double coiledCoilPotentialBetween();
   double getGlobalRadiusOfCurvature();
   double getGlobalRadiusOfCurvatureWithinSec(int &secNo,int &NoNeighbour);
@@ -162,6 +239,10 @@ public:
   void getRandomMoleculeAllowOverlapReset();
   void removeOverlap();
   void resetRandomMolecule();
+/**
+ * Assume no longer used, relates to continuous pov
+ * 
+ */
   void getFrameForBackbone();
 
 /** 
