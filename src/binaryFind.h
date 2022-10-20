@@ -1,7 +1,7 @@
 /**
  * @file binaryFind.cpp
  *
- * @brief Fundamental Logic Class: Simple set operations (Is in set? etc.)
+ * @brief Fundamental Logic Class: Simple set operations (Is in set? etc.) necessary for localWrithe
  *
  * @ingroup Fundamental
  *
