@@ -42,7 +42,6 @@ std::pair<int,int>  binaryFind::getContainingPair(std::vector<point>& pointList,
 	    }else{
 	      midIndex = lowerIndex+ ceil(short(indexDif)/2.0);
 	    }
-	    //std::cout<<pointList[midIndex].getZ()<<" "<<pointList[upperIndex].getZ()<<"\n";
 	    if(switchPoinstAtEnd){
 	      checkInSec(pointList[upperIndex].getZ(),pointList[midIndex].getZ(),zval);
 	    }else{
