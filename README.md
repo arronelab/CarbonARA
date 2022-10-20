@@ -8,7 +8,7 @@ Getting Started with CARBONARA
 
 **CARBONARA is in version 0.1 and is not ready for use in production!**
 
-Head over to the [CARBONARA manual](https://carbonara.org/userguide)
+Head over to the [CARBONARA manual](https://mckeownish.github.io/carbonara.github.io/)
 for usage guides and tutorials that will get you started s m o o t h l y.
 
 License
