@@ -1,0 +1,188 @@
+\hypertarget{classrandom_mol}{}\doxysection{random\+Mol Class Reference}
+\label{classrandom_mol}\index{randomMol@{randomMol}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrandom_mol_a9db2770e19a62027f78f14860fb074ea}\label{classrandom_mol_a9db2770e19a62027f78f14860fb074ea}} 
+{\bfseries random\+Mol} (double \&rmin\+In, double \&rmax\+In, double \&lmin\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a5f5175968ed811aefc35ee4886363d73}\label{classrandom_mol_a5f5175968ed811aefc35ee4886363d73}} 
+void {\bfseries set\+Params} (double \&rmin\+In, double \&rmax\+In, double \&lmin\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a3980e5abd6b0f4f33f3f0d131c093f7f}\label{classrandom_mol_a3980e5abd6b0f4f33f3f0d131c093f7f}} 
+std\+::pair$<$ double, double $>$ {\bfseries kap\+Tau} (\mbox{\hyperlink{classpoint}{point}} \&pt1, \mbox{\hyperlink{classpoint}{point}} \&pt2, \mbox{\hyperlink{classpoint}{point}} \&pt3, \mbox{\hyperlink{classpoint}{point}} \&pt4)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ad84f6ed697b0f0c0af185c1ec531e7fa}\label{classrandom_mol_ad84f6ed697b0f0c0af185c1ec531e7fa}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries binorm} (\mbox{\hyperlink{classpoint}{point}} \&T1, \mbox{\hyperlink{classpoint}{point}} \&T2)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a72d6a0f4dcb603bb78619c90e5f9a2d4}\label{classrandom_mol_a72d6a0f4dcb603bb78619c90e5f9a2d4}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Next\+Point} (\mbox{\hyperlink{classpoint}{point}} \&pt1, \mbox{\hyperlink{classpoint}{point}} \&pt2, \mbox{\hyperlink{classpoint}{point}} \&pt3, double \&r, double \&kap, double \&tau)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a3928bdf30a84f07d77336ff23c500fad}\label{classrandom_mol_a3928bdf30a84f07d77336ff23c500fad}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Next\+Point\+Test} (\mbox{\hyperlink{classpoint}{point}} \&pt1, \mbox{\hyperlink{classpoint}{point}} \&pt2, \mbox{\hyperlink{classpoint}{point}} \&pt3, double \&r, double \&kap, double \&tau)
+\item 
+\mbox{\Hypertarget{classrandom_mol_abfd6a85f7a037b2219a153289517ffdc}\label{classrandom_mol_abfd6a85f7a037b2219a153289517ffdc}} 
+double {\bfseries interp\+Vel2D} (double \&x0, double \&y0, double \&x, double \&y, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&vx, double \&d1, double \&d2, int \&nx, int \&ny)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a9834619a48edf50b0fcb6c21564db803}\label{classrandom_mol_a9834619a48edf50b0fcb6c21564db803}} 
+double {\bfseries interp\+Vel1D} (double \&x0, double \&p, std\+::vector$<$ double $>$ \&vx, double \&d1, int \&nx)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ade903098c178894e2c9fbc5126cfaaca}\label{classrandom_mol_ade903098c178894e2c9fbc5126cfaaca}} 
+double {\bfseries bisection} (double(random\+Mol\+::$\ast$func)(double), double \&val, int n, double range\+Lower, double range\+Upper, double \&prev\+Val)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a6bb55e0c29fd021a0b8680ed7732761f}\label{classrandom_mol_a6bb55e0c29fd021a0b8680ed7732761f}} 
+double {\bfseries bisection\+Double\+Arg} (double(random\+Mol\+::$\ast$func)(double, double), double \&val, int n, double range\+Lower, double range\+Upper, double second\+Arg, double \&prev\+Val)
+\item 
+\mbox{\Hypertarget{classrandom_mol_aabf324dca17fd146afa0a0b14973b9a3}\label{classrandom_mol_aabf324dca17fd146afa0a0b14973b9a3}} 
+double {\bfseries cum\+Dist\+Mixed} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a208f133c51b96caff4103c00b4e69c04}\label{classrandom_mol_a208f133c51b96caff4103c00b4e69c04}} 
+double {\bfseries cum\+Dist\+Neg\+Beta} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a1c6f46aeb4657d961f150e81c8191567}\label{classrandom_mol_a1c6f46aeb4657d961f150e81c8191567}} 
+double {\bfseries cum\+Dist\+Pos\+Beta} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_aa5c4fcdc0f7282a1b520066a97f198c3}\label{classrandom_mol_aa5c4fcdc0f7282a1b520066a97f198c3}} 
+double {\bfseries cum\+Dist\+Alpha} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a23c4ba1142d35a1d7cda8beeed046cbe}\label{classrandom_mol_a23c4ba1142d35a1d7cda8beeed046cbe}} 
+double {\bfseries cum\+Dist\+Mixed\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a5bb6a93627bfbd62de7e9ab663946388}\label{classrandom_mol_a5bb6a93627bfbd62de7e9ab663946388}} 
+double {\bfseries cum\+Dist\+Neg\+Beta\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a841753d969a29cffaa61ef6c4a970886}\label{classrandom_mol_a841753d969a29cffaa61ef6c4a970886}} 
+double {\bfseries cum\+Dist\+Pos\+Beta\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_adeea3b02abd20f949ccda8029da3e86b}\label{classrandom_mol_adeea3b02abd20f949ccda8029da3e86b}} 
+double {\bfseries cum\+Dist\+Alpha\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a4f56b83447ad5e7702f13b64c72d88a8}\label{classrandom_mol_a4f56b83447ad5e7702f13b64c72d88a8}} 
+double {\bfseries cum\+Dist\+Linker\+To\+Helix} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a2a8256477924f62af5f8ca71022f8cf7}\label{classrandom_mol_a2a8256477924f62af5f8ca71022f8cf7}} 
+double {\bfseries cum\+Dist\+Helix\+To\+Linker} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a4a969bc4eb9dd44b5aae7df7a6a8ab19}\label{classrandom_mol_a4a969bc4eb9dd44b5aae7df7a6a8ab19}} 
+double {\bfseries cum\+Dist\+Strand\+To\+Helix} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a6670cab1f550e393d002291300a795af}\label{classrandom_mol_a6670cab1f550e393d002291300a795af}} 
+double {\bfseries cum\+Dist\+Helix\+To\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a78994825928e37650d49a2c6ee92363d}\label{classrandom_mol_a78994825928e37650d49a2c6ee92363d}} 
+double {\bfseries cum\+Dist\+Strand\+To\+Linker} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a3cd508e7bb3f6e6c5b7774e692df5c9a}\label{classrandom_mol_a3cd508e7bb3f6e6c5b7774e692df5c9a}} 
+double {\bfseries cum\+Dist\+Linker\+To\+Strand} (double x)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ac4b0cb95d53a0cbd9736d8d6edf0ea4e}\label{classrandom_mol_ac4b0cb95d53a0cbd9736d8d6edf0ea4e}} 
+double {\bfseries cum\+XGYMixed} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_af34a5adf69f6762f103ac12ee34dbd1c}\label{classrandom_mol_af34a5adf69f6762f103ac12ee34dbd1c}} 
+double {\bfseries cum\+XGYNeg\+Beta} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a10297fbe45291d25d19a18d802d080f5}\label{classrandom_mol_a10297fbe45291d25d19a18d802d080f5}} 
+double {\bfseries cum\+XGYPos\+Beta} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a01fa4b52ad2667cffe44398f10665964}\label{classrandom_mol_a01fa4b52ad2667cffe44398f10665964}} 
+double {\bfseries cum\+XGYAlpha} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a4b9ddac652a55388700227a73be16768}\label{classrandom_mol_a4b9ddac652a55388700227a73be16768}} 
+double {\bfseries cum\+XGYMixed\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_abd5748652fa485d57f248bf29747e00f}\label{classrandom_mol_abd5748652fa485d57f248bf29747e00f}} 
+double {\bfseries cum\+XGYNeg\+Beta\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a3e3681fc8dac5af0d0e9addd96e19fbe}\label{classrandom_mol_a3e3681fc8dac5af0d0e9addd96e19fbe}} 
+double {\bfseries cum\+XGYPos\+Beta\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_acd05ee9c3f38d7957f35fb8589b14b84}\label{classrandom_mol_acd05ee9c3f38d7957f35fb8589b14b84}} 
+double {\bfseries cum\+XGYAlpha\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_af65da6c436d06b539c9a1b1b485caa64}\label{classrandom_mol_af65da6c436d06b539c9a1b1b485caa64}} 
+double {\bfseries cum\+XGYLinker\+To\+Helix} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a49c72428edc5072dbec847e8c6228b31}\label{classrandom_mol_a49c72428edc5072dbec847e8c6228b31}} 
+double {\bfseries cum\+XGYHelix\+To\+Linker} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a7341410c38e4899bc870e5ef6d45d317}\label{classrandom_mol_a7341410c38e4899bc870e5ef6d45d317}} 
+double {\bfseries cum\+XGYStrand\+To\+Helix} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ac3a82a352add5e8b42ef7bfd1adba819}\label{classrandom_mol_ac3a82a352add5e8b42ef7bfd1adba819}} 
+double {\bfseries cum\+XGYHelix\+To\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a8d68a6966b132f14260b813267cf5082}\label{classrandom_mol_a8d68a6966b132f14260b813267cf5082}} 
+double {\bfseries cum\+XGYStrand\+To\+Linker} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_adccb4ee3789fc8d236f5606607020948}\label{classrandom_mol_adccb4ee3789fc8d236f5606607020948}} 
+double {\bfseries cum\+XGYLinker\+To\+Strand} (double Y, double kap\+Val\+In)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ad8e25291b59290c9dfc12b5766b6d3cc}\label{classrandom_mol_ad8e25291b59290c9dfc12b5766b6d3cc}} 
+std\+::pair$<$ double, double $>$ {\bfseries get\+Kap\+Tau\+Prob} (int \&type, std\+::default\+\_\+random\+\_\+engine \&generator)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a79da7e18311005f8c373c04a8fec17e4}\label{classrandom_mol_a79da7e18311005f8c373c04a8fec17e4}} 
+std\+::pair$<$ double, double $>$ {\bfseries get\+Prob\+From\+Kap\+Tau} (int \&type, std\+::default\+\_\+random\+\_\+engine \&generator, std\+::pair$<$ double, double $>$ \&kap\+Tau\+Pair, double prob\+Change)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a470e4969889bc24b4f74220a6507d3c4}\label{classrandom_mol_a470e4969889bc24b4f74220a6507d3c4}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries get\+Tan\+For\+Helix} (double \&k, double \&t, double \&l, double \&xv, double \&yv, double \&zv, \mbox{\hyperlink{classpoint}{point}} \&p)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ad995aa6d209cd3310e6a5c95480f3569}\label{classrandom_mol_ad995aa6d209cd3310e6a5c95480f3569}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries parallel\+Transport} (\mbox{\hyperlink{classpoint}{point}} \&tan1, \mbox{\hyperlink{classpoint}{point}} \&tan2, \mbox{\hyperlink{classpoint}{point}} \&norm1)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a26a5131347243cf5c55a7f667be8db98}\label{classrandom_mol_a26a5131347243cf5c55a7f667be8db98}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries make\+Random\+Section\+With\+Dist} (\mbox{\hyperlink{classpoint}{point}} \&st\+Pt, \mbox{\hyperlink{classpoint}{point}} \&st\+Tan, \mbox{\hyperlink{classpoint}{point}} \&st\+Norm, int \&npts, std\+::default\+\_\+random\+\_\+engine \&generator, int \&loop\+Or\+Strand, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a6e5d87c63c32d4cd4396172c8f26c39e}\label{classrandom_mol_a6e5d87c63c32d4cd4396172c8f26c39e}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries alter\+Section\+With\+Dist} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ curr\+Pts, int \&strand\+Or\+Linker, double rad\+Of\+Search, std\+::default\+\_\+random\+\_\+engine \&generator, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a1bc061956e0061571553285d0247b7c7}\label{classrandom_mol_a1bc061956e0061571553285d0247b7c7}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Loop\+To\+Helix} (\mbox{\hyperlink{classpoint}{point}} \&ptloop1, \mbox{\hyperlink{classpoint}{point}} \&ptloop2, \mbox{\hyperlink{classpoint}{point}} \&ptloop3, double k, double t, double al, double cl, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, bool \&suceeded, int \&index)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ac4849d925ea2f3d114e3049d73966ba6}\label{classrandom_mol_ac4849d925ea2f3d114e3049d73966ba6}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Loop\+To\+Helix\+Alter} (\mbox{\hyperlink{classpoint}{point}} \&ptloop1, \mbox{\hyperlink{classpoint}{point}} \&ptloop2, \mbox{\hyperlink{classpoint}{point}} \&ptloop3, \mbox{\hyperlink{classpoint}{point}} \&ptloop4, double k, double t, double al, double cl, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, double rad\+Of\+Search, bool \&suceeded, int \&index)
+\item 
+\mbox{\Hypertarget{classrandom_mol_aa8f9b37173322d43dc0a4c33628872a6}\label{classrandom_mol_aa8f9b37173322d43dc0a4c33628872a6}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Loop\+To\+Helix\+Strand} (\mbox{\hyperlink{classpoint}{point}} \&ptloop1, \mbox{\hyperlink{classpoint}{point}} \&ptloop2, \mbox{\hyperlink{classpoint}{point}} \&ptloop3, double k, double t, double al, double cl, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a028ede936d933e174d7c8af700f4e821}\label{classrandom_mol_a028ede936d933e174d7c8af700f4e821}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Helix\+To\+Loop} (\mbox{\hyperlink{classpoint}{point}} \&pthel1, \mbox{\hyperlink{classpoint}{point}} \&pthel2, \mbox{\hyperlink{classpoint}{point}} \&pthel3, int \&nl, std\+::default\+\_\+random\+\_\+engine \&generator, int loop\+Or\+Strand, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_aa4d87af84719dafbdb796ea0bb54c737}\label{classrandom_mol_aa4d87af84719dafbdb796ea0bb54c737}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Loop\+With\+Strand} (\mbox{\hyperlink{classpoint}{point}} \&ptloop1, \mbox{\hyperlink{classpoint}{point}} \&ptloop2, \mbox{\hyperlink{classpoint}{point}} \&ptloop3, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, int strand\+Or\+Loop, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a97bc048fa17fe1254d7f38875bae5407}\label{classrandom_mol_a97bc048fa17fe1254d7f38875bae5407}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries get\+Frame\+Helix} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&coords)
+\item 
+\mbox{\Hypertarget{classrandom_mol_acc70930d4a96239f38e55668cafb8c33}\label{classrandom_mol_acc70930d4a96239f38e55668cafb8c33}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Helix\+To\+Helix} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&prev\+Sec, double k, double t, double al, double cl, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, bool \&suceeded, int \&index)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a5672d9d4a15b9c3c523694c2524d6aec}\label{classrandom_mol_a5672d9d4a15b9c3c523694c2524d6aec}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries blend\+Helix\+To\+Helix\+Alter} (\mbox{\hyperlink{classpoint}{point}} \&ptloop1, \mbox{\hyperlink{classpoint}{point}} \&ptloop2, \mbox{\hyperlink{classpoint}{point}} \&ptloop3, \mbox{\hyperlink{classpoint}{point}} \&ptloop4, double k, double t, double al, double cl, int \&n\+Hel, std\+::default\+\_\+random\+\_\+engine \&generator, double rad\+Of\+Search, bool \&suceeded, int \&index)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a239c077674b82ef0a6b31090b03040d6}\label{classrandom_mol_a239c077674b82ef0a6b31090b03040d6}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ {\bfseries make\+Random\+Molecule} (std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&mol\+Dat, \mbox{\hyperlink{classpoint}{point}} \&sp, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a7c0ce37c51a0a2f917a8189fb9abf9c5}\label{classrandom_mol_a7c0ce37c51a0a2f917a8189fb9abf9c5}} 
+void {\bfseries tan\+To\+Sec} (\mbox{\hyperlink{classpoint}{point}} \&sp, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&prev\+Sec)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a9d1ec2540120eee14cd6d35684700c64}\label{classrandom_mol_a9d1ec2540120eee14cd6d35684700c64}} 
+double {\bfseries get\+Max\+Dist\+Change} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&old\+Pts, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&new\+Points)
+\item 
+\mbox{\Hypertarget{classrandom_mol_aa040a7987052a42d3693e4020d7b0958}\label{classrandom_mol_aa040a7987052a42d3693e4020d7b0958}} 
+double {\bfseries reshape\+Mol} (std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&mol\+Dat, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&mol\+Pos, int \&index, \mbox{\hyperlink{classpoint}{point}} \&sp, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ac1236b29a3ec29833cff3547d24ba414}\label{classrandom_mol_ac1236b29a3ec29833cff3547d24ba414}} 
+double {\bfseries reshape\+Mol\+Helix\+Set} (std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&mol\+Dat, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&mol\+Pos, int \&index, int no\+Helices, \mbox{\hyperlink{classpoint}{point}} \&sp, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_ac1e879e79f5afb3c56367a76461dbfde}\label{classrandom_mol_ac1e879e79f5afb3c56367a76461dbfde}} 
+double {\bfseries reshape\+Mol\+Loop\+Then\+Helix\+Set} (std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&mol\+Dat, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&mol\+Pos, int \&index, int no\+Helices, \mbox{\hyperlink{classpoint}{point}} \&sp, bool \&suceeded)
+\item 
+\mbox{\Hypertarget{classrandom_mol_a0ad4a0b170eebaa1c76040fc25dd78b2}\label{classrandom_mol_a0ad4a0b170eebaa1c76040fc25dd78b2}} 
+double {\bfseries reshape\+Mol\+Small\+Variation} (std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&mol\+Dat, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&mol\+Pos, int \&index, \mbox{\hyperlink{classpoint}{point}} \&sp, double variation\+Size, bool \&suceeded)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+random\+Mol\+Gen.\+h\item 
+random\+Mol\+Gen.\+cpp\end{DoxyCompactItemize}

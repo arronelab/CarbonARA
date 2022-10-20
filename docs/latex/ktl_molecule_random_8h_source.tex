@@ -1,0 +1,158 @@
+\hypertarget{ktl_molecule_random_8h_source}{}\doxysection{ktl\+Molecule\+Random.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef KTL\_MOL}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define KTL\_MOL}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <dirent.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}polyHelix.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}randomMolGen.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classktl_molecule}{ktlMolecule}}\{}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39   \mbox{\hyperlink{classktl_molecule}{ktlMolecule}}();}
+\DoxyCodeLine{40   \textcolor{comment}{//ktlMolecule(ktlMolecule \&ktlm);}}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} setParams(\textcolor{keywordtype}{double} \&rminIn,\textcolor{keywordtype}{double} \&rmaxIn,\textcolor{keywordtype}{double} \&lminIn);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} readInMol(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{int} chainNo,\textcolor{keywordtype}{int} isRand);}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} readInMolGen(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} readInMolWithBackbone(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{int} chainNo,\textcolor{keywordtype}{int} isRand);}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} readInMolWithBackboneLenJ(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{int} chainNo,\textcolor{keywordtype}{int} isRand,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* LenJFileName);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} readInMolWithSequenceLenJ(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{int} chainNo,\textcolor{keywordtype}{int} isRand,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* LenJFileName);}
+\DoxyCodeLine{47   std::vector<int> getUnitNos();}
+\DoxyCodeLine{52   std::vector<std::vector<point> > \mbox{\hyperlink{classktl_molecule_af43e782ece78eacb60b01664de23944d}{getTangents}}();}
+\DoxyCodeLine{57   std::vector<std::vector<point> > \mbox{\hyperlink{classktl_molecule_a4a71367cf22ed0a510341be50977d3aa}{getNormals}}();}
+\DoxyCodeLine{62   std::vector<std::vector<point> > \mbox{\hyperlink{classktl_molecule_a50ad5573947561f3c13c95ca2c414214}{getBinormals}}();}
+\DoxyCodeLine{63   std::vector<std::vector<point> > getCoordinates();}
+\DoxyCodeLine{64   std::vector<point> getCoordinatesSection(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{70   \textcolor{keywordtype}{int} \mbox{\hyperlink{classktl_molecule_a13114b774dcce946a542044fd5b244dc}{getSubsecSize}}(\textcolor{keywordtype}{int} sec);}
+\DoxyCodeLine{76   std::vector<std::vector<point> > \mbox{\hyperlink{classktl_molecule_ad6ed6bf1ffb225fc14191cb839b244c5}{getSubsecCoordinates}}(\textcolor{keywordtype}{int} \&sec);}
+\DoxyCodeLine{77   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(\textcolor{keywordtype}{int} \&sec);}
+\DoxyCodeLine{78   \textcolor{comment}{//std::vector<point> getEulerAngles();}}
+\DoxyCodeLine{79   std::vector<double> getDistChanges();}
+\DoxyCodeLine{84   \textcolor{keywordtype}{double} \mbox{\hyperlink{classktl_molecule_a07f7c9a91e70e721cbb06f778a780f70}{getCurvatureJoined}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{89   \textcolor{keywordtype}{double} \mbox{\hyperlink{classktl_molecule_a2570ac0b4d48e655bfe06681b7d7bc3b}{getTorsionJoined}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{90   \textcolor{keywordtype}{double} getLengthJoined(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{91   \textcolor{keywordtype}{int} getUnitNo(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{92   \textcolor{keywordtype}{double} maxNeighbourDistSec(\textcolor{keywordtype}{int} \&sec);}
+\DoxyCodeLine{97   \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_acede2342d07446259bc1b55ab13e1ac1}{getTangent}}(\textcolor{keywordtype}{int} mindex,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{102   \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_afe2392cc86b1629f08eea40ae279b998}{getNormal}}(\textcolor{keywordtype}{int} mindex,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{107   \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_a690498d73cb91957c0cb26882bccf958}{getBinormal}}(\textcolor{keywordtype}{int} mindex,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{108   \mbox{\hyperlink{classpoint}{point}} getCoordinate(\textcolor{keywordtype}{int} mindex,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{109   \textcolor{keywordtype}{double} getAlbeadJoined(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{110   std::string getType(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{111   std::string getType(\textcolor{keywordtype}{int} \&chainNo,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{112   \textcolor{comment}{//double getDistChange(int index);}}
+\DoxyCodeLine{113   \textcolor{keywordtype}{double} getMaxDistChange();}
+\DoxyCodeLine{114   std::pair<double,double> getMaxPossibleLength();}
+\DoxyCodeLine{115   \textcolor{keywordtype}{int} molSize();}
+\DoxyCodeLine{119   \textcolor{keywordtype}{int} \mbox{\hyperlink{classktl_molecule_a7057e1b6342bf45dbab4abac9c188490}{noChains}}();}
+\DoxyCodeLine{120   \textcolor{keywordtype}{int} noSecSize();}
+\DoxyCodeLine{124   \textcolor{keywordtype}{int} \mbox{\hyperlink{classktl_molecule_a70ca23033b0654adb5cca00884107584}{getNoAminos}}();}
+\DoxyCodeLine{125   \textcolor{keywordtype}{void} createSyntheticMolecule(\textcolor{keywordtype}{int} nLinks);}
+\DoxyCodeLine{126   \textcolor{keywordtype}{void} readInFit(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fieldname);}
+\DoxyCodeLine{127   \textcolor{keywordtype}{void} readInMolNmer(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,std::vector<int> \&molIndicies,\textcolor{keywordtype}{int} isRand,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} readInMolNmerAndCoordinates(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,std::vector<int> \&molIndicies,\textcolor{keywordtype}{int} isRand,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} readInMolNmerWithBackbone(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,std::vector<int> \&molIndicies,\textcolor{keywordtype}{int} isRand,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{130   \textcolor{keywordtype}{void} readInMolNmerWithBackboneLenJ(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,std::vector<int> \&molIndicies,\textcolor{keywordtype}{int} isRand,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filenameLenJ);}
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} readInMolNmerWithSequenceLenJ(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,std::vector<int> \&molIndicies,\textcolor{keywordtype}{int} isRand,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filenameLenJ);}
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a3f5d04cd93755f0c0184e0d1a499329e}{readInSequence}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_add51cc5bdfeb826b776b30ee02a52ef0}{readInCoordinates}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} readInSequenceWBackbone(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keywordtype}{int} chainNo,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* backbonename);}
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} readInMolNmerSequenceWBackbone(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* backboneName,std::vector<int> \&molIndicies,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{160   \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_aa4ff0e335e8b8bdae36ff72e54403c21}{binorm}}(\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2);}
+\DoxyCodeLine{165   \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_ae8c483195857a2ba134f66bdcd0c96f1}{parallelTransport}}(\mbox{\hyperlink{classpoint}{point}} \&tan1,\mbox{\hyperlink{classpoint}{point}} \&tan2,\mbox{\hyperlink{classpoint}{point}} \&norm1);}
+\DoxyCodeLine{170   std::vector<std::vector<point> > \mbox{\hyperlink{classktl_molecule_a6152d9c18958b3f00c79ee3c56a5d41e}{updateFrame}}(std::vector<point> \&section,\mbox{\hyperlink{classpoint}{point}} \&tangent,\mbox{\hyperlink{classpoint}{point}} \&normal,\mbox{\hyperlink{classpoint}{point}} \&binormal);}
+\DoxyCodeLine{176   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a263a3e39b2dea4ded750e22379650db4}{getHydrophobicResidues}}();}
+\DoxyCodeLine{183   std::vector<double> \mbox{\hyperlink{classktl_molecule_a98d940f8feca44434c350255fcc5a4d8}{getHydrophobicDistance}}(std::vector<std::vector<point> > \&solventList,\textcolor{keywordtype}{double} \&maxSolDist);}
+\DoxyCodeLine{188   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_aa32aa30241955ab6a433e391449be320}{getCoiledCoilResidues}}();}
+\DoxyCodeLine{193   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_aaed5008ff3e1e379de260d203fdc733d}{getPositiveResidues}}();}
+\DoxyCodeLine{198   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a1a1c931d9b465b5c7349bc8ee9936e74}{getNegativeResidues}}();}
+\DoxyCodeLine{203   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_aa617df428b60243051d19f4ccc630270}{getPolarResidues}}();}
+\DoxyCodeLine{208   \textcolor{keywordtype}{double} \mbox{\hyperlink{classktl_molecule_a77e00d4615fc2ba82890b0ebf34a1e53}{coiledCoilPotential}}();}
+\DoxyCodeLine{213   \textcolor{keywordtype}{double} \mbox{\hyperlink{classktl_molecule_af4f9673646ab53e4415c26bfce34a2e8}{coiledCoilPotentialBetween}}(\textcolor{keywordtype}{int} \&secNo);}
+\DoxyCodeLine{218   \textcolor{keywordtype}{double} \mbox{\hyperlink{classktl_molecule_af4f9673646ab53e4415c26bfce34a2e8}{coiledCoilPotentialBetween}}();}
+\DoxyCodeLine{219   \textcolor{keywordtype}{double} getGlobalRadiusOfCurvature();}
+\DoxyCodeLine{220   \textcolor{keywordtype}{double} getGlobalRadiusOfCurvatureWithinSec(\textcolor{keywordtype}{int} \&secNo,\textcolor{keywordtype}{int} \&NoNeighbour);}
+\DoxyCodeLine{221   \textcolor{keywordtype}{double} getGlobalRadiusOfCurvatureBetweenSec(\textcolor{keywordtype}{int} \&NoNeighbour);}
+\DoxyCodeLine{222   \mbox{\hyperlink{classpoint}{point}} getCentreOfMass(std::vector<std::vector<point> > \&cdSet);}
+\DoxyCodeLine{223   std::vector<int> checkOverlap(std::vector<std::vector<point> > \&cdsIN);}
+\DoxyCodeLine{224   std::vector<double> checkOverlapWithRad(\textcolor{keywordtype}{double} \&wRad,\textcolor{keywordtype}{int} \&sec);}
+\DoxyCodeLine{225   std::vector<double> checkOverlapWithRad(\textcolor{keywordtype}{double} \&wRad);}
+\DoxyCodeLine{226   std::vector<double> getDistSet();}
+\DoxyCodeLine{227   \textcolor{keywordtype}{double} compareDistances(std::vector<std::vector<point> > \&coords2);}
+\DoxyCodeLine{233   \textcolor{keywordtype}{bool} checkCalphas(std::vector<std::vector<point> > \&coordsIn);}
+\DoxyCodeLine{234   \textcolor{keywordtype}{bool} checkCalphas();}
+\DoxyCodeLine{235   \textcolor{keywordtype}{bool} checkCalphas(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{236   \textcolor{keywordtype}{int} getRandomMolecule();}
+\DoxyCodeLine{237   \textcolor{keywordtype}{void} getRandomMoleculeAllowOverlap();}
+\DoxyCodeLine{238   \textcolor{keywordtype}{int} getRandomMoleculeReset();}
+\DoxyCodeLine{239   \textcolor{keywordtype}{void} getRandomMoleculeAllowOverlapReset();}
+\DoxyCodeLine{240   \textcolor{keywordtype}{void} removeOverlap();}
+\DoxyCodeLine{241   \textcolor{keywordtype}{void} resetRandomMolecule();}
+\DoxyCodeLine{246   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_acde74db3720aae0191a5a12c9b207688}{getFrameForBackbone}}();}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{255   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a7d747b1771493c3a5bda18f6c3a2b520}{changeMoleculeSingle}}(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258   \textcolor{keywordtype}{void} changeMoleculeSet(std::vector<int> \&indicies);}
+\DoxyCodeLine{268   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a5066802e6a06cd3f6a3a8db89b127bd2}{changeMoleculeSingleMulti}}(\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} sec);}
+\DoxyCodeLine{269   \textcolor{keywordtype}{void} changeMoleculeSetMulti(std::vector<int>  \&indicies,\textcolor{keywordtype}{int} sec);}
+\DoxyCodeLine{270   \textcolor{keywordtype}{void} changeMoleculeMultiRotate(\textcolor{keywordtype}{double} \&angle,\mbox{\hyperlink{classpoint}{point}} \&k,\textcolor{keywordtype}{int} secIn,\mbox{\hyperlink{classpoint}{point}} \&transVec);}
+\DoxyCodeLine{271   \textcolor{keywordtype}{void} replicateMolecule(\textcolor{keywordtype}{int} \&noReplications); }
+\DoxyCodeLine{272   \textcolor{keywordtype}{void} changeMoleculeLocal(\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{double} variationSize);}
+\DoxyCodeLine{273   \textcolor{keywordtype}{void} changeMoleculeLocalSet(std::vector<int> \&indicies,\textcolor{keywordtype}{double} variationSize);}
+\DoxyCodeLine{274   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a7d747b1771493c3a5bda18f6c3a2b520}{changeMoleculeSingle}}(\textcolor{keywordtype}{int} \&index,std::vector<std::vector<point> > \&cdsIn,std::vector<std::pair<std::string,int> > \&nameSizeSubList);}
+\DoxyCodeLine{275   \textcolor{keywordtype}{void} rotation3D(\mbox{\hyperlink{classpoint}{point}} \&p,\mbox{\hyperlink{classpoint}{point}} \&centre,\mbox{\hyperlink{classpoint}{point}} \&k,\textcolor{keywordtype}{double} \&cosangle,\textcolor{keywordtype}{double} \&sinangle);}
+\DoxyCodeLine{276   \textcolor{keywordtype}{void} rotateSection(std::vector<std::vector<point> >  \&section,\mbox{\hyperlink{classpoint}{point}} \&centre,\mbox{\hyperlink{classpoint}{point}} \&k,\textcolor{keywordtype}{double} \&angle,\mbox{\hyperlink{classpoint}{point}} \&transVec);}
+\DoxyCodeLine{277   \textcolor{keywordtype}{bool} checkOverlapSbond(\textcolor{keywordtype}{double} \&minDist);}
+\DoxyCodeLine{278   \textcolor{keywordtype}{void} changeMoleculeSingleCheckOverlap();}
+\DoxyCodeLine{286   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a22eb1be12691ce9d37c6e80e916fa413}{writeMoleculeToFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{287   \textcolor{keywordtype}{void} getBackboneStats();}
+\DoxyCodeLine{288   std::vector<std::pair<double,double> > getKapTauVals();}
+\DoxyCodeLine{289   \textcolor{keywordtype}{double} getPairDistance(std::pair<int,int> \&index1,std::pair<int,int> \&index2);}
+\DoxyCodeLine{290   \textcolor{keywordtype}{double} lennardJones(\textcolor{keywordtype}{double} \&idealDist,\textcolor{keywordtype}{double} \&currDist,\textcolor{keywordtype}{int} noConPred,\textcolor{keywordtype}{double} \&weightCoeff);}
+\DoxyCodeLine{291   \textcolor{keywordtype}{double} getFitQualSbonds(std::vector<std::tuple<std::pair<int,int>,std::pair<int,int>,\textcolor{keywordtype}{double}> > \&contactPairList,\textcolor{keywordtype}{double} weightCoeff);}
+\DoxyCodeLine{292   \textcolor{keywordtype}{double} getFitQualSbondsNonSpecific(std::vector<std::pair<std::pair<int,int>,\textcolor{keywordtype}{double} >> \&contactPairList,\textcolor{keywordtype}{double} weightCoeff);}
+\DoxyCodeLine{293   std::vector<double> getExactDistSet(std::vector<std::vector<point> > \&coordSet);}
+\DoxyCodeLine{294   \textcolor{keywordtype}{double} allDists(std::vector<point> \&ptSet,std::vector<double> \&distSet);}
+\DoxyCodeLine{295   std::vector<double> solMolDists(std::vector<std::vector<point> > \&pts1);}
+\DoxyCodeLine{296   std::vector<double> getApproxDistSet(\textcolor{keywordtype}{double} \&divFac);}
+\DoxyCodeLine{297   std::vector<double> getApproxDistSetFixed();}
+\DoxyCodeLine{303   \textcolor{keywordtype}{void} \mbox{\hyperlink{classktl_molecule_a491b6fbeb0eaefa9f6670967b81b8136}{loadContactPredictions}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* contactloc);}
+\DoxyCodeLine{304   \textcolor{keywordtype}{double} getLennardJonesContact();}
+\DoxyCodeLine{305   \textcolor{keywordtype}{void} loadFixedSections(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fixedsecloc);}
+\DoxyCodeLine{306 \textcolor{keyword}{private}:}
+\DoxyCodeLine{307   std::vector<int> noPts;}
+\DoxyCodeLine{308   std::vector<std::vector<point> > coords;}
+\DoxyCodeLine{309   std::vector<std::vector<std::string> > aminoList; }
+\DoxyCodeLine{310   std::vector<std::vector<point> > tanlist;}
+\DoxyCodeLine{311   std::vector<std::vector<point> > normlist;}
+\DoxyCodeLine{312   std::vector<std::vector<point> > binormlist;}
+\DoxyCodeLine{313   \mbox{\hyperlink{classpoly_helix}{polyHelix}} ph;}
+\DoxyCodeLine{314   std::vector<std::pair<int,int> > chainList;}
+\DoxyCodeLine{315   std::vector<double> distChanges;}
+\DoxyCodeLine{316   std::vector<std::pair<std::string,int> > nameSizeList;}
+\DoxyCodeLine{321   std::vector<std::pair<int,int> > hydroPhobicList;}
+\DoxyCodeLine{326   std::vector<std::pair<int,int> > polarList;}
+\DoxyCodeLine{331   std::vector<std::pair<int,int> > posChargeList;}
+\DoxyCodeLine{336   std::vector<std::pair<int,int> > negChargeList;}
+\DoxyCodeLine{341   std::vector<std::pair<int,int> > coiledCoilList;}
+\DoxyCodeLine{342   \mbox{\hyperlink{classrandom_mol}{randomMol}} rmg;}
+\DoxyCodeLine{343   std::vector<std::vector<double> > distSetsSecs;}
+\DoxyCodeLine{344   std::vector<double> distSets;}
+\DoxyCodeLine{345   \textcolor{keywordtype}{double} kapvallink,kapvalbeta,kapvalalpha,tauvallink,tauvalbeta,tauvalalpha,alvallink,alvalbeta,alvalalpha,maxDistChange;}
+\DoxyCodeLine{346   std::vector<std::tuple<std::pair<int,int>,std::pair<int,int>,\textcolor{keywordtype}{double}> > contactPairList;}
+\DoxyCodeLine{347   std::vector<int> unchangedSections;}
+\DoxyCodeLine{348 \};}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

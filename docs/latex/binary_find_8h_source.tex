@@ -1,0 +1,26 @@
+\hypertarget{binary_find_8h_source}{}\doxysection{binary\+Find.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef BINARY\_FIND\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define BINARY\_FIND\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classbinary_find}{binaryFind}}\{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{classbinary_find}{binaryFind}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{classbinary_find_a85496d177e8d67557a857220dd71dbd6}{checkInSec}}(\textcolor{keywordtype}{double} lowerSec, \textcolor{keywordtype}{double} upperSec,\textcolor{keywordtype}{double}\& zval);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classbinary_find_a3fd8d20b139e0ede69125c939b0068bf}{checkInSecInitial}}(\textcolor{keywordtype}{double} lowerSec, \textcolor{keywordtype}{double} upperSec,\textcolor{keywordtype}{double}\& zv);}
+\DoxyCodeLine{50     std::pair<int,int> \mbox{\hyperlink{classbinary_find_a5c638e27db48d34b5b706fdaa7338865}{getContainingPair}}(std::vector<point>\& pointList,\textcolor{keywordtype}{int}\& lowerIndex,\textcolor{keywordtype}{int}\& upperIndex,\textcolor{keywordtype}{double}\& zv);}
+\DoxyCodeLine{51     \textcolor{keyword}{private}:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} isIn;  }
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} lowerIndex,upperIndex;}
+\DoxyCodeLine{54     std::pair<int,int> boundingIndicies;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{double} zval;}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

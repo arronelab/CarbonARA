@@ -1,0 +1,27 @@
+\hypertarget{optimization_point_8h_source}{}\doxysection{optimization\+Point.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef OPTPOINT\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define OPTPOINT\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classoptimization_point}{optimizationPoint}}\{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 \mbox{\hyperlink{classoptimization_point}{optimizationPoint}}(std::vector<point> \&pointList,std::vector<std::vector<point> > \&kderivList,std::vector<std::vector<point> > \&tderivList,std::vector<std::vector<point> > \&LderivList);}
+\DoxyCodeLine{36 std::vector<point> \mbox{\hyperlink{classoptimization_point_a0a72ca1c416d3f3c73eb68032f734354}{getPoints}}();}
+\DoxyCodeLine{42 std::vector<std::vector<point> > \mbox{\hyperlink{classoptimization_point_a64e1cbabbde3b7ddc453789af13d5b42}{getKderivs}}();}
+\DoxyCodeLine{48 std::vector<std::vector<point> > \mbox{\hyperlink{classoptimization_point_a3bcf3eab806b1d7b20f1149e0bca7e0f}{getTderivs}}();}
+\DoxyCodeLine{54 std::vector<std::vector<point> > \mbox{\hyperlink{classoptimization_point_acf2477404cfc5240265d88c83133e1a4}{getLderivs}}();}
+\DoxyCodeLine{55 \textcolor{keyword}{private}:}
+\DoxyCodeLine{56 std::vector<point> points;}
+\DoxyCodeLine{57 std::vector<std::vector<point> > kderivs;}
+\DoxyCodeLine{58 std::vector<std::vector<point> > tderivs;}
+\DoxyCodeLine{59 std::vector<std::vector<point> > Lderivs;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

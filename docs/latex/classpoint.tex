@@ -1,0 +1,430 @@
+\hypertarget{classpoint}{}\doxysection{point Class Reference}
+\label{classpoint}\index{point@{point}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpoint_a42594d45b2425b07c383abb5c9e8259f}{point}} (double x, double y, double z)
+\item 
+\mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}} ()
+\item 
+\mbox{\hyperlink{classpoint_a7b8d1677416ad853f3df4ad8095d4164}{point}} (std\+::string \&triplet)
+\item 
+double \mbox{\hyperlink{classpoint_a599c4e97b9b8a84df3159d859d3a8c3c}{getX}} ()
+\item 
+double \mbox{\hyperlink{classpoint_a02851756acd156f6bc0288d03257dcfd}{getY}} ()
+\item 
+double \mbox{\hyperlink{classpoint_a50311b12deadb0cb568ebbb6a4753f3d}{getZ}} ()
+\item 
+void \mbox{\hyperlink{classpoint_a27a5d4c7962be3ec96afcfdd2893e424}{setX}} (double xv)
+\item 
+void \mbox{\hyperlink{classpoint_a94758a74d3a63829fbedef9bc68f2e10}{setY}} (double yv)
+\item 
+void \mbox{\hyperlink{classpoint_a5e7ee14742a018d71fbd0debae1b2e6d}{setZ}} (double zv)
+\item 
+double \mbox{\hyperlink{classpoint_a4d83f0c3804d60a0193075176a1f1d8c}{length}} ()
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_ad74d9ccd6b19ecb39b44845ab2e7c542}{sum}} (\mbox{\hyperlink{classpoint}{point}} \&b)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_ab64269a43726581bbf1e4ea0a7dbff4d}{dif}} (\mbox{\hyperlink{classpoint}{point}} \&b)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a68b5f93d3684f57479269543518a164e}{cross}} (\mbox{\hyperlink{classpoint}{point}} \&p2)
+\item 
+double \mbox{\hyperlink{classpoint_a2350f9ad078a147242e2cb7627fc2cca}{scalar\+Triple}} (\mbox{\hyperlink{classpoint}{point}} \&p1, \mbox{\hyperlink{classpoint}{point}} \&p2, \mbox{\hyperlink{classpoint}{point}} \&p3)
+\item 
+bool \mbox{\hyperlink{classpoint_aab2d4b2123b2f74a6068ef6855753ab0}{check\+Equal}} (\mbox{\hyperlink{classpoint}{point}} \&p2)
+\item 
+void \mbox{\hyperlink{classpoint_a713aceed43c81fbac66344c82a7acf3d}{scalar\+Mult}} (double a)
+\item 
+double \mbox{\hyperlink{classpoint_a84770146f102bcc693dceb1bfc3e786f}{pair\+Dist}} (\mbox{\hyperlink{classpoint}{point}} \&p)
+\item 
+void \mbox{\hyperlink{classpoint_a9e13e4855b8d89c50e2535ece3150b03}{normalise}} ()
+\item 
+void \mbox{\hyperlink{classpoint_a7126a0c2931561eb7506fa99d3f3f8a9}{znormalise}} ()
+\item 
+void \mbox{\hyperlink{classpoint_aa078b15c3fdcccc3093c1fb1afa9be10}{print\+Point}} ()
+\item 
+double \mbox{\hyperlink{classpoint_aa96f1f1fc8af381ed715033982e8a4b2}{dotprod}} (\mbox{\hyperlink{classpoint}{point}} \&p2)
+\item 
+bool \mbox{\hyperlink{classpoint_adf950fccc0c4db363a0f889112df9f7a}{is\+Nonzero}} ()
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_add2e6b129927dba1767c2eed1c8c9e15}{operator+}} (\mbox{\hyperlink{classpoint}{point}} p)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a399a9038e7715a8036dbe925e2794eda}{operator-\/}} (\mbox{\hyperlink{classpoint}{point}} p)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a3178b9728bfde69888714272f4b9b0a0}{operator$\ast$}} (double d)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a50404e35b2fd8bd2dcda07cbb85c4856}{operator/}} (double d)
+\item 
+double \mbox{\hyperlink{classpoint_ac277834d378d603ab861622a3c1e554f}{e\+Dist}} (\mbox{\hyperlink{classpoint}{point}} \&p2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpoint_a42594d45b2425b07c383abb5c9e8259f}\label{classpoint_a42594d45b2425b07c383abb5c9e8259f}} 
+\index{point@{point}!point@{point}}
+\index{point@{point}!point@{point}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily point\+::point (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
+
+Constructs a vector with given coordinates
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+{\em z} & z-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}\label{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}} 
+\index{point@{point}!point@{point}}
+\index{point@{point}!point@{point}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily point\+::point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{classpoint_autotoc_md0}{}\doxysubsection{@overload Constructs an empty vector}\label{classpoint_autotoc_md0}
+\mbox{\Hypertarget{classpoint_a7b8d1677416ad853f3df4ad8095d4164}\label{classpoint_a7b8d1677416ad853f3df4ad8095d4164}} 
+\index{point@{point}!point@{point}}
+\index{point@{point}!point@{point}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily point\+::point (\begin{DoxyParamCaption}\item[{std\+::string \&}]{triplet }\end{DoxyParamCaption})}
+
+\hypertarget{classpoint_autotoc_md1}{}\doxysubsection{@overload Constructs a vector with coordinates given as string}\label{classpoint_autotoc_md1}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpoint_aab2d4b2123b2f74a6068ef6855753ab0}\label{classpoint_aab2d4b2123b2f74a6068ef6855753ab0}} 
+\index{point@{point}!checkEqual@{checkEqual}}
+\index{checkEqual@{checkEqual}!point@{point}}
+\doxysubsubsection{\texorpdfstring{checkEqual()}{checkEqual()}}
+{\footnotesize\ttfamily bool point\+::check\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+Checks if input vector is the same as current vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em p2} & Input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a68b5f93d3684f57479269543518a164e}\label{classpoint_a68b5f93d3684f57479269543518a164e}} 
+\index{point@{point}!cross@{cross}}
+\index{cross@{cross}!point@{point}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::cross (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+Computes cross product of input vector and current vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em p2} & Vector to be used in cross product \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_ab64269a43726581bbf1e4ea0a7dbff4d}\label{classpoint_ab64269a43726581bbf1e4ea0a7dbff4d}} 
+\index{point@{point}!dif@{dif}}
+\index{dif@{dif}!point@{point}}
+\doxysubsubsection{\texorpdfstring{dif()}{dif()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::dif (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{b }\end{DoxyParamCaption})}
+
+Subtracts input vector from current vector (component wise)
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Vector to be subtracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_aa96f1f1fc8af381ed715033982e8a4b2}\label{classpoint_aa96f1f1fc8af381ed715033982e8a4b2}} 
+\index{point@{point}!dotprod@{dotprod}}
+\index{dotprod@{dotprod}!point@{point}}
+\doxysubsubsection{\texorpdfstring{dotprod()}{dotprod()}}
+{\footnotesize\ttfamily double point\+::dotprod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+Computes dot product of input vector and current vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p2} & Input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_ac277834d378d603ab861622a3c1e554f}\label{classpoint_ac277834d378d603ab861622a3c1e554f}} 
+\index{point@{point}!eDist@{eDist}}
+\index{eDist@{eDist}!point@{point}}
+\doxysubsubsection{\texorpdfstring{eDist()}{eDist()}}
+{\footnotesize\ttfamily double point\+::e\+Dist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+Computes Euclidean distance between input vector and current vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em p2} & Input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a599c4e97b9b8a84df3159d859d3a8c3c}\label{classpoint_a599c4e97b9b8a84df3159d859d3a8c3c}} 
+\index{point@{point}!getX@{getX}}
+\index{getX@{getX}!point@{point}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily double point\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get x-\/coordinate
+
+\begin{DoxyReturn}{Returns}
+double ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a02851756acd156f6bc0288d03257dcfd}\label{classpoint_a02851756acd156f6bc0288d03257dcfd}} 
+\index{point@{point}!getY@{getY}}
+\index{getY@{getY}!point@{point}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily double point\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get y-\/coordinate
+
+\begin{DoxyReturn}{Returns}
+double ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a50311b12deadb0cb568ebbb6a4753f3d}\label{classpoint_a50311b12deadb0cb568ebbb6a4753f3d}} 
+\index{point@{point}!getZ@{getZ}}
+\index{getZ@{getZ}!point@{point}}
+\doxysubsubsection{\texorpdfstring{getZ()}{getZ()}}
+{\footnotesize\ttfamily double point\+::getZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get z-\/coordinate
+
+\begin{DoxyReturn}{Returns}
+double ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_adf950fccc0c4db363a0f889112df9f7a}\label{classpoint_adf950fccc0c4db363a0f889112df9f7a}} 
+\index{point@{point}!isNonzero@{isNonzero}}
+\index{isNonzero@{isNonzero}!point@{point}}
+\doxysubsubsection{\texorpdfstring{isNonzero()}{isNonzero()}}
+{\footnotesize\ttfamily bool point\+::is\+Nonzero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks is all components of current vector are \texorpdfstring{$>$}{>} 0.\+00000001
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a4d83f0c3804d60a0193075176a1f1d8c}\label{classpoint_a4d83f0c3804d60a0193075176a1f1d8c}} 
+\index{point@{point}!length@{length}}
+\index{length@{length}!point@{point}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily double point\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get length of vector via sqrt(x$^\wedge$2+y$^\wedge$2+z$^\wedge$2)
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a9e13e4855b8d89c50e2535ece3150b03}\label{classpoint_a9e13e4855b8d89c50e2535ece3150b03}} 
+\index{point@{point}!normalise@{normalise}}
+\index{normalise@{normalise}!point@{point}}
+\doxysubsubsection{\texorpdfstring{normalise()}{normalise()}}
+{\footnotesize\ttfamily void point\+::normalise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Normalises current vector \mbox{\Hypertarget{classpoint_a3178b9728bfde69888714272f4b9b0a0}\label{classpoint_a3178b9728bfde69888714272f4b9b0a0}} 
+\index{point@{point}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!point@{point}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+Gives scalar multiple of current vector Feels same as scalar\+Mult, do we need both?
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_add2e6b129927dba1767c2eed1c8c9e15}\label{classpoint_add2e6b129927dba1767c2eed1c8c9e15}} 
+\index{point@{point}!operator+@{operator+}}
+\index{operator+@{operator+}!point@{point}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{p }\end{DoxyParamCaption})}
+
+Adds input vector to current vector (component wise) This feels the same as sum, do we need both?
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Vector to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a399a9038e7715a8036dbe925e2794eda}\label{classpoint_a399a9038e7715a8036dbe925e2794eda}} 
+\index{point@{point}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!point@{point}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{p }\end{DoxyParamCaption})}
+
+Substracts input vector from current vector (component wise) This feels the same as dif, do we need both?
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Vector to be subtracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a50404e35b2fd8bd2dcda07cbb85c4856}\label{classpoint_a50404e35b2fd8bd2dcda07cbb85c4856}} 
+\index{point@{point}!operator/@{operator/}}
+\index{operator/@{operator/}!point@{point}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::operator/ (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+Gives scalar division of current vector (i.\+e. (x,y,z)-\/-\/\texorpdfstring{$>$}{>}(x/d,y/d,z/d) )
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a84770146f102bcc693dceb1bfc3e786f}\label{classpoint_a84770146f102bcc693dceb1bfc3e786f}} 
+\index{point@{point}!pairDist@{pairDist}}
+\index{pairDist@{pairDist}!point@{point}}
+\doxysubsubsection{\texorpdfstring{pairDist()}{pairDist()}}
+{\footnotesize\ttfamily double point\+::pair\+Dist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p }\end{DoxyParamCaption})}
+
+Checks if the pairwise distance between all components of input vector and current vector is less than 0.\+00000001 (i.\+e. x1-\/x0\texorpdfstring{$<$}{<}0.\+00000001 and y1-\/y0\texorpdfstring{$<$}{<}0.\+00000001 and z1-\/z0\texorpdfstring{$<$}{<}0.\+00000001)
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_aa078b15c3fdcccc3093c1fb1afa9be10}\label{classpoint_aa078b15c3fdcccc3093c1fb1afa9be10}} 
+\index{point@{point}!printPoint@{printPoint}}
+\index{printPoint@{printPoint}!point@{point}}
+\doxysubsubsection{\texorpdfstring{printPoint()}{printPoint()}}
+{\footnotesize\ttfamily void point\+::print\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints current point as X Y Z \mbox{\Hypertarget{classpoint_a713aceed43c81fbac66344c82a7acf3d}\label{classpoint_a713aceed43c81fbac66344c82a7acf3d}} 
+\index{point@{point}!scalarMult@{scalarMult}}
+\index{scalarMult@{scalarMult}!point@{point}}
+\doxysubsubsection{\texorpdfstring{scalarMult()}{scalarMult()}}
+{\footnotesize\ttfamily void point\+::scalar\+Mult (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})}
+
+Gives the scalar multiple of current vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpoint_a2350f9ad078a147242e2cb7627fc2cca}\label{classpoint_a2350f9ad078a147242e2cb7627fc2cca}} 
+\index{point@{point}!scalarTriple@{scalarTriple}}
+\index{scalarTriple@{scalarTriple}!point@{point}}
+\doxysubsubsection{\texorpdfstring{scalarTriple()}{scalarTriple()}}
+{\footnotesize\ttfamily double point\+::scalar\+Triple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p1,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p2,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{p3 }\end{DoxyParamCaption})}
+
+Computes scalar triple product of three vectors p1, p2, p3
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & Input vector \\
+\hline
+{\em p2} & Input vector \\
+\hline
+{\em p3} & Input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a27a5d4c7962be3ec96afcfdd2893e424}\label{classpoint_a27a5d4c7962be3ec96afcfdd2893e424}} 
+\index{point@{point}!setX@{setX}}
+\index{setX@{setX}!point@{point}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void point\+::setX (\begin{DoxyParamCaption}\item[{double}]{xv }\end{DoxyParamCaption})}
+
+Change x-\/coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em xv} & New x-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpoint_a94758a74d3a63829fbedef9bc68f2e10}\label{classpoint_a94758a74d3a63829fbedef9bc68f2e10}} 
+\index{point@{point}!setY@{setY}}
+\index{setY@{setY}!point@{point}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void point\+::setY (\begin{DoxyParamCaption}\item[{double}]{yv }\end{DoxyParamCaption})}
+
+Change x-\/coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em yv} & New y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpoint_a5e7ee14742a018d71fbd0debae1b2e6d}\label{classpoint_a5e7ee14742a018d71fbd0debae1b2e6d}} 
+\index{point@{point}!setZ@{setZ}}
+\index{setZ@{setZ}!point@{point}}
+\doxysubsubsection{\texorpdfstring{setZ()}{setZ()}}
+{\footnotesize\ttfamily void point\+::setZ (\begin{DoxyParamCaption}\item[{double}]{zv }\end{DoxyParamCaption})}
+
+Change z-\/coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em zv} & New z-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpoint_ad74d9ccd6b19ecb39b44845ab2e7c542}\label{classpoint_ad74d9ccd6b19ecb39b44845ab2e7c542}} 
+\index{point@{point}!sum@{sum}}
+\index{sum@{sum}!point@{point}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} point\+::sum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{b }\end{DoxyParamCaption})}
+
+Adds input vector to current vector (component wise)
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Vector to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpoint_a7126a0c2931561eb7506fa99d3f3f8a9}\label{classpoint_a7126a0c2931561eb7506fa99d3f3f8a9}} 
+\index{point@{point}!znormalise@{znormalise}}
+\index{znormalise@{znormalise}!point@{point}}
+\doxysubsubsection{\texorpdfstring{znormalise()}{znormalise()}}
+{\footnotesize\ttfamily void point\+::znormalise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Rescales current vector such that z-\/component is 1 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+point.\+h\item 
+\mbox{\hyperlink{point_8cpp}{point.\+cpp}}\end{DoxyCompactItemize}

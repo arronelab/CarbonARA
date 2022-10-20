@@ -1,0 +1,118 @@
+\hypertarget{random_mol_gen_8h_source}{}\doxysection{random\+Mol\+Gen.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RANDOM\_MOL}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RANDOM\_MOL}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}polyHelix.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iterator>} }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classrandom_mol}{randomMol}}\{}
+\DoxyCodeLine{14  \textcolor{keyword}{public}:}
+\DoxyCodeLine{15   \mbox{\hyperlink{classrandom_mol}{randomMol}}()\{\};}
+\DoxyCodeLine{16   \mbox{\hyperlink{classrandom_mol}{randomMol}}(\textcolor{keywordtype}{double} \&rminIn,\textcolor{keywordtype}{double} \&rmaxIn,\textcolor{keywordtype}{double} \&lminIn);}
+\DoxyCodeLine{17   \textcolor{keywordtype}{void} setParams(\textcolor{keywordtype}{double} \&rminIn,\textcolor{keywordtype}{double} \&rmaxIn,\textcolor{keywordtype}{double} \&lminIn);}
+\DoxyCodeLine{18   std::pair<double,double> kapTau(\mbox{\hyperlink{classpoint}{point}} \&pt1,\mbox{\hyperlink{classpoint}{point}} \&pt2,\mbox{\hyperlink{classpoint}{point}} \&pt3,\mbox{\hyperlink{classpoint}{point}} \&pt4);}
+\DoxyCodeLine{19   \mbox{\hyperlink{classpoint}{point}} binorm(\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2);}
+\DoxyCodeLine{20   \mbox{\hyperlink{classpoint}{point}} getNextPoint(\mbox{\hyperlink{classpoint}{point}} \&pt1,\mbox{\hyperlink{classpoint}{point}} \&pt2,\mbox{\hyperlink{classpoint}{point}} \&pt3,\textcolor{keywordtype}{double} \&r,\textcolor{keywordtype}{double} \&kap,\textcolor{keywordtype}{double} \&tau);}
+\DoxyCodeLine{21   \mbox{\hyperlink{classpoint}{point}} getNextPointTest(\mbox{\hyperlink{classpoint}{point}} \&pt1,\mbox{\hyperlink{classpoint}{point}} \&pt2,\mbox{\hyperlink{classpoint}{point}} \&pt3,\textcolor{keywordtype}{double} \&r,\textcolor{keywordtype}{double} \&kap,\textcolor{keywordtype}{double} \&tau);}
+\DoxyCodeLine{22   \textcolor{keywordtype}{double} interpVel2D(\textcolor{keywordtype}{double} \&x0,\textcolor{keywordtype}{double} \&y0,\textcolor{keywordtype}{double} \&x,\textcolor{keywordtype}{double} \&y,std::vector<std::vector<double> > \&vx,\textcolor{keywordtype}{double} \&d1,\textcolor{keywordtype}{double} \&d2,\textcolor{keywordtype}{int} \&nx,\textcolor{keywordtype}{int} \&ny);}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} interpVel1D(\textcolor{keywordtype}{double} \&x0,\textcolor{keywordtype}{double} \&p,std::vector<double> \&vx,\textcolor{keywordtype}{double} \&d1,\textcolor{keywordtype}{int} \&nx);}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} bisection(\textcolor{keywordtype}{double} (\mbox{\hyperlink{classrandom_mol}{randomMol}}::*func)(\textcolor{keywordtype}{double}),\textcolor{keywordtype}{double} \&val,\textcolor{keywordtype}{int} n,\textcolor{keywordtype}{double} rangeLower,\textcolor{keywordtype}{double} rangeUpper,\textcolor{keywordtype}{double} \&prevVal);}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} bisectionDoubleArg(\textcolor{keywordtype}{double} (\mbox{\hyperlink{classrandom_mol}{randomMol}}::*func)(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double}),\textcolor{keywordtype}{double} \&val,\textcolor{keywordtype}{int} n,\textcolor{keywordtype}{double} rangeLower,\textcolor{keywordtype}{double} rangeUpper,\textcolor{keywordtype}{double} secondArg,\textcolor{keywordtype}{double} \&prevVal);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{double} cumDistMixed(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{27   \textcolor{keywordtype}{double} cumDistNegBeta(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{28   \textcolor{keywordtype}{double} cumDistPosBeta(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{double} cumDistAlpha(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{double} cumDistMixedStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} cumDistNegBetaStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{double} cumDistPosBetaStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{double} cumDistAlphaStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} cumDistLinkerToHelix(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} cumDistHelixToLinker(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{36   \textcolor{keywordtype}{double} cumDistStrandToHelix(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{double} cumDistHelixToStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{double} cumDistStrandToLinker(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{39   \textcolor{keywordtype}{double} cumDistLinkerToStrand(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} cumXGYMixed(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{double} cumXGYNegBeta(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{double} cumXGYPosBeta(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{43   \textcolor{keywordtype}{double} cumXGYAlpha(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{double} cumXGYMixedStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{45   \textcolor{keywordtype}{double} cumXGYNegBetaStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{double} cumXGYPosBetaStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} cumXGYAlphaStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} cumXGYLinkerToHelix(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{double} cumXGYHelixToLinker(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} cumXGYStrandToHelix(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{51   \textcolor{keywordtype}{double} cumXGYHelixToStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{double} cumXGYStrandToLinker(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} cumXGYLinkerToStrand(\textcolor{keywordtype}{double} Y,\textcolor{keywordtype}{double} kapValIn);}
+\DoxyCodeLine{54   std::pair<double,double> getKapTauProb(\textcolor{keywordtype}{int} \&type,std::default\_random\_engine \&generator); }
+\DoxyCodeLine{55   std::pair<double,double> getProbFromKapTau(\textcolor{keywordtype}{int} \&type,std::default\_random\_engine \&generator,std::pair<double,double> \&kapTauPair,\textcolor{keywordtype}{double} probChange);}
+\DoxyCodeLine{56   std::vector<point> getTanForHelix(\textcolor{keywordtype}{double} \&k,\textcolor{keywordtype}{double} \&t,\textcolor{keywordtype}{double} \&l,\textcolor{keywordtype}{double} \&xv,\textcolor{keywordtype}{double} \&yv,\textcolor{keywordtype}{double} \&zv,\mbox{\hyperlink{classpoint}{point}} \&p);}
+\DoxyCodeLine{57   \mbox{\hyperlink{classpoint}{point}} parallelTransport(\mbox{\hyperlink{classpoint}{point}} \&tan1,\mbox{\hyperlink{classpoint}{point}} \&tan2,\mbox{\hyperlink{classpoint}{point}} \&norm1);}
+\DoxyCodeLine{58   std::vector<point> makeRandomSectionWithDist(\mbox{\hyperlink{classpoint}{point}} \&stPt,\mbox{\hyperlink{classpoint}{point}} \&stTan,\mbox{\hyperlink{classpoint}{point}} \&stNorm,\textcolor{keywordtype}{int} \&npts,std::default\_random\_engine \&generator,\textcolor{keywordtype}{int} \&loopOrStrand,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{59   std::vector<point> alterSectionWithDist(std::vector<point> currPts,\textcolor{keywordtype}{int} \&strandOrLinker,\textcolor{keywordtype}{double} radOfSearch,std::default\_random\_engine \&generator,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{60   std::vector<point>  blendLoopToHelix(\mbox{\hyperlink{classpoint}{point}} \&ptloop1,\mbox{\hyperlink{classpoint}{point}} \&ptloop2,\mbox{\hyperlink{classpoint}{point}} \&ptloop3,\textcolor{keywordtype}{double} k,\textcolor{keywordtype}{double} t,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{double} cl,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{bool} \&suceeded,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{61   std::vector<point> blendLoopToHelixAlter(\mbox{\hyperlink{classpoint}{point}} \&ptloop1,\mbox{\hyperlink{classpoint}{point}} \&ptloop2,\mbox{\hyperlink{classpoint}{point}} \&ptloop3,\mbox{\hyperlink{classpoint}{point}} \&ptloop4,\textcolor{keywordtype}{double} k,\textcolor{keywordtype}{double} t,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{double} cl,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{double} radOfSearch,\textcolor{keywordtype}{bool} \&suceeded,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{62   std::vector<point>  blendLoopToHelixStrand(\mbox{\hyperlink{classpoint}{point}} \&ptloop1,\mbox{\hyperlink{classpoint}{point}} \&ptloop2,\mbox{\hyperlink{classpoint}{point}} \&ptloop3,\textcolor{keywordtype}{double} k,\textcolor{keywordtype}{double} t,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{double} cl,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{63   std::vector<point>  blendHelixToLoop(\mbox{\hyperlink{classpoint}{point}} \&pthel1,\mbox{\hyperlink{classpoint}{point}} \&pthel2,\mbox{\hyperlink{classpoint}{point}} \&pthel3,\textcolor{keywordtype}{int} \&nl,std::default\_random\_engine \&generator,\textcolor{keywordtype}{int} loopOrStrand,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{64   std::vector<point> blendLoopWithStrand(\mbox{\hyperlink{classpoint}{point}} \&ptloop1,\mbox{\hyperlink{classpoint}{point}} \&ptloop2,\mbox{\hyperlink{classpoint}{point}} \&ptloop3,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{int} strandOrLoop,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{65   std::vector<point> getFrameHelix(std::vector<point> \&coords);}
+\DoxyCodeLine{66   std::vector<point> blendHelixToHelix(std::vector<point> \&prevSec,\textcolor{keywordtype}{double} k,\textcolor{keywordtype}{double} t,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{double} cl,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{bool} \&suceeded,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{67   std::vector<point> blendHelixToHelixAlter(\mbox{\hyperlink{classpoint}{point}} \&ptloop1,\mbox{\hyperlink{classpoint}{point}} \&ptloop2,\mbox{\hyperlink{classpoint}{point}} \&ptloop3,\mbox{\hyperlink{classpoint}{point}} \&ptloop4,\textcolor{keywordtype}{double} k,\textcolor{keywordtype}{double} t,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{double} cl,\textcolor{keywordtype}{int} \&nHel,std::default\_random\_engine \&generator,\textcolor{keywordtype}{double} radOfSearch,\textcolor{keywordtype}{bool} \&suceeded,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{68   std::vector<std::vector<point> > makeRandomMolecule(std::vector<std::pair<std::string,int> > \&molDat,\mbox{\hyperlink{classpoint}{point}} \&sp,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} tanToSec(\mbox{\hyperlink{classpoint}{point}} \&sp,std::vector<point> \&prevSec);}
+\DoxyCodeLine{70   \textcolor{keywordtype}{double} getMaxDistChange(std::vector<point> \&oldPts,std::vector<point> \&newPoints);}
+\DoxyCodeLine{71   \textcolor{keywordtype}{double} reshapeMol(std::vector<std::pair<std::string,int> > \&molDat,std::vector<std::vector<point> > \&molPos,\textcolor{keywordtype}{int} \&index,\mbox{\hyperlink{classpoint}{point}} \&sp,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{72   \textcolor{keywordtype}{double} reshapeMolHelixSet(std::vector<std::pair<std::string,int> > \&molDat,std::vector<std::vector<point> > \&molPos,\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} noHelices,\mbox{\hyperlink{classpoint}{point}} \&sp,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{73   \textcolor{keywordtype}{double} reshapeMolLoopThenHelixSet(std::vector<std::pair<std::string,int> > \&molDat,std::vector<std::vector<point> > \&molPos,\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} noHelices,\mbox{\hyperlink{classpoint}{point}} \&sp,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{74   \textcolor{keywordtype}{double} reshapeMolSmallVariation(std::vector<std::pair<std::string,int> > \&molDat,std::vector<std::vector<point> > \&molPos,\textcolor{keywordtype}{int} \&index,\mbox{\hyperlink{classpoint}{point}} \&sp,\textcolor{keywordtype}{double} variationSize,\textcolor{keywordtype}{bool} \&suceeded);}
+\DoxyCodeLine{75  \textcolor{keyword}{private}:}
+\DoxyCodeLine{76   std::vector<std::vector<double> > mixedYfromXInterpolants;}
+\DoxyCodeLine{77   std::vector<std::vector<double> > posBetaYfromXInterpolants;}
+\DoxyCodeLine{78   std::vector<std::vector<double> > negBetaYfromXInterpolants;}
+\DoxyCodeLine{79   std::vector<std::vector<double> > alphaYfromXInterpolants;}
+\DoxyCodeLine{80   std::vector<std::vector<double> > helixToLinkerYfromXInterpolants;}
+\DoxyCodeLine{81   std::vector<std::vector<double> > linkerToHelixYfromXInterpolants;}
+\DoxyCodeLine{82   std::vector<std::vector<double> > strandToLinkerYfromXInterpolants;}
+\DoxyCodeLine{83   std::vector<std::vector<double> > linkerToStrandYfromXInterpolants;}
+\DoxyCodeLine{84   std::vector<double> mixedXCumInterpolants;}
+\DoxyCodeLine{85   std::vector<double> posBetaXCumInterpolants;}
+\DoxyCodeLine{86   std::vector<double> negBetaXCumInterpolants;}
+\DoxyCodeLine{87   std::vector<double> alphaXCumInterpolants;}
+\DoxyCodeLine{88   std::vector<double> helixToLinkerXCumInterpolants;}
+\DoxyCodeLine{89   std::vector<double> linkerToHelixXCumInterpolants;}
+\DoxyCodeLine{90   std::vector<double> strandToLinkerXCumInterpolants;}
+\DoxyCodeLine{91   std::vector<double> linkerToStrandXCumInterpolants;}
+\DoxyCodeLine{92   std::vector<std::vector<double> > mixedStrandYfromXInterpolants;}
+\DoxyCodeLine{93   std::vector<std::vector<double> > posBetaStrandYfromXInterpolants;}
+\DoxyCodeLine{94   std::vector<std::vector<double> > negBetaStrandYfromXInterpolants;}
+\DoxyCodeLine{95   std::vector<std::vector<double> > alphaStrandYfromXInterpolants;}
+\DoxyCodeLine{96   std::vector<std::vector<double> > helixToStrandYfromXInterpolants;}
+\DoxyCodeLine{97   std::vector<std::vector<double> > strandToHelixYfromXInterpolants;}
+\DoxyCodeLine{98   std::vector<double> mixedStrandXCumInterpolants;}
+\DoxyCodeLine{99   std::vector<double> posBetaStrandXCumInterpolants;}
+\DoxyCodeLine{100   std::vector<double> negBetaStrandXCumInterpolants;}
+\DoxyCodeLine{101   std::vector<double> alphaStrandXCumInterpolants;}
+\DoxyCodeLine{102   std::vector<double> helixToStrandXCumInterpolants;}
+\DoxyCodeLine{103   std::vector<double> strandToHelixXCumInterpolants;}
+\DoxyCodeLine{104   std::uniform\_real\_distribution<double> distribution;}
+\DoxyCodeLine{105   \textcolor{comment}{//std::vector<std::vector<point> > frameSet;}}
+\DoxyCodeLine{106   std::vector<point> dummyFrame;}
+\DoxyCodeLine{107   \textcolor{keywordtype}{double} kapL;\textcolor{keywordtype}{double} kapU;\textcolor{keywordtype}{double} tauL;\textcolor{keywordtype}{double} tauU;}
+\DoxyCodeLine{108   \textcolor{keywordtype}{int} nkap,ntau,nGridSize;}
+\DoxyCodeLine{109   \textcolor{keywordtype}{double} dkap,dtau,kapVal,pAlpha,pposBeta,pnegBeta,pMixed,pAlphaStrand,pposBetaStrand,pnegBetaStrand,pMixedStrand,lmin,rmin,rmax;}
+\DoxyCodeLine{110   \textcolor{keywordtype}{double} alphaKap,alphaTau,alphaAl,alphaCl,betaKap,betaTau,betaAl,betaCl;}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

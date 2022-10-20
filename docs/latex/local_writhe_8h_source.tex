@@ -1,0 +1,76 @@
+\hypertarget{local_writhe_8h_source}{}\doxysection{local\+Writhe.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LOCAL\_WRITHE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LOCAL\_WRITHE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}getSections.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}mutualWind2.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <complex>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classlocal_writhe}{localWrithe}}\{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11   \mbox{\hyperlink{classlocal_writhe}{localWrithe}}();}
+\DoxyCodeLine{12   \textcolor{keywordtype}{void} localDensity(\mbox{\hyperlink{classpoint}{point}}\& p1,\mbox{\hyperlink{classpoint}{point}}\& p2,\mbox{\hyperlink{classpoint}{point}}\& p3,\mbox{\hyperlink{classpoint}{point}}\& p4);}
+\DoxyCodeLine{13   \textcolor{keywordtype}{void} rotateListToMaximum(std::vector<point> \&list);}
+\DoxyCodeLine{14   \textcolor{keywordtype}{void} derivList(std::vector<point>\& list);}
+\DoxyCodeLine{15   \mbox{\hyperlink{classpoint}{point}} interpolateTang(\textcolor{keywordtype}{int} lowIndex,\textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{16   \textcolor{keywordtype}{void} reconstructCurve(std::vector<point>\& list);}
+\DoxyCodeLine{17   \mbox{\hyperlink{classpoint}{point}} interp(\mbox{\hyperlink{classpoint}{point}}\& lower,\mbox{\hyperlink{classpoint}{point}}\& upper,\textcolor{keywordtype}{double} zval);}
+\DoxyCodeLine{18   \textcolor{keywordtype}{void} clearVecs();}
+\DoxyCodeLine{19   std::vector<point> derivListReturn(std::vector<point>\& list);}
+\DoxyCodeLine{20   \textcolor{keywordtype}{void} localDensity(\mbox{\hyperlink{classpoint}{point}}\& tangent,\mbox{\hyperlink{classpoint}{point}}\& tderiv);}
+\DoxyCodeLine{21   \textcolor{keywordtype}{void} addInterpolatedTan(\mbox{\hyperlink{classpoint}{point}}\& tan1,\textcolor{keywordtype}{double}\& den1, \mbox{\hyperlink{classpoint}{point}} tan2,\textcolor{keywordtype}{double}\& den2,\textcolor{keywordtype}{double}\& integral);}
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} addInterpolatedTanLocal(\mbox{\hyperlink{classpoint}{point}}\& tan1,\textcolor{keywordtype}{double}\& den1, \mbox{\hyperlink{classpoint}{point}} tan2,\textcolor{keywordtype}{double}\& den2,\textcolor{keywordtype}{double}\& integral);}
+\DoxyCodeLine{23   \textcolor{keywordtype}{void} FillDensityList();}
+\DoxyCodeLine{24   \textcolor{keywordtype}{void} SimpsonsRule(\textcolor{keywordtype}{int} startval,\textcolor{keywordtype}{int} endval);}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} getWrithePl(std::vector<point>\& list,std::vector<int> turnlist);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} getListTurnPts(std::vector<point> list);}
+\DoxyCodeLine{27   std::vector<int> getListTurnPtsReturn(std::vector<point> list);}
+\DoxyCodeLine{28   \textcolor{keywordtype}{double} angle(\textcolor{keywordtype}{double} xdif,\textcolor{keywordtype}{double} ydif);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} checkTurn(\mbox{\hyperlink{classpoint}{point}}\& n1,\textcolor{keywordtype}{int} n1pos,\mbox{\hyperlink{classpoint}{point}}\& n2,\textcolor{keywordtype}{int} n2pos,std::vector<int> \&turnlist,\textcolor{keywordtype}{bool} \&wasPrev);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} checkTurnWinding(\mbox{\hyperlink{classpoint}{point}}\& nminus,\mbox{\hyperlink{classpoint}{point}}\& nplus,\mbox{\hyperlink{classpoint}{point}} \&ncurr,\textcolor{keywordtype}{int} \&n,std::vector<int> \&turnlist);}
+\DoxyCodeLine{31   std::vector<std::pair<int,int> > makeTurnForNonLocal();}
+\DoxyCodeLine{32   std::vector<std::pair<int,int> > makeTurnForNonLocal(std::vector<int> \&turnListIn);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{double} getWrithe(std::vector<point>\& list);}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} getWritheLocal(std::vector<point>\& list);}
+\DoxyCodeLine{35   std::vector<double> getWritheGen(std::vector<point>\& list);}
+\DoxyCodeLine{36   std::vector<double> getWritheGenSmooth(std::vector<point>\& list);}
+\DoxyCodeLine{37   std::vector<double> getWritheGenClosed(std::vector<point>\& list);}
+\DoxyCodeLine{38   std::vector<double> getWritheGenStandard(std::vector<point>\& list);}
+\DoxyCodeLine{39   std::vector<double> getWritheGenStandardSmooth(std::vector<point>\& list);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} getEndAngles(std::vector<point> \&curvelist1,std::vector<point> \&curvelist2,std::vector<int> \& turnlist1,std::vector<int> \& turnlist2);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{double} getWinding(std::vector<point>\& list1,std::vector<point>\& list2);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{double} getWindingSmooth(std::vector<point>\& list1,std::vector<point>\& list2);}
+\DoxyCodeLine{43   \mbox{\hyperlink{classpoint}{point}} dbold(std::vector<point>\& pointList,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{44   \mbox{\hyperlink{classpoint}{point}} dboldLk(std::vector<point>\& pointList1,std::vector<point>\& pointList2,\textcolor{keywordtype}{int} size1,\textcolor{keywordtype}{int} size2,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classpoint}{point}} te(std::vector<point>\& pointList,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{double} mu(std::vector<point>\& pointList,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} k,\textcolor{keywordtype}{int} m, \textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} wij(std::vector<point>\& pointList,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} lkij(std::vector<point>\& pointList,std::vector<point>\& pointList2,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} size2,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{double} acosC(\textcolor{keywordtype}{double} temp);}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} DI(std::vector<point>\& pointList);}
+\DoxyCodeLine{51   \textcolor{keywordtype}{double} DIAbs(std::vector<point>\& pointList);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{double} DIClosed(std::vector<point>\& pointList);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} muLink(std::vector<point>\& pointList,std::vector<point>\& pointList2,\textcolor{keywordtype}{int} size,\textcolor{keywordtype}{int} size2,\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{54   \textcolor{keywordtype}{double} DIClosedLk(std::vector<point>\& pointList,std::vector<point>\& pointList2);}
+\DoxyCodeLine{55   std::vector<std::pair<std::pair<int,int>,\textcolor{keywordtype}{double}> > DIDownSample(std::vector<std::vector<point> >\& pointListIn);}
+\DoxyCodeLine{56   std::vector<std::pair<std::pair<int,int>,\textcolor{keywordtype}{double}> > DIDownSampleAbs(std::vector<std::vector<point> >\& pointListIn);}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void}  DIDownSampleWrite(std::vector<std::vector<point> >\& pointListIn,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void}  DIDownSampleAbsWrite(std::vector<std::vector<point> >\& pointListIn,\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} den,lambda;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} writhepl;}
+\DoxyCodeLine{62   std::vector<point> dlist;}
+\DoxyCodeLine{63   std::vector<point> tanlist;}
+\DoxyCodeLine{64   std::vector<point> tderiv;}
+\DoxyCodeLine{65   std::vector<double> densityList;}
+\DoxyCodeLine{66   std::vector<int> turnlist;}
+\DoxyCodeLine{67   std::vector<int> turnPts;}
+\DoxyCodeLine{68   std::vector<double> arcLengthLst;}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

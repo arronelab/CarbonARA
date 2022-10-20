@@ -1,0 +1,575 @@
+\hypertarget{classktl_molecule}{}\doxysection{ktl\+Molecule Class Reference}
+\label{classktl_molecule}\index{ktlMolecule@{ktlMolecule}}
+
+
+{\ttfamily \#include $<$ktl\+Molecule\+Random.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac62e7c0e514219caa92d8eb5a266dcb7}\label{classktl_molecule_ac62e7c0e514219caa92d8eb5a266dcb7}} 
+void {\bfseries set\+Params} (double \&rmin\+In, double \&rmax\+In, double \&lmin\+In)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a26af0145d594de5349fe0fe4d0706166}\label{classktl_molecule_a26af0145d594de5349fe0fe4d0706166}} 
+void {\bfseries read\+In\+Mol} (const char $\ast$filename, int chain\+No, int is\+Rand)
+\item 
+\mbox{\Hypertarget{classktl_molecule_afd7fc9dbd3c6105cdb686a65c5bf60d5}\label{classktl_molecule_afd7fc9dbd3c6105cdb686a65c5bf60d5}} 
+void {\bfseries read\+In\+Mol\+Gen} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ab72435a066ccaa7170839d6cdbb539ac}\label{classktl_molecule_ab72435a066ccaa7170839d6cdbb539ac}} 
+void {\bfseries read\+In\+Mol\+With\+Backbone} (const char $\ast$filename, int chain\+No, int is\+Rand)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a71a35ddc5a7d81cf32a7189e5681be31}\label{classktl_molecule_a71a35ddc5a7d81cf32a7189e5681be31}} 
+void {\bfseries read\+In\+Mol\+With\+Backbone\+LenJ} (const char $\ast$filename, int chain\+No, int is\+Rand, const char $\ast$Len\+JFile\+Name)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a7a623302bdfcebb469fbe47e3e4ecdf1}\label{classktl_molecule_a7a623302bdfcebb469fbe47e3e4ecdf1}} 
+void {\bfseries read\+In\+Mol\+With\+Sequence\+LenJ} (const char $\ast$filename, int chain\+No, int is\+Rand, const char $\ast$Len\+JFile\+Name)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a046631810a5ac65e82e413ba43c44b9d}\label{classktl_molecule_a046631810a5ac65e82e413ba43c44b9d}} 
+std\+::vector$<$ int $>$ {\bfseries get\+Unit\+Nos} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classktl_molecule_af43e782ece78eacb60b01664de23944d}{get\+Tangents}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classktl_molecule_a4a71367cf22ed0a510341be50977d3aa}{get\+Normals}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classktl_molecule_a50ad5573947561f3c13c95ca2c414214}{get\+Binormals}} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a16720b1b8b788c24a68ea9231cde76b7}\label{classktl_molecule_a16720b1b8b788c24a68ea9231cde76b7}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ {\bfseries get\+Coordinates} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_aaba3f28f7b9088683b7d6b6378655459}\label{classktl_molecule_aaba3f28f7b9088683b7d6b6378655459}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries get\+Coordinates\+Section} (int i)
+\item 
+int \mbox{\hyperlink{classktl_molecule_a13114b774dcce946a542044fd5b244dc}{get\+Subsec\+Size}} (int sec)
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classktl_molecule_ad6ed6bf1ffb225fc14191cb839b244c5}{get\+Subsec\+Coordinates}} (int \&sec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ad0ab714cebb3f2eef4e2bc2472e6d85c}\label{classktl_molecule_ad0ab714cebb3f2eef4e2bc2472e6d85c}} 
+std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ {\bfseries get\+Name\+Size\+List\+Of\+Section} (int \&sec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a81b70fd583f04fd57d7cbc58631fb2a1}\label{classktl_molecule_a81b70fd583f04fd57d7cbc58631fb2a1}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Dist\+Changes} ()
+\item 
+double \mbox{\hyperlink{classktl_molecule_a07f7c9a91e70e721cbb06f778a780f70}{get\+Curvature\+Joined}} (int index)
+\item 
+double \mbox{\hyperlink{classktl_molecule_a2570ac0b4d48e655bfe06681b7d7bc3b}{get\+Torsion\+Joined}} (int index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a6530028ae353926e12197a8998fde458}\label{classktl_molecule_a6530028ae353926e12197a8998fde458}} 
+double {\bfseries get\+Length\+Joined} (int index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_afe78517eb6a80d75c5971cc7217f46df}\label{classktl_molecule_afe78517eb6a80d75c5971cc7217f46df}} 
+int {\bfseries get\+Unit\+No} (int index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a2bb558ce1479eb190cd608aed7d566da}\label{classktl_molecule_a2bb558ce1479eb190cd608aed7d566da}} 
+double {\bfseries max\+Neighbour\+Dist\+Sec} (int \&sec)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_acede2342d07446259bc1b55ab13e1ac1}{get\+Tangent}} (int mindex, int subindex)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_afe2392cc86b1629f08eea40ae279b998}{get\+Normal}} (int mindex, int subindex)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_a690498d73cb91957c0cb26882bccf958}{get\+Binormal}} (int mindex, int subindex)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a86c38e2770c85464a9e3f649dbd04ba8}\label{classktl_molecule_a86c38e2770c85464a9e3f649dbd04ba8}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Coordinate} (int mindex, int subindex)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a06e5cc6f550164fd314739afd480d3d0}\label{classktl_molecule_a06e5cc6f550164fd314739afd480d3d0}} 
+double {\bfseries get\+Albead\+Joined} (int index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac71ce20aa059dc25b146297b1689a69c}\label{classktl_molecule_ac71ce20aa059dc25b146297b1689a69c}} 
+std\+::string {\bfseries get\+Type} (int \&index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a46b8b82e696c6bc69ade67eb84adce9c}\label{classktl_molecule_a46b8b82e696c6bc69ade67eb84adce9c}} 
+std\+::string {\bfseries get\+Type} (int \&chain\+No, int \&index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac7873f4710d80d824518da7866645638}\label{classktl_molecule_ac7873f4710d80d824518da7866645638}} 
+double {\bfseries get\+Max\+Dist\+Change} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a400e918f309c547e96e3e929138fe8d3}\label{classktl_molecule_a400e918f309c547e96e3e929138fe8d3}} 
+std\+::pair$<$ double, double $>$ {\bfseries get\+Max\+Possible\+Length} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac90b22266cf8057029973c353ea30797}\label{classktl_molecule_ac90b22266cf8057029973c353ea30797}} 
+int {\bfseries mol\+Size} ()
+\item 
+int \mbox{\hyperlink{classktl_molecule_a7057e1b6342bf45dbab4abac9c188490}{no\+Chains}} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5cb75b25d20b75f45a1f4708bbfd5826}\label{classktl_molecule_a5cb75b25d20b75f45a1f4708bbfd5826}} 
+int {\bfseries no\+Sec\+Size} ()
+\item 
+int \mbox{\hyperlink{classktl_molecule_a70ca23033b0654adb5cca00884107584}{get\+No\+Aminos}} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac0527594b2c45745fc64f66e3533e9a3}\label{classktl_molecule_ac0527594b2c45745fc64f66e3533e9a3}} 
+void {\bfseries create\+Synthetic\+Molecule} (int n\+Links)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a81eb01d4183ab69ce5845bdd96a57786}\label{classktl_molecule_a81eb01d4183ab69ce5845bdd96a57786}} 
+void {\bfseries read\+In\+Fit} (const char $\ast$filename, const char $\ast$fieldname)
+\item 
+\mbox{\Hypertarget{classktl_molecule_aa6de42a27f9c5a06bdeb848a6c3d625d}\label{classktl_molecule_aa6de42a27f9c5a06bdeb848a6c3d625d}} 
+void {\bfseries read\+In\+Mol\+Nmer} (const char $\ast$filename, std\+::vector$<$ int $>$ \&mol\+Indicies, int is\+Rand, double \&rmin, double \&rmax, double \&lmin)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a7275fbfc79fafce95f3076893500cbf9}\label{classktl_molecule_a7275fbfc79fafce95f3076893500cbf9}} 
+void {\bfseries read\+In\+Mol\+Nmer\+And\+Coordinates} (const char $\ast$filename, std\+::vector$<$ int $>$ \&mol\+Indicies, int is\+Rand, double \&rmin, double \&rmax, double \&lmin)
+\item 
+\mbox{\Hypertarget{classktl_molecule_af5665088593397025c579a43a7228c68}\label{classktl_molecule_af5665088593397025c579a43a7228c68}} 
+void {\bfseries read\+In\+Mol\+Nmer\+With\+Backbone} (const char $\ast$filename, std\+::vector$<$ int $>$ \&mol\+Indicies, int is\+Rand, double \&rmin, double \&rmax, double \&lmin)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a18b97e654703a15a530a34566ca23376}\label{classktl_molecule_a18b97e654703a15a530a34566ca23376}} 
+void {\bfseries read\+In\+Mol\+Nmer\+With\+Backbone\+LenJ} (const char $\ast$filename, std\+::vector$<$ int $>$ \&mol\+Indicies, int is\+Rand, double \&rmin, double \&rmax, double \&lmin, const char $\ast$filename\+LenJ)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a367d40a909af11aaa43eac52675399a7}\label{classktl_molecule_a367d40a909af11aaa43eac52675399a7}} 
+void {\bfseries read\+In\+Mol\+Nmer\+With\+Sequence\+LenJ} (const char $\ast$filename, std\+::vector$<$ int $>$ \&mol\+Indicies, int is\+Rand, double \&rmin, double \&rmax, double \&lmin, const char $\ast$filename\+LenJ)
+\item 
+void \mbox{\hyperlink{classktl_molecule_a3f5d04cd93755f0c0184e0d1a499329e}{read\+In\+Sequence}} (const char $\ast$filename, double \&rmin, double \&rmax, double \&lmin)
+\item 
+void \mbox{\hyperlink{classktl_molecule_add51cc5bdfeb826b776b30ee02a52ef0}{read\+In\+Coordinates}} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a9ffe0f1a8b386fbffe90a279907c5959}\label{classktl_molecule_a9ffe0f1a8b386fbffe90a279907c5959}} 
+void {\bfseries read\+In\+Sequence\+WBackbone} (const char $\ast$filename, int chain\+No, const char $\ast$backbonename)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a6be9dd9abcd663a58d6a2335378f6e0b}\label{classktl_molecule_a6be9dd9abcd663a58d6a2335378f6e0b}} 
+void {\bfseries read\+In\+Mol\+Nmer\+Sequence\+WBackbone} (const char $\ast$filename, const char $\ast$backbone\+Name, std\+::vector$<$ int $>$ \&mol\+Indicies, double \&rmin, double \&rmax, double \&lmin)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_aa4ff0e335e8b8bdae36ff72e54403c21}{binorm}} (\mbox{\hyperlink{classpoint}{point}} \&T1, \mbox{\hyperlink{classpoint}{point}} \&T2)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classktl_molecule_ae8c483195857a2ba134f66bdcd0c96f1}{parallel\+Transport}} (\mbox{\hyperlink{classpoint}{point}} \&tan1, \mbox{\hyperlink{classpoint}{point}} \&tan2, \mbox{\hyperlink{classpoint}{point}} \&norm1)
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classktl_molecule_a6152d9c18958b3f00c79ee3c56a5d41e}{update\+Frame}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&section, \mbox{\hyperlink{classpoint}{point}} \&tangent, \mbox{\hyperlink{classpoint}{point}} \&normal, \mbox{\hyperlink{classpoint}{point}} \&binormal)
+\item 
+void \mbox{\hyperlink{classktl_molecule_a263a3e39b2dea4ded750e22379650db4}{get\+Hydrophobic\+Residues}} ()
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classktl_molecule_a98d940f8feca44434c350255fcc5a4d8}{get\+Hydrophobic\+Distance}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&solvent\+List, double \&max\+Sol\+Dist)
+\item 
+void \mbox{\hyperlink{classktl_molecule_aa32aa30241955ab6a433e391449be320}{get\+Coiled\+Coil\+Residues}} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_aaed5008ff3e1e379de260d203fdc733d}{get\+Positive\+Residues}} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_a1a1c931d9b465b5c7349bc8ee9936e74}{get\+Negative\+Residues}} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_aa617df428b60243051d19f4ccc630270}{get\+Polar\+Residues}} ()
+\item 
+double \mbox{\hyperlink{classktl_molecule_a77e00d4615fc2ba82890b0ebf34a1e53}{coiled\+Coil\+Potential}} ()
+\item 
+double \mbox{\hyperlink{classktl_molecule_ac430868dc7a90657535346bf58e1ce8b}{coiled\+Coil\+Potential\+Between}} (int \&sec\+No)
+\item 
+double \mbox{\hyperlink{classktl_molecule_af4f9673646ab53e4415c26bfce34a2e8}{coiled\+Coil\+Potential\+Between}} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5a7b51ba879a71c9439a045be88968cc}\label{classktl_molecule_a5a7b51ba879a71c9439a045be88968cc}} 
+double {\bfseries get\+Global\+Radius\+Of\+Curvature} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_af5d2d9e98435167b859660f55a3dca57}\label{classktl_molecule_af5d2d9e98435167b859660f55a3dca57}} 
+double {\bfseries get\+Global\+Radius\+Of\+Curvature\+Within\+Sec} (int \&sec\+No, int \&No\+Neighbour)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5106d6c65a09ebd05f73d901bd9f4e89}\label{classktl_molecule_a5106d6c65a09ebd05f73d901bd9f4e89}} 
+double {\bfseries get\+Global\+Radius\+Of\+Curvature\+Between\+Sec} (int \&No\+Neighbour)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a237b01043e4a2d17dbe719f86ca84ee5}\label{classktl_molecule_a237b01043e4a2d17dbe719f86ca84ee5}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Centre\+Of\+Mass} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&cd\+Set)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac591f43d7b0ba6be9ae7397cc5a26543}\label{classktl_molecule_ac591f43d7b0ba6be9ae7397cc5a26543}} 
+std\+::vector$<$ int $>$ {\bfseries check\+Overlap} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&cds\+IN)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac4cf010abe470d891c90b7975ee9098c}\label{classktl_molecule_ac4cf010abe470d891c90b7975ee9098c}} 
+std\+::vector$<$ double $>$ {\bfseries check\+Overlap\+With\+Rad} (double \&w\+Rad, int \&sec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a80bff463e7f05b780b4ef39278d01716}\label{classktl_molecule_a80bff463e7f05b780b4ef39278d01716}} 
+std\+::vector$<$ double $>$ {\bfseries check\+Overlap\+With\+Rad} (double \&w\+Rad)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a90af3169bf20ac6a37118454e60eba12}\label{classktl_molecule_a90af3169bf20ac6a37118454e60eba12}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Dist\+Set} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_ad88893b748c572de77ff339894c82f58}\label{classktl_molecule_ad88893b748c572de77ff339894c82f58}} 
+double {\bfseries compare\+Distances} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&coords2)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5ab9bf33c63c4d333c39793468f78099}\label{classktl_molecule_a5ab9bf33c63c4d333c39793468f78099}} 
+bool {\bfseries check\+Calphas} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&coords\+In)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a40cb83d3a0d00c691b3bb3907076b512}\label{classktl_molecule_a40cb83d3a0d00c691b3bb3907076b512}} 
+bool {\bfseries check\+Calphas} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5d18057340f1a6e7562badb860f8911e}\label{classktl_molecule_a5d18057340f1a6e7562badb860f8911e}} 
+bool {\bfseries check\+Calphas} (int \&index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a31eeaacd49bb8ff748918737572a3279}\label{classktl_molecule_a31eeaacd49bb8ff748918737572a3279}} 
+int {\bfseries get\+Random\+Molecule} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_aae48f7498b6e57eaca8cd3e790c08ea4}\label{classktl_molecule_aae48f7498b6e57eaca8cd3e790c08ea4}} 
+void {\bfseries get\+Random\+Molecule\+Allow\+Overlap} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a2130236840dbd024ffdf44f7480cbcbc}\label{classktl_molecule_a2130236840dbd024ffdf44f7480cbcbc}} 
+int {\bfseries get\+Random\+Molecule\+Reset} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a15b87039c9cbfd70c9428722e76a68b1}\label{classktl_molecule_a15b87039c9cbfd70c9428722e76a68b1}} 
+void {\bfseries get\+Random\+Molecule\+Allow\+Overlap\+Reset} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a94fc8b3a8d86523ea9059aacc5346633}\label{classktl_molecule_a94fc8b3a8d86523ea9059aacc5346633}} 
+void {\bfseries remove\+Overlap} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5d2b7afc66e1a1469434cf2f5fca76b6}\label{classktl_molecule_a5d2b7afc66e1a1469434cf2f5fca76b6}} 
+void {\bfseries reset\+Random\+Molecule} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_acde74db3720aae0191a5a12c9b207688}{get\+Frame\+For\+Backbone}} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_a7d747b1771493c3a5bda18f6c3a2b520}{change\+Molecule\+Single}} (int \&index)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ab7d831b5b00b1d9273ea5c765485cfa6}\label{classktl_molecule_ab7d831b5b00b1d9273ea5c765485cfa6}} 
+void {\bfseries change\+Molecule\+Set} (std\+::vector$<$ int $>$ \&indicies)
+\item 
+void \mbox{\hyperlink{classktl_molecule_a5066802e6a06cd3f6a3a8db89b127bd2}{change\+Molecule\+Single\+Multi}} (int \&index, int sec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_aeed0e6a321ee31cc3033b076633676e4}\label{classktl_molecule_aeed0e6a321ee31cc3033b076633676e4}} 
+void {\bfseries change\+Molecule\+Set\+Multi} (std\+::vector$<$ int $>$ \&indicies, int sec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a0436ab15422e933baf9974d22bd01cc9}\label{classktl_molecule_a0436ab15422e933baf9974d22bd01cc9}} 
+void {\bfseries change\+Molecule\+Multi\+Rotate} (double \&angle, \mbox{\hyperlink{classpoint}{point}} \&k, int sec\+In, \mbox{\hyperlink{classpoint}{point}} \&trans\+Vec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a93f65c63568eeea2da6d16cb8800fe90}\label{classktl_molecule_a93f65c63568eeea2da6d16cb8800fe90}} 
+void {\bfseries replicate\+Molecule} (int \&no\+Replications)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a05eabc562ab06c044181c6c194bdfe3a}\label{classktl_molecule_a05eabc562ab06c044181c6c194bdfe3a}} 
+void {\bfseries change\+Molecule\+Local} (int \&index, double variation\+Size)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a2605d89af083bc4301b7dc6dc837cf0f}\label{classktl_molecule_a2605d89af083bc4301b7dc6dc837cf0f}} 
+void {\bfseries change\+Molecule\+Local\+Set} (std\+::vector$<$ int $>$ \&indicies, double variation\+Size)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a44d2119de68db9f3e942ef0a9f2c37a7}\label{classktl_molecule_a44d2119de68db9f3e942ef0a9f2c37a7}} 
+void {\bfseries change\+Molecule\+Single} (int \&index, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&cds\+In, std\+::vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ \&name\+Size\+Sub\+List)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5eac99957f5b7886ee43d705c6b7fdd8}\label{classktl_molecule_a5eac99957f5b7886ee43d705c6b7fdd8}} 
+void {\bfseries rotation3D} (\mbox{\hyperlink{classpoint}{point}} \&p, \mbox{\hyperlink{classpoint}{point}} \&centre, \mbox{\hyperlink{classpoint}{point}} \&k, double \&cosangle, double \&sinangle)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ab68be626cd3d981f93f065e053ed9211}\label{classktl_molecule_ab68be626cd3d981f93f065e053ed9211}} 
+void {\bfseries rotate\+Section} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&section, \mbox{\hyperlink{classpoint}{point}} \&centre, \mbox{\hyperlink{classpoint}{point}} \&k, double \&angle, \mbox{\hyperlink{classpoint}{point}} \&trans\+Vec)
+\item 
+\mbox{\Hypertarget{classktl_molecule_adb7cb8fa50269fe974978dad3c49b858}\label{classktl_molecule_adb7cb8fa50269fe974978dad3c49b858}} 
+bool {\bfseries check\+Overlap\+Sbond} (double \&min\+Dist)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a7740cee7bf6c48dac54215d1bed87f8b}\label{classktl_molecule_a7740cee7bf6c48dac54215d1bed87f8b}} 
+void {\bfseries change\+Molecule\+Single\+Check\+Overlap} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_a22eb1be12691ce9d37c6e80e916fa413}{write\+Molecule\+To\+File}} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ae76509453e6c99caa55ac05af53296c3}\label{classktl_molecule_ae76509453e6c99caa55ac05af53296c3}} 
+void {\bfseries get\+Backbone\+Stats} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_afc7c88ac19d12ee3bc6d425ad0aea9c3}\label{classktl_molecule_afc7c88ac19d12ee3bc6d425ad0aea9c3}} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries get\+Kap\+Tau\+Vals} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_a278b5bcb08248b36e99a8b2155042834}\label{classktl_molecule_a278b5bcb08248b36e99a8b2155042834}} 
+double {\bfseries get\+Pair\+Distance} (std\+::pair$<$ int, int $>$ \&index1, std\+::pair$<$ int, int $>$ \&index2)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a0ecbb805d02d2893c2b70e185ffec423}\label{classktl_molecule_a0ecbb805d02d2893c2b70e185ffec423}} 
+double {\bfseries lennard\+Jones} (double \&ideal\+Dist, double \&curr\+Dist, int no\+Con\+Pred, double \&weight\+Coeff)
+\item 
+\mbox{\Hypertarget{classktl_molecule_aa53faac409312f5818300a24867ec969}\label{classktl_molecule_aa53faac409312f5818300a24867ec969}} 
+double {\bfseries get\+Fit\+Qual\+Sbonds} (std\+::vector$<$ std\+::tuple$<$ std\+::pair$<$ int, int $>$, std\+::pair$<$ int, int $>$, double $>$ $>$ \&contact\+Pair\+List, double weight\+Coeff)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ab35ba75d5fc02dfecdc615902a1e1828}\label{classktl_molecule_ab35ba75d5fc02dfecdc615902a1e1828}} 
+double {\bfseries get\+Fit\+Qual\+Sbonds\+Non\+Specific} (std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ int, int $>$, double $>$ $>$ \&contact\+Pair\+List, double weight\+Coeff)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ae54130c12c3bf90157653ea87af3d3e5}\label{classktl_molecule_ae54130c12c3bf90157653ea87af3d3e5}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Exact\+Dist\+Set} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&coord\+Set)
+\item 
+\mbox{\Hypertarget{classktl_molecule_ab6a535ca2b7e1bcdc8964b6f55cd9ad1}\label{classktl_molecule_ab6a535ca2b7e1bcdc8964b6f55cd9ad1}} 
+double {\bfseries all\+Dists} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&pt\+Set, std\+::vector$<$ double $>$ \&dist\+Set)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a771fe3019cc901d53580d0862c02e143}\label{classktl_molecule_a771fe3019cc901d53580d0862c02e143}} 
+std\+::vector$<$ double $>$ {\bfseries sol\+Mol\+Dists} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&pts1)
+\item 
+\mbox{\Hypertarget{classktl_molecule_af88b5e1ec735a589df87fd875c9b8879}\label{classktl_molecule_af88b5e1ec735a589df87fd875c9b8879}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Approx\+Dist\+Set} (double \&div\+Fac)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a5167eed88fe118ff4342bbec7977e1b4}\label{classktl_molecule_a5167eed88fe118ff4342bbec7977e1b4}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Approx\+Dist\+Set\+Fixed} ()
+\item 
+void \mbox{\hyperlink{classktl_molecule_a491b6fbeb0eaefa9f6670967b81b8136}{load\+Contact\+Predictions}} (const char $\ast$contactloc)
+\item 
+\mbox{\Hypertarget{classktl_molecule_a569c1c49d3e1b102ad512eca14d50cdf}\label{classktl_molecule_a569c1c49d3e1b102ad512eca14d50cdf}} 
+double {\bfseries get\+Lennard\+Jones\+Contact} ()
+\item 
+\mbox{\Hypertarget{classktl_molecule_ac2074d5b50944bc155170da4a45818d5}\label{classktl_molecule_ac2074d5b50944bc155170da4a45818d5}} 
+void {\bfseries load\+Fixed\+Sections} (const char $\ast$fixedsecloc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Big con
+
+Tracing is controlled on a per \char`\"{}component\char`\"{} basis, where a \char`\"{}component\char`\"{} is a name of the form aaa.\+bbb.\+ccc where aaa is the Most significant part; for example, the utilities library might be called \char`\"{}utils\char`\"{}, the doubly-\/linked list \char`\"{}utils.\+dlist\char`\"{}, and the code to destroy a list \char`\"{}utils.\+dlist.\+del\char`\"{} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classktl_molecule_aa4ff0e335e8b8bdae36ff72e54403c21}\label{classktl_molecule_aa4ff0e335e8b8bdae36ff72e54403c21}} 
+\index{ktlMolecule@{ktlMolecule}!binorm@{binorm}}
+\index{binorm@{binorm}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{binorm()}{binorm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} ktl\+Molecule\+::binorm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{T1,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{T2 }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a7d747b1771493c3a5bda18f6c3a2b520}\label{classktl_molecule_a7d747b1771493c3a5bda18f6c3a2b520}} 
+\index{ktlMolecule@{ktlMolecule}!changeMoleculeSingle@{changeMoleculeSingle}}
+\index{changeMoleculeSingle@{changeMoleculeSingle}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{changeMoleculeSingle()}{changeMoleculeSingle()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::change\+Molecule\+Single (\begin{DoxyParamCaption}\item[{int \&}]{index }\end{DoxyParamCaption})}
+
+Resampling of single molecule section
+
+Some description of how that is done...
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of protein section to be re-\/generated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a5066802e6a06cd3f6a3a8db89b127bd2}\label{classktl_molecule_a5066802e6a06cd3f6a3a8db89b127bd2}} 
+\index{ktlMolecule@{ktlMolecule}!changeMoleculeSingleMulti@{changeMoleculeSingleMulti}}
+\index{changeMoleculeSingleMulti@{changeMoleculeSingleMulti}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{changeMoleculeSingleMulti()}{changeMoleculeSingleMulti()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::change\+Molecule\+Single\+Multi (\begin{DoxyParamCaption}\item[{int \&}]{index,  }\item[{int}]{sec }\end{DoxyParamCaption})}
+
+Changes single secondary structure element
+
+Some description of how that is done...
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of secondary structure element to be changed\\
+\hline
+{\em sec} & Chain number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a77e00d4615fc2ba82890b0ebf34a1e53}\label{classktl_molecule_a77e00d4615fc2ba82890b0ebf34a1e53}} 
+\index{ktlMolecule@{ktlMolecule}!coiledCoilPotential@{coiledCoilPotential}}
+\index{coiledCoilPotential@{coiledCoilPotential}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{coiledCoilPotential()}{coiledCoilPotential()}}
+{\footnotesize\ttfamily double ktl\+Molecule\+::coiled\+Coil\+Potential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, specific to coiled coil example from paper \mbox{\Hypertarget{classktl_molecule_af4f9673646ab53e4415c26bfce34a2e8}\label{classktl_molecule_af4f9673646ab53e4415c26bfce34a2e8}} 
+\index{ktlMolecule@{ktlMolecule}!coiledCoilPotentialBetween@{coiledCoilPotentialBetween}}
+\index{coiledCoilPotentialBetween@{coiledCoilPotentialBetween}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{coiledCoilPotentialBetween()}{coiledCoilPotentialBetween()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ktl\+Molecule\+::coiled\+Coil\+Potential\+Between (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, specific to coiled coil example from paper \mbox{\Hypertarget{classktl_molecule_ac430868dc7a90657535346bf58e1ce8b}\label{classktl_molecule_ac430868dc7a90657535346bf58e1ce8b}} 
+\index{ktlMolecule@{ktlMolecule}!coiledCoilPotentialBetween@{coiledCoilPotentialBetween}}
+\index{coiledCoilPotentialBetween@{coiledCoilPotentialBetween}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{coiledCoilPotentialBetween()}{coiledCoilPotentialBetween()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double ktl\+Molecule\+::coiled\+Coil\+Potential\+Between (\begin{DoxyParamCaption}\item[{int \&}]{sec\+No }\end{DoxyParamCaption})}
+
+Assume no longer used, specific to coiled coil example from paper \mbox{\Hypertarget{classktl_molecule_a690498d73cb91957c0cb26882bccf958}\label{classktl_molecule_a690498d73cb91957c0cb26882bccf958}} 
+\index{ktlMolecule@{ktlMolecule}!getBinormal@{getBinormal}}
+\index{getBinormal@{getBinormal}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getBinormal()}{getBinormal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} ktl\+Molecule\+::get\+Binormal (\begin{DoxyParamCaption}\item[{int}]{mindex,  }\item[{int}]{subindex }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a50ad5573947561f3c13c95ca2c414214}\label{classktl_molecule_a50ad5573947561f3c13c95ca2c414214}} 
+\index{ktlMolecule@{ktlMolecule}!getBinormals@{getBinormals}}
+\index{getBinormals@{getBinormals}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getBinormals()}{getBinormals()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ ktl\+Molecule\+::get\+Binormals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_aa32aa30241955ab6a433e391449be320}\label{classktl_molecule_aa32aa30241955ab6a433e391449be320}} 
+\index{ktlMolecule@{ktlMolecule}!getCoiledCoilResidues@{getCoiledCoilResidues}}
+\index{getCoiledCoilResidues@{getCoiledCoilResidues}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getCoiledCoilResidues()}{getCoiledCoilResidues()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Coiled\+Coil\+Residues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, specific to coiled coil example from paper \mbox{\Hypertarget{classktl_molecule_a07f7c9a91e70e721cbb06f778a780f70}\label{classktl_molecule_a07f7c9a91e70e721cbb06f778a780f70}} 
+\index{ktlMolecule@{ktlMolecule}!getCurvatureJoined@{getCurvatureJoined}}
+\index{getCurvatureJoined@{getCurvatureJoined}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getCurvatureJoined()}{getCurvatureJoined()}}
+{\footnotesize\ttfamily double ktl\+Molecule\+::get\+Curvature\+Joined (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_acde74db3720aae0191a5a12c9b207688}\label{classktl_molecule_acde74db3720aae0191a5a12c9b207688}} 
+\index{ktlMolecule@{ktlMolecule}!getFrameForBackbone@{getFrameForBackbone}}
+\index{getFrameForBackbone@{getFrameForBackbone}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getFrameForBackbone()}{getFrameForBackbone()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Frame\+For\+Backbone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a98d940f8feca44434c350255fcc5a4d8}\label{classktl_molecule_a98d940f8feca44434c350255fcc5a4d8}} 
+\index{ktlMolecule@{ktlMolecule}!getHydrophobicDistance@{getHydrophobicDistance}}
+\index{getHydrophobicDistance@{getHydrophobicDistance}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getHydrophobicDistance()}{getHydrophobicDistance()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ ktl\+Molecule\+::get\+Hydrophobic\+Distance (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{solvent\+List,  }\item[{double \&}]{max\+Sol\+Dist }\end{DoxyParamCaption})}
+
+Checks for the average distance between a hydrophobic residue and solvent molceules (within some cut off distance)
+
+
+\begin{DoxyParams}{Parameters}
+{\em solvent\+List} & List of coordinates of all solvent molecules. \\
+\hline
+{\em max\+Sol\+Dist} & Cut off distance to check for solvent molecules. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a263a3e39b2dea4ded750e22379650db4}\label{classktl_molecule_a263a3e39b2dea4ded750e22379650db4}} 
+\index{ktlMolecule@{ktlMolecule}!getHydrophobicResidues@{getHydrophobicResidues}}
+\index{getHydrophobicResidues@{getHydrophobicResidues}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getHydrophobicResidues()}{getHydrophobicResidues()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Hydrophobic\+Residues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Finds Hydrophobic Residues
+
+Stores the index of all Hydrophobic Residues (here Amino Acid Letter Code\+: A,I,L,M,F,V,P,G) \mbox{\Hypertarget{classktl_molecule_a1a1c931d9b465b5c7349bc8ee9936e74}\label{classktl_molecule_a1a1c931d9b465b5c7349bc8ee9936e74}} 
+\index{ktlMolecule@{ktlMolecule}!getNegativeResidues@{getNegativeResidues}}
+\index{getNegativeResidues@{getNegativeResidues}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getNegativeResidues()}{getNegativeResidues()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Negative\+Residues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns indices of negatively charged residues (here Amino Acid Letter Code\+: D, E) \mbox{\Hypertarget{classktl_molecule_a70ca23033b0654adb5cca00884107584}\label{classktl_molecule_a70ca23033b0654adb5cca00884107584}} 
+\index{ktlMolecule@{ktlMolecule}!getNoAminos@{getNoAminos}}
+\index{getNoAminos@{getNoAminos}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getNoAminos()}{getNoAminos()}}
+{\footnotesize\ttfamily int ktl\+Molecule\+::get\+No\+Aminos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the number of residues in the chain. \mbox{\Hypertarget{classktl_molecule_afe2392cc86b1629f08eea40ae279b998}\label{classktl_molecule_afe2392cc86b1629f08eea40ae279b998}} 
+\index{ktlMolecule@{ktlMolecule}!getNormal@{getNormal}}
+\index{getNormal@{getNormal}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getNormal()}{getNormal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} ktl\+Molecule\+::get\+Normal (\begin{DoxyParamCaption}\item[{int}]{mindex,  }\item[{int}]{subindex }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a4a71367cf22ed0a510341be50977d3aa}\label{classktl_molecule_a4a71367cf22ed0a510341be50977d3aa}} 
+\index{ktlMolecule@{ktlMolecule}!getNormals@{getNormals}}
+\index{getNormals@{getNormals}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getNormals()}{getNormals()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ ktl\+Molecule\+::get\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_aa617df428b60243051d19f4ccc630270}\label{classktl_molecule_aa617df428b60243051d19f4ccc630270}} 
+\index{ktlMolecule@{ktlMolecule}!getPolarResidues@{getPolarResidues}}
+\index{getPolarResidues@{getPolarResidues}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getPolarResidues()}{getPolarResidues()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Polar\+Residues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns indices of polar residues (here Amino Acid Letter Code\+: Q, N, H, S, T, Y, C) \mbox{\Hypertarget{classktl_molecule_aaed5008ff3e1e379de260d203fdc733d}\label{classktl_molecule_aaed5008ff3e1e379de260d203fdc733d}} 
+\index{ktlMolecule@{ktlMolecule}!getPositiveResidues@{getPositiveResidues}}
+\index{getPositiveResidues@{getPositiveResidues}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getPositiveResidues()}{getPositiveResidues()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::get\+Positive\+Residues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns indices of positively charged residues (here Amino Acid Letter Code\+: K, Y, R) \mbox{\Hypertarget{classktl_molecule_ad6ed6bf1ffb225fc14191cb839b244c5}\label{classktl_molecule_ad6ed6bf1ffb225fc14191cb839b244c5}} 
+\index{ktlMolecule@{ktlMolecule}!getSubsecCoordinates@{getSubsecCoordinates}}
+\index{getSubsecCoordinates@{getSubsecCoordinates}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getSubsecCoordinates()}{getSubsecCoordinates()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ ktl\+Molecule\+::get\+Subsec\+Coordinates (\begin{DoxyParamCaption}\item[{int \&}]{sec }\end{DoxyParamCaption})}
+
+Returns Coordinates of Secondary Structure Element
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & Index of Secondary Structure Element (Counting from 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a13114b774dcce946a542044fd5b244dc}\label{classktl_molecule_a13114b774dcce946a542044fd5b244dc}} 
+\index{ktlMolecule@{ktlMolecule}!getSubsecSize@{getSubsecSize}}
+\index{getSubsecSize@{getSubsecSize}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getSubsecSize()}{getSubsecSize()}}
+{\footnotesize\ttfamily int ktl\+Molecule\+::get\+Subsec\+Size (\begin{DoxyParamCaption}\item[{int}]{sec }\end{DoxyParamCaption})}
+
+Returns Size of Secondary Structure Element
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & Index of Secondary Structure Element (Counting from 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_acede2342d07446259bc1b55ab13e1ac1}\label{classktl_molecule_acede2342d07446259bc1b55ab13e1ac1}} 
+\index{ktlMolecule@{ktlMolecule}!getTangent@{getTangent}}
+\index{getTangent@{getTangent}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getTangent()}{getTangent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} ktl\+Molecule\+::get\+Tangent (\begin{DoxyParamCaption}\item[{int}]{mindex,  }\item[{int}]{subindex }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_af43e782ece78eacb60b01664de23944d}\label{classktl_molecule_af43e782ece78eacb60b01664de23944d}} 
+\index{ktlMolecule@{ktlMolecule}!getTangents@{getTangents}}
+\index{getTangents@{getTangents}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getTangents()}{getTangents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ ktl\+Molecule\+::get\+Tangents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a2570ac0b4d48e655bfe06681b7d7bc3b}\label{classktl_molecule_a2570ac0b4d48e655bfe06681b7d7bc3b}} 
+\index{ktlMolecule@{ktlMolecule}!getTorsionJoined@{getTorsionJoined}}
+\index{getTorsionJoined@{getTorsionJoined}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{getTorsionJoined()}{getTorsionJoined()}}
+{\footnotesize\ttfamily double ktl\+Molecule\+::get\+Torsion\+Joined (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a491b6fbeb0eaefa9f6670967b81b8136}\label{classktl_molecule_a491b6fbeb0eaefa9f6670967b81b8136}} 
+\index{ktlMolecule@{ktlMolecule}!loadContactPredictions@{loadContactPredictions}}
+\index{loadContactPredictions@{loadContactPredictions}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{loadContactPredictions()}{loadContactPredictions()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::load\+Contact\+Predictions (\begin{DoxyParamCaption}\item[{const char $\ast$}]{contactloc }\end{DoxyParamCaption})}
+
+Processes contact predictions file (optional functionality)
+
+
+\begin{DoxyParams}{Parameters}
+{\em contactloc} & Location of contact predictions file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a7057e1b6342bf45dbab4abac9c188490}\label{classktl_molecule_a7057e1b6342bf45dbab4abac9c188490}} 
+\index{ktlMolecule@{ktlMolecule}!noChains@{noChains}}
+\index{noChains@{noChains}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{noChains()}{noChains()}}
+{\footnotesize\ttfamily int ktl\+Molecule\+::no\+Chains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns Number of Chains \mbox{\Hypertarget{classktl_molecule_ae8c483195857a2ba134f66bdcd0c96f1}\label{classktl_molecule_ae8c483195857a2ba134f66bdcd0c96f1}} 
+\index{ktlMolecule@{ktlMolecule}!parallelTransport@{parallelTransport}}
+\index{parallelTransport@{parallelTransport}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{parallelTransport()}{parallelTransport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} ktl\+Molecule\+::parallel\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{tan1,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{tan2,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{norm1 }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_add51cc5bdfeb826b776b30ee02a52ef0}\label{classktl_molecule_add51cc5bdfeb826b776b30ee02a52ef0}} 
+\index{ktlMolecule@{ktlMolecule}!readInCoordinates@{readInCoordinates}}
+\index{readInCoordinates@{readInCoordinates}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{readInCoordinates()}{readInCoordinates()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::read\+In\+Coordinates (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Processes Coordinate File
+
+Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Location of Coordinates file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a3f5d04cd93755f0c0184e0d1a499329e}\label{classktl_molecule_a3f5d04cd93755f0c0184e0d1a499329e}} 
+\index{ktlMolecule@{ktlMolecule}!readInSequence@{readInSequence}}
+\index{readInSequence@{readInSequence}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{readInSequence()}{readInSequence()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::read\+In\+Sequence (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{double \&}]{rmin,  }\item[{double \&}]{rmax,  }\item[{double \&}]{lmin }\end{DoxyParamCaption})}
+
+Processes Sequence File
+
+Reads in Number of Chains, Primary Sequence, and (Simplified) Secondary Sequence. Uses Secondary Sequence to partition the curve.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Location of Sequence Fingerprint file\\
+\hline
+{\em rmin} & Minimum distance between neighbouring c\+Alpha residues, default=3.\+7\\
+\hline
+{\em rmax} & Maximum distance between neighbouring c\+Alpha residues, default=3.\+9\\
+\hline
+{\em lmin} & Closest distance two non adjactent local (same secondary structure) c\+Alpha residues can get, default=4.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classktl_molecule_a6152d9c18958b3f00c79ee3c56a5d41e}\label{classktl_molecule_a6152d9c18958b3f00c79ee3c56a5d41e}} 
+\index{ktlMolecule@{ktlMolecule}!updateFrame@{updateFrame}}
+\index{updateFrame@{updateFrame}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{updateFrame()}{updateFrame()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ ktl\+Molecule\+::update\+Frame (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{section,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{tangent,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{normal,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{binormal }\end{DoxyParamCaption})}
+
+Assume no longer used, relates to continuous pov \mbox{\Hypertarget{classktl_molecule_a22eb1be12691ce9d37c6e80e916fa413}\label{classktl_molecule_a22eb1be12691ce9d37c6e80e916fa413}} 
+\index{ktlMolecule@{ktlMolecule}!writeMoleculeToFile@{writeMoleculeToFile}}
+\index{writeMoleculeToFile@{writeMoleculeToFile}!ktlMolecule@{ktlMolecule}}
+\doxysubsubsection{\texorpdfstring{writeMoleculeToFile()}{writeMoleculeToFile()}}
+{\footnotesize\ttfamily void ktl\+Molecule\+::write\+Molecule\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Outputs molecule as a coordinate file
+
+Multimers will be in one single file, with each chain separate by \char`\"{}\+End Chain i\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ouput coordinate file location \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ktl\+Molecule\+Random.\+h\item 
+\mbox{\hyperlink{ktl_molecule_random_8cpp}{ktl\+Molecule\+Random.\+cpp}}\end{DoxyCompactItemize}

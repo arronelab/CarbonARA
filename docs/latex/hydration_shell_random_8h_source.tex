@@ -1,0 +1,245 @@
+\hypertarget{hydration_shell_random_8h_source}{}\doxysection{hydration\+Shell\+Random.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HYD\_SH\_M}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HYD\_SH\_M}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}ktlMoleculeRandom.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <algorithm>}  }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <functional>} }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classhydration_shell_minimal}{hydrationShellMinimal}}\{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11   \mbox{\hyperlink{classhydration_shell_minimal}{hydrationShellMinimal}}()\{\};}
+\DoxyCodeLine{12   \mbox{\hyperlink{classhydration_shell_minimal}{hydrationShellMinimal}}(\mbox{\hyperlink{classktl_molecule}{ktlMolecule}} \&molIn,\textcolor{keywordtype}{double} RinInp,\textcolor{keywordtype}{double} RoutInp,\textcolor{keywordtype}{double} \&RhyIn,\textcolor{keywordtype}{int} ntrivsIn,\textcolor{keywordtype}{double} helixRatioIn,\textcolor{keywordtype}{int} solventsPerLinkIn,\textcolor{keywordtype}{double} \&mutualDistCutOffIn,\textcolor{keywordtype}{double} \&rmin,\textcolor{keywordtype}{double} \&rmax,\textcolor{keywordtype}{double} \&lmin);}
+\DoxyCodeLine{13   \textcolor{keywordtype}{void} resetMol(\mbox{\hyperlink{classktl_molecule}{ktlMolecule}} \&molIn);}
+\DoxyCodeLine{14   \textcolor{keywordtype}{void} getPointAndMidlengthHelix(\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} \&hIndex);}
+\DoxyCodeLine{15   \textcolor{keywordtype}{void} getPointAndMidlengthMulti(\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} \&hIndex);}
+\DoxyCodeLine{16   \textcolor{keywordtype}{void} getPointAndMidlengthStraight(\textcolor{keywordtype}{int} \&sec,\textcolor{keywordtype}{int} \&part,\textcolor{keywordtype}{int} \&hIndex,std::string soe);}
+\DoxyCodeLine{17   \textcolor{keywordtype}{void} tubeParamList();}
+\DoxyCodeLine{18   \textcolor{keywordtype}{void} updateTubeParamList(\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} \&startHIndex);}
+\DoxyCodeLine{19   \mbox{\hyperlink{classpoint}{point}} getDirec(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{20   \mbox{\hyperlink{classpoint}{point}} getHydTan(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{21   \mbox{\hyperlink{classpoint}{point}} getHydNorm(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{22   \mbox{\hyperlink{classpoint}{point}} getHydBinorm(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} hydTubeLength(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{24   \mbox{\hyperlink{classpoint}{point}} hydTubeCentre(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{25   \mbox{\hyperlink{classpoint}{point}} getTangent(\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{26   \mbox{\hyperlink{classpoint}{point}} getNormal(\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{27   \mbox{\hyperlink{classpoint}{point}} getBinormal(\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} subindex);}
+\DoxyCodeLine{28   \mbox{\hyperlink{classpoint}{point}} getCentrePoint(\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} subIndex);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{int} getNScat();}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} resetMolecule();}
+\DoxyCodeLine{31   \textcolor{keywordtype}{int} getMolSize();}
+\DoxyCodeLine{32   \textcolor{keywordtype}{int} getNoSections();}
+\DoxyCodeLine{33   \textcolor{keywordtype}{int} getNoKvals();}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} getMaxDist();}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} makeInitialSegData(\mbox{\hyperlink{classpoint}{point}} \&cp,\mbox{\hyperlink{classpoint}{point}} \&T,\mbox{\hyperlink{classpoint}{point}} \&N1,\textcolor{keywordtype}{double} \&tm,\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} \&nseg);}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} updateSegData(\mbox{\hyperlink{classpoint}{point}} \&cp,\mbox{\hyperlink{classpoint}{point}} \&T,\mbox{\hyperlink{classpoint}{point}} \&N1,\textcolor{keywordtype}{double} \&tm,\textcolor{keywordtype}{int} index,\textcolor{keywordtype}{int} \&nseg);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} constructInitialState();}
+\DoxyCodeLine{38   std::vector<std::vector<point> > getHydrationLayer(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{39   std::vector<std::vector<int> > getTruthTable(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} updateTruthTableTest(\textcolor{keywordtype}{int} \&ind1,\textcolor{keywordtype}{int} \&ind2,\textcolor{keywordtype}{double} \&R);}
+\DoxyCodeLine{41   std::pair<std::vector<std::vector<double> >,std::pair<std::string,std::string>  > getMinTvalsFiniteNew(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2);}
+\DoxyCodeLine{42   std::pair<std::vector<std::vector<double> >,std::pair<std::string,std::string>  > getMinTvalsFiniteNewTest(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2);}
+\DoxyCodeLine{43    \textcolor{keywordtype}{void} overlapPodstruct(\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j,\textcolor{keywordtype}{int} inch,\textcolor{keywordtype}{int} jnch);}
+\DoxyCodeLine{44    \textcolor{keywordtype}{void} overlapPodstructJoined(\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{45    std::pair<std::vector<point>,std::string> getEllipseOf1(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,std::vector<double> \&sol);}
+\DoxyCodeLine{46    std::pair<std::vector<point>,std::string> getEllipseOf2(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,std::vector<double> \&sol);}
+\DoxyCodeLine{47    std::pair<std::vector<point>,std::string> getEllipseOf1Test(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,std::vector<double> \&sol);}
+\DoxyCodeLine{48    std::pair<std::vector<point>,std::string> getEllipseOf2Test(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,std::vector<double> \&sol);}
+\DoxyCodeLine{49    \textcolor{keywordtype}{bool} checkIsIn1(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&sol1,\textcolor{keywordtype}{double} \&sol2,\textcolor{keywordtype}{int} inch,\textcolor{keywordtype}{int} jnch,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2);}
+\DoxyCodeLine{50    \textcolor{keywordtype}{bool} checkIsIn2(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&sol1,\textcolor{keywordtype}{double} \&sol2,\textcolor{keywordtype}{int} inch,\textcolor{keywordtype}{int} jnch,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2);}
+\DoxyCodeLine{51    \textcolor{keywordtype}{bool} checkIsIn1(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,\mbox{\hyperlink{classpoint}{point}} \&r2cp,\mbox{\hyperlink{classpoint}{point}} \&r12,\mbox{\hyperlink{classpoint}{point}} \&J,\mbox{\hyperlink{classpoint}{point}} \&ellipsePoint,\textcolor{keywordtype}{double} \&t2param,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{52    \textcolor{keywordtype}{bool} checkIsIn2(\mbox{\hyperlink{classpoint}{point}} \&cp1,\mbox{\hyperlink{classpoint}{point}} \&cp2,\mbox{\hyperlink{classpoint}{point}} \&T1,\mbox{\hyperlink{classpoint}{point}} \&T2,\textcolor{keywordtype}{double} \&tm1,\textcolor{keywordtype}{double} \&tm2,\textcolor{keywordtype}{double} \&R1,\textcolor{keywordtype}{double} \&R2,\mbox{\hyperlink{classpoint}{point}} \&r1cp,\mbox{\hyperlink{classpoint}{point}} \&r2e,\mbox{\hyperlink{classpoint}{point}} \&J,\mbox{\hyperlink{classpoint}{point}} \&ellipsePoint,\textcolor{keywordtype}{double} \&t1param,\textcolor{keywordtype}{int} i,\textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{53    \textcolor{keywordtype}{void} allOverlap();}
+\DoxyCodeLine{54    \textcolor{keywordtype}{void} allOverlap(\textcolor{keywordtype}{int} \&ChangeIndex);}
+\DoxyCodeLine{55    \textcolor{keywordtype}{void} allOverlapOne(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{56    \textcolor{keywordtype}{void} printOnePod(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{57    \textcolor{keywordtype}{void} calculateHelix(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{58    \textcolor{keywordtype}{void} getAllHelices();}
+\DoxyCodeLine{59    \textcolor{keywordtype}{void} printHelices(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{60    \textcolor{keywordtype}{void} printHelicesFlat(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{61    \textcolor{keywordtype}{void} updateHelices(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{62    \textcolor{keywordtype}{void} updateHelicesSimple(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{63    std::vector<std::pair<int,double> > countDistances(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{64    \textcolor{keywordtype}{void} printSelfDistances(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{65    \textcolor{keywordtype}{double} helixDistFunc(\textcolor{keywordtype}{int} \&d, \textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} \&npts);}
+\DoxyCodeLine{66    \textcolor{keywordtype}{void} selfScatteringSingleFast(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{67    \textcolor{keywordtype}{void} selfScatteringSingleFastRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{68    \textcolor{keywordtype}{void} printOneSelfScatter(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{69    \textcolor{keywordtype}{void} printTotalOneMutualScatter(\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{70    \textcolor{keywordtype}{double} returnTotalOneMutualScatter(\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{71    \textcolor{keywordtype}{void} selfScatteringAll(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{72    \textcolor{keywordtype}{void} sectionAndSectionFull(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{73    \textcolor{keywordtype}{void} sectionAndSectionUpdateLow(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{74    \textcolor{keywordtype}{void} mutualScatteringAll(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{75    \textcolor{keywordtype}{void} getAllScatter(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{76    \textcolor{keywordtype}{void} selfScatteringAllRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{77    \textcolor{keywordtype}{void} sectionAndSectionFullRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{78    \textcolor{keywordtype}{void} sectionAndSectionUpdateLowRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{79    \textcolor{keywordtype}{void} mutualScatteringAllRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{80    \textcolor{keywordtype}{void} getAllScatterRT(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{81    \textcolor{keywordtype}{void} getFlatSolList();}
+\DoxyCodeLine{82    \textcolor{keywordtype}{void} solventMoleculeDistances(std::vector<double> \&molSolDistances,std::vector<double> \&solSolDistances);}
+\DoxyCodeLine{83    std::vector<std::vector<point> > returnFlatSolList();}
+\DoxyCodeLine{84    std::vector<double> flattenVector(std::vector<std::vector<std::vector<double> > > \&vec);}
+\DoxyCodeLine{85    std::vector<int> binDistancesMolecule();}
+\DoxyCodeLine{86    std::vector<int> binDistancesSolvent();}
+\DoxyCodeLine{87    std::vector<int> binDistancesSolventMolecule();}
+\DoxyCodeLine{88    \textcolor{keywordtype}{bool} isCutOffViolated();}
+\DoxyCodeLine{89    \textcolor{keywordtype}{double} getCuttOffDistMutual();}
+\DoxyCodeLine{90    \textcolor{keywordtype}{void} setNScat(\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{91    \textcolor{keywordtype}{void} preCalculatePhases(\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{92    \textcolor{keywordtype}{void} preCalculatePhasesRT(\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{93    \textcolor{keywordtype}{void} getInitialScatter(\textcolor{keywordtype}{int} \&nk,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{94    \textcolor{keywordtype}{void} getInitialScatterRT(\textcolor{keywordtype}{int} \&nk,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{95    \textcolor{keywordtype}{void} addScatteringLists(std::vector<std::pair<double,double> > \&l1,std::vector<std::pair<double,double> > \&l2);}
+\DoxyCodeLine{96    \textcolor{keywordtype}{void} getScatteringBinnedRT(\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{97    \textcolor{keywordtype}{void} getScatteringBinnedRTUpdate();}
+\DoxyCodeLine{98    \textcolor{keywordtype}{void} getScatteringBinnedRTUpdate(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{99    \textcolor{keywordtype}{void} getUpdate(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{100    std::vector<std::pair<int,double> > binDistances();}
+\DoxyCodeLine{101    std::vector<std::vector<int> > findPointsInbetweenLayer(\textcolor{keywordtype}{double} c,\textcolor{keywordtype}{double} kap,\textcolor{keywordtype}{double} tau,\textcolor{keywordtype}{double} phi,\textcolor{keywordtype}{double} psi,\textcolor{keywordtype}{double} theta,std::vector<double> arcLengthTable,std::vector<std::pair<double,double> > distTable);}
+\DoxyCodeLine{102    \textcolor{keywordtype}{void} generateTableOneDistance(\textcolor{keywordtype}{int} ntheta,\textcolor{keywordtype}{int} nphi,\textcolor{keywordtype}{int} npsi,\textcolor{keywordtype}{double} c,\textcolor{keywordtype}{double} kap,\textcolor{keywordtype}{double} tau,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{int} npts,std::vector<std::pair<double,double> > distTable,\textcolor{keywordtype}{int} distBin);}
+\DoxyCodeLine{103    \textcolor{keywordtype}{void} writeOneDistanceFileToFile(std::vector<std::vector<std::vector<std::vector<std::vector<int> > > > >  \&thetaList,\textcolor{keywordtype}{int} \&distBin);}
+\DoxyCodeLine{104    \textcolor{keywordtype}{void} readOneDistanceFromFile(\textcolor{keywordtype}{int} thetaSize,\textcolor{keywordtype}{int} phiSize,\textcolor{keywordtype}{int} psiSize,\textcolor{keywordtype}{int} \&distBin,\textcolor{keywordtype}{int} \&maxNoPts,\textcolor{keywordtype}{int} \&noBinsInFile);}
+\DoxyCodeLine{105    \textcolor{keywordtype}{void} selectDistances(\textcolor{keywordtype}{double} \&dist,\textcolor{keywordtype}{int} \&theAng,\textcolor{keywordtype}{int} \&phiAng,\textcolor{keywordtype}{int} \&psiAng,\textcolor{keywordtype}{int} \&currDindex,\textcolor{keywordtype}{int} noMol,std::vector<int> \&molDistances,std::vector<int> \&solDistances,\textcolor{keywordtype}{int} \&molIndex);}
+\DoxyCodeLine{106    std::vector<int> selectAngles(\textcolor{keywordtype}{double} the,\textcolor{keywordtype}{double} phi,\textcolor{keywordtype}{double} psi);}
+\DoxyCodeLine{107    \textcolor{keywordtype}{void} setUpDistanceAngleLists(\textcolor{keywordtype}{int} ntheta,\textcolor{keywordtype}{int} nphi,\textcolor{keywordtype}{int} npsi,\textcolor{keywordtype}{int} noBinsToRead);}
+\DoxyCodeLine{108    \textcolor{keywordtype}{void} calculateScatteringBinned(\textcolor{keywordtype}{int} noBinsToRead);}
+\DoxyCodeLine{109    \textcolor{keywordtype}{void} getCentreDistances();}
+\DoxyCodeLine{110    \textcolor{keywordtype}{void} generateAllTables(\textcolor{keywordtype}{int} ntheta,\textcolor{keywordtype}{int} nphi,\textcolor{keywordtype}{int} npsi,\textcolor{keywordtype}{double} kap,\textcolor{keywordtype}{double} tau,\textcolor{keywordtype}{double} al,\textcolor{keywordtype}{int} nptsHelix,\textcolor{keywordtype}{int} noBins);}
+\DoxyCodeLine{111    \textcolor{keywordtype}{void} readInHelixDistances(\textcolor{keywordtype}{int} ntheta,\textcolor{keywordtype}{int} nphi,\textcolor{keywordtype}{int} npsi,\textcolor{keywordtype}{int} noBinsToRead,\textcolor{keywordtype}{int} maxNoPts);}
+\DoxyCodeLine{112    \textcolor{keywordtype}{void} printOneMutualScatter(\textcolor{keywordtype}{int} index1,\textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{113    std::vector<std::pair<double,double> > getTotalSelfScatter();}
+\DoxyCodeLine{114    \textcolor{keywordtype}{void} addOneScatterSelf(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{115    \textcolor{keywordtype}{void} addOneScatterMutual(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{int} \&index1,\textcolor{keywordtype}{int} \&index2);}
+\DoxyCodeLine{116    \textcolor{keywordtype}{void} printTotalScatter();}
+\DoxyCodeLine{117    \textcolor{keywordtype}{void} printIndicies(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{118    \textcolor{keywordtype}{void} printIndiciesPrev(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{119    \textcolor{keywordtype}{void} writeHydrationShellToFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{120    std::vector<std::vector<std::vector<int> > > getIndicies(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{121    std::vector<std::vector<int> > getTTS(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{122    \textcolor{keywordtype}{void} printShellFrame(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{123    \textcolor{keywordtype}{void} printMinDists(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{124    \textcolor{keywordtype}{int} getNoScatPoints();}
+\DoxyCodeLine{125    \textcolor{keywordtype}{void} writeTotalScatterToFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{126    \textcolor{keywordtype}{void} updateHydration(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{127    \textcolor{keywordtype}{void} reverseOverlapsNew(\textcolor{keywordtype}{int} \&podIndex,\textcolor{keywordtype}{int} \&changeIndex,\textcolor{keywordtype}{int} \&changeIndexUp,std::vector<int>  \&sublistAbove,std::vector<int> \&sublistBelow);}
+\DoxyCodeLine{128    \textcolor{keywordtype}{void} updateHydrationNew(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{129    \textcolor{keywordtype}{void} updateState(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{130    \textcolor{keywordtype}{void} reverseOverlaps(\textcolor{keywordtype}{int} \&podIndex,\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{131    \textcolor{keywordtype}{void} updateFlatSolList(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{132    \textcolor{keywordtype}{void} updateScattering(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{133    std::vector<int> updateBinDistancesMolecule(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{134    std::vector<int> updateBinDistancesSolvent(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{135    std::vector<int> updateBinDistancesSolventMolecule(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{136    std::vector<std::pair<double,double> > updateBinDistancesMoleculeTest(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{137    std::vector<std::pair<double,double> > updateBinDistancesSolventTest(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{138    std::vector<std::pair<double,double> > updateBinDistancesSolventMoleculeTest(\textcolor{keywordtype}{int} \&nscat,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{139    \textcolor{keywordtype}{void} updateScatteringBinnedTest(\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax,\textcolor{keywordtype}{int} \&changeIndex,\textcolor{keywordtype}{int} \&changeIndexLow,\textcolor{keywordtype}{int} \&changeIndexHigh);}
+\DoxyCodeLine{140    \textcolor{keywordtype}{void} changeConfigurationBinned(\textcolor{keywordtype}{int} \&changeIndex,\textcolor{keywordtype}{double} \&kmin,\textcolor{keywordtype}{double} \&kmax);}
+\DoxyCodeLine{141    \textcolor{keywordtype}{void} changeConfigurationBinnedFull(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{142    \textcolor{keywordtype}{void} changeConfigurationBinnedFullFast(\textcolor{keywordtype}{int} \&changeIndex);}
+\DoxyCodeLine{143    \textcolor{keywordtype}{void} changeConfigurationLocalBinnedFull(std::vector<int> \&changeIndicies,\textcolor{keywordtype}{double} \&variationSize);}
+\DoxyCodeLine{144   \textcolor{keywordtype}{void} changeMoleculeSingle(\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} changeMoleculeSet(std::vector<int> \&indicies);}
+\DoxyCodeLine{146   \textcolor{keywordtype}{void} changeMoleculeSingleMulti(\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{int} secIn);}
+\DoxyCodeLine{147   \textcolor{keywordtype}{void} changeMoleculeSetMulti(std::vector<int>  \&indicies,\textcolor{keywordtype}{int} secIn);}
+\DoxyCodeLine{148   \textcolor{keywordtype}{void} changeMoleculeMultiRotate(\textcolor{keywordtype}{double} \&angle,\mbox{\hyperlink{classpoint}{point}} \&k,\textcolor{keywordtype}{int} secIn,\mbox{\hyperlink{classpoint}{point}} \&transVec);}
+\DoxyCodeLine{149   \textcolor{keywordtype}{void} replicateMolecule(\textcolor{keywordtype}{int} \&noReplications);}
+\DoxyCodeLine{150   \textcolor{keywordtype}{void} changeMoleculeLocal(\textcolor{keywordtype}{int} \&index,\textcolor{keywordtype}{double} variationSize);}
+\DoxyCodeLine{151   \textcolor{keywordtype}{void} changeMoleculeLocalSet(std::vector<int> \&indicies,\textcolor{keywordtype}{double} variationSize);}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} changeMoleculeSingle(\textcolor{keywordtype}{int} \&index,std::vector<std::vector<point> > \&cdsIn,std::vector<std::pair<std::string,int> > \&nameSizeSubList);}
+\DoxyCodeLine{153   \textcolor{keywordtype}{int} getSubsecSize(\textcolor{keywordtype}{int} sec);}
+\DoxyCodeLine{154   \textcolor{keywordtype}{double} maxNeighbourDistSec(\textcolor{keywordtype}{int} \&sec);}
+\DoxyCodeLine{155   std::vector<double> checkOverlapWithRad(\textcolor{keywordtype}{double} \&wRad);}
+\DoxyCodeLine{156   \textcolor{keywordtype}{void} getHydrophobicResidues();}
+\DoxyCodeLine{157   \textcolor{keywordtype}{void} getCoiledCoilResidues();}
+\DoxyCodeLine{158   \textcolor{keywordtype}{double} getGlobalRadiusOfCurvature();}
+\DoxyCodeLine{159   \textcolor{keywordtype}{double} getGlobalRadiusOfCurvatureBetweenSec();}
+\DoxyCodeLine{160   \textcolor{keywordtype}{double} coiledCoilPotential();}
+\DoxyCodeLine{161   \textcolor{keywordtype}{double} coiledCoilPotentialBetween();}
+\DoxyCodeLine{162   \textcolor{keywordtype}{double} getFitQualSbonds(std::vector<std::tuple<std::pair<int,int>,std::pair<int,int>,\textcolor{keywordtype}{double}> > \&contactPairList,\textcolor{keywordtype}{double} weightCoeff);}
+\DoxyCodeLine{163   \textcolor{keywordtype}{double} compareDistances(std::vector<std::vector<point> > \&coords2);}
+\DoxyCodeLine{164   std::string getType(\textcolor{keywordtype}{int} \&chainIndex,\textcolor{keywordtype}{int} \&index);}
+\DoxyCodeLine{165   std::vector<std::vector<point> > getCoordinates();}
+\DoxyCodeLine{166    std::vector<std::pair<double,double> > getSolScatter();}
+\DoxyCodeLine{167    std::vector<std::pair<double,double> > getMolScatter();}
+\DoxyCodeLine{168    std::vector<std::pair<double,double> > getSolMolScatter();}
+\DoxyCodeLine{169    std::vector<std::vector<std::pair<double,double> > > getSelfSolScatter();}
+\DoxyCodeLine{170    std::vector<std::vector<std::pair<double,double> > > getSelfMolScatter();}
+\DoxyCodeLine{171    std::vector<std::vector<std::pair<double,double> > > getSelfSolMolScatter();}
+\DoxyCodeLine{172    std::vector<std::vector<std::vector<std::pair<double,double> > > > getMutualSolScatter();}
+\DoxyCodeLine{173    std::vector<std::vector<std::vector<std::pair<double,double> > > > getMutualMolScatter();}
+\DoxyCodeLine{174    std::vector<std::vector<std::vector<std::pair<double,double> > > > getMutualSolMolScatter();}
+\DoxyCodeLine{175    \textcolor{keywordtype}{void} writeMoleculeToFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{176    \textcolor{keywordtype}{int} getNoBins(\textcolor{keywordtype}{double} kmin,\textcolor{keywordtype}{double} kmax);}
+\DoxyCodeLine{177    \textcolor{keywordtype}{void} writeHelixPointsToFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{178    \textcolor{keywordtype}{void} writeHydrationParametersaToFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{179    \textcolor{keywordtype}{void} getBackboneStats();}
+\DoxyCodeLine{180    std::vector<std::pair<double,double> > getKapTauVals();}
+\DoxyCodeLine{181   \textcolor{keywordtype}{void} generateHydrationLayer();}
+\DoxyCodeLine{182  \textcolor{keyword}{private}:}
+\DoxyCodeLine{183   \textcolor{keywordtype}{void} updateTruthTable(\textcolor{keywordtype}{int} \&ind1,\textcolor{keywordtype}{int} \&ind2,\textcolor{keywordtype}{double} \&R);}
+\DoxyCodeLine{184   \mbox{\hyperlink{classktl_molecule}{ktlMolecule}} mol;}
+\DoxyCodeLine{185   \mbox{\hyperlink{classpoly_helix}{polyHelix}} ph;}
+\DoxyCodeLine{186   std::vector<point> direcList;}
+\DoxyCodeLine{187   std::vector<point> frameTan;}
+\DoxyCodeLine{188   std::vector<point> frameNorm;}
+\DoxyCodeLine{189   std::vector<point> frameBinorm;}
+\DoxyCodeLine{190   std::vector<point> midPointList;}
+\DoxyCodeLine{191   std::vector<std::string> nameLst;}
+\DoxyCodeLine{192   std::vector<int> lengthSec;}
+\DoxyCodeLine{193   std::vector<double> halfLengthList,cstepList;}
+\DoxyCodeLine{194   \textcolor{keywordtype}{int} molsize;}
+\DoxyCodeLine{195   \textcolor{keywordtype}{double} Pi,Rin,Rout,Rhy;}
+\DoxyCodeLine{196   std::vector<int> distBinsMol;}
+\DoxyCodeLine{197   std::vector<int> distBinsSol;}
+\DoxyCodeLine{198   std::vector<int> distBinsSolMol;}
+\DoxyCodeLine{199   std::vector<double> edgesolset1,edgesolset2,edgesolset3,edgesolset4,middlesol;}
+\DoxyCodeLine{200   std::pair<std::string,std::string> typeMessage;}
+\DoxyCodeLine{201   std::vector<std::vector<std::vector<point> > > allSegments;}
+\DoxyCodeLine{202   std::vector<std::vector<std::vector<int> > > allTruthTables;}
+\DoxyCodeLine{203   std::vector<std::vector<std::vector<std::vector<int> > > > indexList;}
+\DoxyCodeLine{204   std::vector<std::vector<std::vector<std::vector<int> > > > indexListPrev;}
+\DoxyCodeLine{205   \textcolor{keywordtype}{int} solventsPerLink;}
+\DoxyCodeLine{206   \textcolor{keywordtype}{double} helixRatio;}
+\DoxyCodeLine{207   \textcolor{keywordtype}{int} ntrivs;}
+\DoxyCodeLine{208   std::vector<std::vector<point> > helixpts;}
+\DoxyCodeLine{209   std::vector<std::vector<point> > helPtsFlat;}
+\DoxyCodeLine{210   std::vector<std::vector<point> > solPtsFlat;}
+\DoxyCodeLine{211   std::vector<std::vector<std::pair<double,double> > > selfScatteringListSol;}
+\DoxyCodeLine{212   std::vector<std::vector<std::pair<double,double> > > selfScatteringListMol;}
+\DoxyCodeLine{213   std::vector<std::vector<std::pair<double,double> > > selfScatteringListSolMol;}
+\DoxyCodeLine{214   std::vector<std::vector<std::vector<std::pair<double,double> > > > mutualScatteringListSol;}
+\DoxyCodeLine{215   std::vector<std::vector<std::vector<std::pair<double,double> > > > mutualScatteringListMol;}
+\DoxyCodeLine{216   std::vector<std::vector<std::vector<std::pair<double,double> > > > mutualScatteringListSolMol;}
+\DoxyCodeLine{217   std::vector<std::pair<double,double> > totalScatterSol;}
+\DoxyCodeLine{218   std::vector<std::pair<double,double> > totalScatterMol;}
+\DoxyCodeLine{219   std::vector<std::pair<double,double> > totalScatterSolMol;}
+\DoxyCodeLine{220   std::vector<std::pair<double,double> > emptyScatterSol;}
+\DoxyCodeLine{221   std::vector<std::pair<double,double> > emptyScatterMol;}
+\DoxyCodeLine{222   std::vector<std::pair<double,double> > emptyScatterSolMol;}
+\DoxyCodeLine{223   std::vector<std::pair<double,double> > mutualScatterSol;}
+\DoxyCodeLine{224   std::vector<std::pair<double,double> > mutualScatterMol;}
+\DoxyCodeLine{225   std::vector<std::pair<double,double> > mutualScatterSolMol;}
+\DoxyCodeLine{226   std::vector<bool> hydrationChangeList;}
+\DoxyCodeLine{227   std::vector<std::vector<std::vector<double> > > molmolDistSum;}
+\DoxyCodeLine{228   std::vector<std::vector<std::vector<double> > > solsolDistSum;}
+\DoxyCodeLine{229   std::vector<std::vector<std::vector<double> > > molsolDistSum;}
+\DoxyCodeLine{230   std::vector<std::vector<std::vector<double> > > solmolDistSum;}
+\DoxyCodeLine{231   std::vector<std::vector<double> > distanceSets;}
+\DoxyCodeLine{232   std::vector<std::pair<double,double> > distanceList;}
+\DoxyCodeLine{233   std::vector<std::pair<std::vector<std::pair<double,int> >,\textcolor{keywordtype}{int}> > minimumDistances;}
+\DoxyCodeLine{234   std::vector<std::vector<double> > phaseList;}
+\DoxyCodeLine{235   \textcolor{keywordtype}{int} solIntbound,molIntbound,solmolIntbound,nscat,nSize;}
+\DoxyCodeLine{236   \textcolor{keywordtype}{double} maxDistChange,kminVal,kmaxVal,maxDistVal,maxdist,maxScatDist,mutualDistCutOff;}
+\DoxyCodeLine{237   \textcolor{keywordtype}{bool} isTooClose;}
+\DoxyCodeLine{238 \};}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

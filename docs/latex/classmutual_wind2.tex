@@ -1,0 +1,95 @@
+\hypertarget{classmutual_wind2}{}\doxysection{mutual\+Wind2 Class Reference}
+\label{classmutual_wind2}\index{mutualWind2@{mutualWind2}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a496d34febf492837a74e52c43cc0a0de}\label{classmutual_wind2_a496d34febf492837a74e52c43cc0a0de}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries interp} (\mbox{\hyperlink{classpoint}{point}} \&lower, \mbox{\hyperlink{classpoint}{point}} \&upper, double zval)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a35a48937dd533eb33ed830a1d071e597}\label{classmutual_wind2_a35a48937dd533eb33ed830a1d071e597}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Interpolated\+Top} (std\+::pair$<$ int, int $>$ \&turn\+Middle, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tanlist, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a5df6dbff3d3944bd0509820e3766535c}\label{classmutual_wind2_a5df6dbff3d3944bd0509820e3766535c}} 
+std\+::pair$<$ double, double $>$ {\bfseries get\+ExtremaZ} (std\+::pair$<$ int, int $>$ \&turn\+Middle, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tanlist, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a7c9242fefad904e0bde2d5c9370823d1}\label{classmutual_wind2_a7c9242fefad904e0bde2d5c9370823d1}} 
+int {\bfseries quadrant} (\mbox{\hyperlink{classpoint}{point}} \&pointdif)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a10ef206af003a5669a83d81346cba9af}\label{classmutual_wind2_a10ef206af003a5669a83d81346cba9af}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+Turning\+Angle\+Quad} (std\+::pair$<$ int, int $>$ \&turn\+Middle, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tanlist, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a5befaf3d68bc6d295627dd52846eb6a6}\label{classmutual_wind2_a5befaf3d68bc6d295627dd52846eb6a6}} 
+double {\bfseries angle} (double xdif, double ydif)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a8d0f91e6474d15610f8965ee36c9e3be}\label{classmutual_wind2_a8d0f91e6474d15610f8965ee36c9e3be}} 
+void {\bfseries branch\+Tracker} (int \&curr\+Branch, int \&prev\+Branch, int \&winding\+Sum, double \&rot\+Direc)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_acca60ca73dcf74f7ac11098d879ca11f}\label{classmutual_wind2_acca60ca73dcf74f7ac11098d879ca11f}} 
+bool {\bfseries check\+Alligned} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist2)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a79f12feed9d75da098d22b7685b12b1e}\label{classmutual_wind2_a79f12feed9d75da098d22b7685b12b1e}} 
+std\+::pair$<$ int, \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries get\+Next\+Index} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist2, std\+::pair$<$ int, int $>$ \&index\+Pair, int \&prev\+Quad)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a54b6b38744a2b612c249c5ecbabe5328}\label{classmutual_wind2_a54b6b38744a2b612c249c5ecbabe5328}} 
+void {\bfseries Append\+Extremum\+Join} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist2, \mbox{\hyperlink{classpoint}{point}} \&new\+S1min\+Extremum, \mbox{\hyperlink{classpoint}{point}} \&new\+S2max\+Extremum, \mbox{\hyperlink{classpoint}{point}} \&new\+Joint\+Extremum)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a2855a382be7cc8ca2eff41dcac917db1}\label{classmutual_wind2_a2855a382be7cc8ca2eff41dcac917db1}} 
+void {\bfseries Append\+Extremum\+Join\+Closed} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist2, \mbox{\hyperlink{classpoint}{point}} \&new\+S1min\+Extremum, \mbox{\hyperlink{classpoint}{point}} \&new\+S2max\+Extremum, \mbox{\hyperlink{classpoint}{point}} \&new\+Joint\+Extremum)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a458a1a6c4c08556f2738c944eb04bdf5}\label{classmutual_wind2_a458a1a6c4c08556f2738c944eb04bdf5}} 
+void {\bfseries check\+Append\+Extrema} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sublist, \mbox{\hyperlink{classpoint}{point}} \&min\+Extremum, \mbox{\hyperlink{classpoint}{point}} \&max\+Extremum)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a17e0165bc9fe0bd710fc272272374c7f}\label{classmutual_wind2_a17e0165bc9fe0bd710fc272272374c7f}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ {\bfseries interpolate\+For\+Winding} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tanlist, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ turning\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_aee67335690019c449512d7770d892869}\label{classmutual_wind2_aee67335690019c449512d7770d892869}} 
+std\+::vector$<$ \mbox{\hyperlink{classwinding_storage}{winding\+Storage}} $>$ {\bfseries get\+Mutual\+Sections} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&super\+Sublist1, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&super\+Sublist2, int \&first\+Index)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a0e52d661b7578fe00728e08490b91f37}\label{classmutual_wind2_a0e52d661b7578fe00728e08490b91f37}} 
+int {\bfseries get\+Integer\+Winding\+Of\+Pair\+Joined} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::pair$<$ int, int $>$ \&s1min\+Inp, std\+::pair$<$ int, int $>$ \&s1max\+Inp, std\+::pair$<$ int, int $>$ \&s2min\+Inp, std\+::pair$<$ int, int $>$ \&s2max\+Inp)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_ad56034ecbb4dfe3ebfd1e02d90098d9b}\label{classmutual_wind2_ad56034ecbb4dfe3ebfd1e02d90098d9b}} 
+int {\bfseries get\+Integer\+Winding\+Of\+Pair\+Joined\+Closed\+End} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::pair$<$ int, int $>$ \&s1min\+Inp, std\+::pair$<$ int, int $>$ \&s1max\+Inp, std\+::pair$<$ int, int $>$ \&s2min\+Inp, std\+::pair$<$ int, int $>$ \&s2max\+Inp)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a56b464cb60d108582eeae6f77f9b66e8}\label{classmutual_wind2_a56b464cb60d108582eeae6f77f9b66e8}} 
+int {\bfseries get\+Integer\+Winding\+Of\+Pair} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::pair$<$ int, int $>$ \&s1min\+Inp, std\+::pair$<$ int, int $>$ \&s1max\+Inp, std\+::pair$<$ int, int $>$ \&s2min\+Inp, std\+::pair$<$ int, int $>$ \&s2max\+Inp)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a2a09a0a17dd3ca019c3fce6d3b04b93f}\label{classmutual_wind2_a2a09a0a17dd3ca019c3fce6d3b04b93f}} 
+int {\bfseries get\+Integer\+Winding\+Of\+Pair\+Link} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, int \&s1min\+Inp, int \&s1max\+Inp, int \&s2min\+Inp, int \&s2max\+Inp)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a7ef9b8252b307e7ce69ff6f7934b97cc}\label{classmutual_wind2_a7ef9b8252b307e7ce69ff6f7934b97cc}} 
+int {\bfseries get\+Integer\+Winding\+Of\+Pair\+Link\+Testing} (\mbox{\hyperlink{classwinding_storage}{winding\+Storage}} \&w)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a0fd78e5d4af2844373cec039d98ad0fc}\label{classmutual_wind2_a0fd78e5d4af2844373cec039d98ad0fc}} 
+int {\bfseries get\+Integer\+Windings\+Star} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a34179652d79ab9ded7fc31280e900333}\label{classmutual_wind2_a34179652d79ab9ded7fc31280e900333}} 
+void {\bfseries extend\+Above\+Span} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List2, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List1, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List2)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_abc3fb8af143629d5621264eb1f8c303f}\label{classmutual_wind2_abc3fb8af143629d5621264eb1f8c303f}} 
+void {\bfseries extend\+Below\+Span} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List2, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List1, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List2)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_affc193fcbe8e3c019d54590e26c029e4}\label{classmutual_wind2_affc193fcbe8e3c019d54590e26c029e4}} 
+void {\bfseries extend\+Both\+Pos\+Neg} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List2, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List1, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List2)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_ac6733e3b2c0604273661bf2e144a9421}\label{classmutual_wind2_ac6733e3b2c0604273661bf2e144a9421}} 
+void {\bfseries extend\+Both\+Neg\+Pos} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List2, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List1, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List2)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_a007eec6c882530677e67ea4b01e263bb}\label{classmutual_wind2_a007eec6c882530677e67ea4b01e263bb}} 
+std\+::vector$<$ int $>$ {\bfseries get\+Integer\+Windings\+Star\+Gen} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_aa384ac370bb2edf5e98b9d2fd1b6d04a}\label{classmutual_wind2_aa384ac370bb2edf5e98b9d2fd1b6d04a}} 
+std\+::vector$<$ int $>$ {\bfseries get\+Integer\+Windings\+Closed} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_aced1e1902ae3d76813c79e1acbd7d351}\label{classmutual_wind2_aced1e1902ae3d76813c79e1acbd7d351}} 
+std\+::vector$<$ int $>$ {\bfseries get\+Integer\+Windings\+Star\+Gen\+Standard} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&tan\+List, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&turn\+List, std\+::vector$<$ double $>$ \&start\+Angles, std\+::vector$<$ double $>$ \&end\+Angles)
+\item 
+\mbox{\Hypertarget{classmutual_wind2_aabe8747fd067aed76b9873788faf2eb9}\label{classmutual_wind2_aabe8747fd067aed76b9873788faf2eb9}} 
+int {\bfseries get\+Winding\+Integer} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curve\+List2, std\+::vector$<$ int $>$ \&turn\+List1, std\+::vector$<$ int $>$ \&turn\+List2)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mutual\+Wind2.\+h\item 
+mutual\+Wind2.\+cpp\end{DoxyCompactItemize}

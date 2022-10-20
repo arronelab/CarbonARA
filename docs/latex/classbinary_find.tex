@@ -1,0 +1,81 @@
+\hypertarget{classbinary_find}{}\doxysection{binary\+Find Class Reference}
+\label{classbinary_find}\index{binaryFind@{binaryFind}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbinary_find_a85496d177e8d67557a857220dd71dbd6}{check\+In\+Sec}} (double lower\+Sec, double upper\+Sec, double \&zval)
+\item 
+bool \mbox{\hyperlink{classbinary_find_a3fd8d20b139e0ede69125c939b0068bf}{check\+In\+Sec\+Initial}} (double lower\+Sec, double upper\+Sec, double \&zv)
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classbinary_find_a5c638e27db48d34b5b706fdaa7338865}{get\+Containing\+Pair}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int \&lower\+Index, int \&upper\+Index, double \&zv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbinary_find_a85496d177e8d67557a857220dd71dbd6}\label{classbinary_find_a85496d177e8d67557a857220dd71dbd6}} 
+\index{binaryFind@{binaryFind}!checkInSec@{checkInSec}}
+\index{checkInSec@{checkInSec}!binaryFind@{binaryFind}}
+\doxysubsubsection{\texorpdfstring{checkInSec()}{checkInSec()}}
+{\footnotesize\ttfamily void binary\+Find\+::check\+In\+Sec (\begin{DoxyParamCaption}\item[{double}]{lower\+Sec,  }\item[{double}]{upper\+Sec,  }\item[{double \&}]{zval }\end{DoxyParamCaption})}
+
+Checks if input value lies within a given interval. Has no return value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower\+Sec} & Minimum of interval. \\
+\hline
+{\em upper\+Sec} & Maximum of interval. \\
+\hline
+{\em zval} & Input Value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbinary_find_a3fd8d20b139e0ede69125c939b0068bf}\label{classbinary_find_a3fd8d20b139e0ede69125c939b0068bf}} 
+\index{binaryFind@{binaryFind}!checkInSecInitial@{checkInSecInitial}}
+\index{checkInSecInitial@{checkInSecInitial}!binaryFind@{binaryFind}}
+\doxysubsubsection{\texorpdfstring{checkInSecInitial()}{checkInSecInitial()}}
+{\footnotesize\ttfamily bool binary\+Find\+::check\+In\+Sec\+Initial (\begin{DoxyParamCaption}\item[{double}]{lower\+Sec,  }\item[{double}]{upper\+Sec,  }\item[{double \&}]{zv }\end{DoxyParamCaption})}
+
+Checks if input value lies within a given interval. Do we need both?
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower\+Sec} & Minimum of interval. \\
+\hline
+{\em upper\+Sec} & Maximum of interval. \\
+\hline
+{\em zv} & Input Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbinary_find_a5c638e27db48d34b5b706fdaa7338865}\label{classbinary_find_a5c638e27db48d34b5b706fdaa7338865}} 
+\index{binaryFind@{binaryFind}!getContainingPair@{getContainingPair}}
+\index{getContainingPair@{getContainingPair}!binaryFind@{binaryFind}}
+\doxysubsubsection{\texorpdfstring{getContainingPair()}{getContainingPair()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ binary\+Find\+::get\+Containing\+Pair (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List,  }\item[{int \&}]{lower\+Index,  }\item[{int \&}]{upper\+Index,  }\item[{double \&}]{zv }\end{DoxyParamCaption})}
+
+Gets the pair of points whose z-\/value bounds the input value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & List of points. \\
+\hline
+{\em lower\+Index} & Index of first point. \\
+\hline
+{\em upper\+Index} & Index of last point. \\
+\hline
+{\em zv} & Input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int,int$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+binary\+Find.\+h\item 
+\mbox{\hyperlink{binary_find_8cpp}{binary\+Find.\+cpp}}\end{DoxyCompactItemize}

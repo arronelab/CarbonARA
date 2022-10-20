@@ -1,0 +1,90 @@
+\hypertarget{classoptimization_point}{}\doxysection{optimization\+Point Class Reference}
+\label{classoptimization_point}\index{optimizationPoint@{optimizationPoint}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptimization_point_a047b90da2d023033c71a550ff5c55c20}{optimization\+Point}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&kderiv\+List, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&tderiv\+List, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&Lderiv\+List)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \mbox{\hyperlink{classoptimization_point_a0a72ca1c416d3f3c73eb68032f734354}{get\+Points}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classoptimization_point_a64e1cbabbde3b7ddc453789af13d5b42}{get\+Kderivs}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classoptimization_point_a3bcf3eab806b1d7b20f1149e0bca7e0f}{get\+Tderivs}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \mbox{\hyperlink{classoptimization_point_acf2477404cfc5240265d88c83133e1a4}{get\+Lderivs}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptimization_point_a047b90da2d023033c71a550ff5c55c20}\label{classoptimization_point_a047b90da2d023033c71a550ff5c55c20}} 
+\index{optimizationPoint@{optimizationPoint}!optimizationPoint@{optimizationPoint}}
+\index{optimizationPoint@{optimizationPoint}!optimizationPoint@{optimizationPoint}}
+\doxysubsubsection{\texorpdfstring{optimizationPoint()}{optimizationPoint()}}
+{\footnotesize\ttfamily optimization\+Point\+::optimization\+Point (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{kderiv\+List,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{tderiv\+List,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{Lderiv\+List }\end{DoxyParamCaption})}
+
+Initialises a new optimization Point object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & List of points \\
+\hline
+{\em kderiv\+List} & List of curvature derivatives (?) \\
+\hline
+{\em tderiv\+List} & List of torsion derivatives (?) \\
+\hline
+{\em Lderiv\+List} & List of length derivatives (?) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptimization_point_a64e1cbabbde3b7ddc453789af13d5b42}\label{classoptimization_point_a64e1cbabbde3b7ddc453789af13d5b42}} 
+\index{optimizationPoint@{optimizationPoint}!getKderivs@{getKderivs}}
+\index{getKderivs@{getKderivs}!optimizationPoint@{optimizationPoint}}
+\doxysubsubsection{\texorpdfstring{getKderivs()}{getKderivs()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ optimization\+Point\+::get\+Kderivs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the list of curvature derivatives from the optimization point object.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector\texorpdfstring{$<$}{<}std\+::vector$<$point$>$ \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoptimization_point_acf2477404cfc5240265d88c83133e1a4}\label{classoptimization_point_acf2477404cfc5240265d88c83133e1a4}} 
+\index{optimizationPoint@{optimizationPoint}!getLderivs@{getLderivs}}
+\index{getLderivs@{getLderivs}!optimizationPoint@{optimizationPoint}}
+\doxysubsubsection{\texorpdfstring{getLderivs()}{getLderivs()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ optimization\+Point\+::get\+Lderivs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the list of length derivatives from the optimization point object.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector\texorpdfstring{$<$}{<}std\+::vector$<$point$>$ \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoptimization_point_a0a72ca1c416d3f3c73eb68032f734354}\label{classoptimization_point_a0a72ca1c416d3f3c73eb68032f734354}} 
+\index{optimizationPoint@{optimizationPoint}!getPoints@{getPoints}}
+\index{getPoints@{getPoints}!optimizationPoint@{optimizationPoint}}
+\doxysubsubsection{\texorpdfstring{getPoints()}{getPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ optimization\+Point\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the list of points from the optimization point object.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$point$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoptimization_point_a3bcf3eab806b1d7b20f1149e0bca7e0f}\label{classoptimization_point_a3bcf3eab806b1d7b20f1149e0bca7e0f}} 
+\index{optimizationPoint@{optimizationPoint}!getTderivs@{getTderivs}}
+\index{getTderivs@{getTderivs}!optimizationPoint@{optimizationPoint}}
+\doxysubsubsection{\texorpdfstring{getTderivs()}{getTderivs()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ optimization\+Point\+::get\+Tderivs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the list of torsion derivatives from the optimization point object.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector\texorpdfstring{$<$}{<}std\+::vector$<$point$>$ \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+optimization\+Point.\+h\item 
+\mbox{\hyperlink{optimization_point_8cpp}{optimization\+Point.\+cpp}}\end{DoxyCompactItemize}

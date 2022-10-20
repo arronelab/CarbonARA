@@ -1,0 +1,70 @@
+\hypertarget{classget_sections}{}\doxysection{get\+Sections Class Reference}
+\label{classget_sections}\index{getSections@{getSections}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classget_sections_ab852aa4f503a00d3f3df9b6f084ca557}{get\+Sections}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&lst)
+\item 
+void \mbox{\hyperlink{classget_sections_a90d4a5ea0d20a102925fd1d28f13f7e8}{check\+Turn}} (\mbox{\hyperlink{classpoint}{point}} \&n1, int n1pos, \mbox{\hyperlink{classpoint}{point}} \&n2, int n2pos, \mbox{\hyperlink{classpoint}{point}} \&n3, int n3pos)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classget_sections_a0d8721c7496f141626b2908786b4e1e6}{get\+List\+Turn\+Pts}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classget_sections_ab852aa4f503a00d3f3df9b6f084ca557}\label{classget_sections_ab852aa4f503a00d3f3df9b6f084ca557}} 
+\index{getSections@{getSections}!getSections@{getSections}}
+\index{getSections@{getSections}!getSections@{getSections}}
+\doxysubsubsection{\texorpdfstring{getSections()}{getSections()}}
+{\footnotesize\ttfamily get\+Sections\+::get\+Sections (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{lst }\end{DoxyParamCaption})}
+
+Initialises list
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & list \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classget_sections_a90d4a5ea0d20a102925fd1d28f13f7e8}\label{classget_sections_a90d4a5ea0d20a102925fd1d28f13f7e8}} 
+\index{getSections@{getSections}!checkTurn@{checkTurn}}
+\index{checkTurn@{checkTurn}!getSections@{getSections}}
+\doxysubsubsection{\texorpdfstring{checkTurn()}{checkTurn()}}
+{\footnotesize\ttfamily void get\+Sections\+::check\+Turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{n1,  }\item[{int}]{n1pos,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{n2,  }\item[{int}]{n2pos,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{n3,  }\item[{int}]{n3pos }\end{DoxyParamCaption})}
+
+Checks if there is a turning point between n1 and n2, if so, adds their positions to initialised list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & Point 1 \\
+\hline
+{\em n1pos} & Index of point 1 \\
+\hline
+{\em n2} & Point 2 \\
+\hline
+{\em n2pos} & Index of point 2 \\
+\hline
+{\em n3} & Unused \\
+\hline
+{\em n3pos} & Unused \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classget_sections_a0d8721c7496f141626b2908786b4e1e6}\label{classget_sections_a0d8721c7496f141626b2908786b4e1e6}} 
+\index{getSections@{getSections}!getListTurnPts@{getListTurnPts}}
+\index{getListTurnPts@{getListTurnPts}!getSections@{getSections}}
+\doxysubsubsection{\texorpdfstring{getListTurnPts()}{getListTurnPts()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ get\+Sections\+::get\+List\+Turn\+Pts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Finds all the turning points of a given list.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ List of indices of turning points of input list. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+get\+Sections.\+h\item 
+\mbox{\hyperlink{get_sections_8cpp}{get\+Sections.\+cpp}}\end{DoxyCompactItemize}

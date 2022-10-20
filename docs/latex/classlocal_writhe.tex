@@ -1,0 +1,152 @@
+\hypertarget{classlocal_writhe}{}\doxysection{local\+Writhe Class Reference}
+\label{classlocal_writhe}\index{localWrithe@{localWrithe}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlocal_writhe_afbe62696fb2e08731d358d488060e8c1}\label{classlocal_writhe_afbe62696fb2e08731d358d488060e8c1}} 
+void {\bfseries local\+Density} (\mbox{\hyperlink{classpoint}{point}} \&p1, \mbox{\hyperlink{classpoint}{point}} \&p2, \mbox{\hyperlink{classpoint}{point}} \&p3, \mbox{\hyperlink{classpoint}{point}} \&p4)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a61cdf9b990ee0cfc6da8c3c7fcc217af}\label{classlocal_writhe_a61cdf9b990ee0cfc6da8c3c7fcc217af}} 
+void {\bfseries rotate\+List\+To\+Maximum} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a165bd16ee5975e37c49f6011b191b791}\label{classlocal_writhe_a165bd16ee5975e37c49f6011b191b791}} 
+void {\bfseries deriv\+List} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a860af25c4796a2d56d02485f679a370c}\label{classlocal_writhe_a860af25c4796a2d56d02485f679a370c}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries interpolate\+Tang} (int low\+Index, double t)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_af33d7341a286222c63b31013f1dee274}\label{classlocal_writhe_af33d7341a286222c63b31013f1dee274}} 
+void {\bfseries reconstruct\+Curve} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a6e50ce43e66b8e8a68fac45a6e0a3760}\label{classlocal_writhe_a6e50ce43e66b8e8a68fac45a6e0a3760}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries interp} (\mbox{\hyperlink{classpoint}{point}} \&lower, \mbox{\hyperlink{classpoint}{point}} \&upper, double zval)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ab53c155c060e1eeb5e3f90e135c4f57e}\label{classlocal_writhe_ab53c155c060e1eeb5e3f90e135c4f57e}} 
+void {\bfseries clear\+Vecs} ()
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a853ad39cf77126a7a0f88358fd79d185}\label{classlocal_writhe_a853ad39cf77126a7a0f88358fd79d185}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries deriv\+List\+Return} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a41eb22df40d4ad6684bb461882cca322}\label{classlocal_writhe_a41eb22df40d4ad6684bb461882cca322}} 
+void {\bfseries local\+Density} (\mbox{\hyperlink{classpoint}{point}} \&tangent, \mbox{\hyperlink{classpoint}{point}} \&tderiv)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a0d2d65eedf6d425665666e4595470f1d}\label{classlocal_writhe_a0d2d65eedf6d425665666e4595470f1d}} 
+void {\bfseries add\+Interpolated\+Tan} (\mbox{\hyperlink{classpoint}{point}} \&tan1, double \&den1, \mbox{\hyperlink{classpoint}{point}} tan2, double \&den2, double \&integral)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_aea9d22efbdf385d1eee4fcb5af0173a8}\label{classlocal_writhe_aea9d22efbdf385d1eee4fcb5af0173a8}} 
+void {\bfseries add\+Interpolated\+Tan\+Local} (\mbox{\hyperlink{classpoint}{point}} \&tan1, double \&den1, \mbox{\hyperlink{classpoint}{point}} tan2, double \&den2, double \&integral)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_aa77e7784ee89dcb146e520c77a62323a}\label{classlocal_writhe_aa77e7784ee89dcb146e520c77a62323a}} 
+void {\bfseries Fill\+Density\+List} ()
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a42a57aeac03d9881a18f3353be83837f}\label{classlocal_writhe_a42a57aeac03d9881a18f3353be83837f}} 
+void {\bfseries Simpsons\+Rule} (int startval, int endval)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ad7076629d1f3fdbc429a474c179596b9}\label{classlocal_writhe_ad7076629d1f3fdbc429a474c179596b9}} 
+double {\bfseries get\+Writhe\+Pl} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list, std\+::vector$<$ int $>$ turnlist)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_abb7ccb1713ba5b26317e5cc057d466eb}\label{classlocal_writhe_abb7ccb1713ba5b26317e5cc057d466eb}} 
+void {\bfseries get\+List\+Turn\+Pts} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a8f39484a4f0367d8dcef8adf378f1151}\label{classlocal_writhe_a8f39484a4f0367d8dcef8adf378f1151}} 
+std\+::vector$<$ int $>$ {\bfseries get\+List\+Turn\+Pts\+Return} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_aab05e9b10725ba7378b9681d8af43989}\label{classlocal_writhe_aab05e9b10725ba7378b9681d8af43989}} 
+double {\bfseries angle} (double xdif, double ydif)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a42fb66701021685105d8972f0cf05838}\label{classlocal_writhe_a42fb66701021685105d8972f0cf05838}} 
+void {\bfseries check\+Turn} (\mbox{\hyperlink{classpoint}{point}} \&n1, int n1pos, \mbox{\hyperlink{classpoint}{point}} \&n2, int n2pos, std\+::vector$<$ int $>$ \&turnlist, bool \&was\+Prev)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a9bbe11c1644f7a58774f5416194fe6f3}\label{classlocal_writhe_a9bbe11c1644f7a58774f5416194fe6f3}} 
+void {\bfseries check\+Turn\+Winding} (\mbox{\hyperlink{classpoint}{point}} \&nminus, \mbox{\hyperlink{classpoint}{point}} \&nplus, \mbox{\hyperlink{classpoint}{point}} \&ncurr, int \&n, std\+::vector$<$ int $>$ \&turnlist)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a6e11127daa33ce3e8a0730e16bf337e9}\label{classlocal_writhe_a6e11127daa33ce3e8a0730e16bf337e9}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries make\+Turn\+For\+Non\+Local} ()
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a0bdfb5a22dfe2ddbdb480d68a735bd6d}\label{classlocal_writhe_a0bdfb5a22dfe2ddbdb480d68a735bd6d}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries make\+Turn\+For\+Non\+Local} (std\+::vector$<$ int $>$ \&turn\+List\+In)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ac9dc251bc8f63316a043f6e0ad4bb6b5}\label{classlocal_writhe_ac9dc251bc8f63316a043f6e0ad4bb6b5}} 
+double {\bfseries get\+Writhe} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_af6a09f36b7e4288b77e91d5f272d2b05}\label{classlocal_writhe_af6a09f36b7e4288b77e91d5f272d2b05}} 
+double {\bfseries get\+Writhe\+Local} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a27ea939aef9994862f93806f38179264}\label{classlocal_writhe_a27ea939aef9994862f93806f38179264}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Writhe\+Gen} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ac3b86c57bb83764d618bbdfd1f543e68}\label{classlocal_writhe_ac3b86c57bb83764d618bbdfd1f543e68}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Writhe\+Gen\+Smooth} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_aa0ed70da3bd4d1d9e661d7d8a933db87}\label{classlocal_writhe_aa0ed70da3bd4d1d9e661d7d8a933db87}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Writhe\+Gen\+Closed} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ab4908b0d68b5d20990068b54c9492b3c}\label{classlocal_writhe_ab4908b0d68b5d20990068b54c9492b3c}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Writhe\+Gen\+Standard} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a9b6e244df1709ff1abf53c934c0cacdd}\label{classlocal_writhe_a9b6e244df1709ff1abf53c934c0cacdd}} 
+std\+::vector$<$ double $>$ {\bfseries get\+Writhe\+Gen\+Standard\+Smooth} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a13baf1826af1ca2b30bcbcd1714b0347}\label{classlocal_writhe_a13baf1826af1ca2b30bcbcd1714b0347}} 
+double {\bfseries get\+End\+Angles} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curvelist1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&curvelist2, std\+::vector$<$ int $>$ \&turnlist1, std\+::vector$<$ int $>$ \&turnlist2)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_af77aa6940eb12399fec4a0a19b576d22}\label{classlocal_writhe_af77aa6940eb12399fec4a0a19b576d22}} 
+double {\bfseries get\+Winding} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list2)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ad745312fb7af781d3990b2fd73f3c332}\label{classlocal_writhe_ad745312fb7af781d3990b2fd73f3c332}} 
+double {\bfseries get\+Winding\+Smooth} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&list2)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a7cb7198affb478227292e912f9830e0f}\label{classlocal_writhe_a7cb7198affb478227292e912f9830e0f}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries dbold} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a6c43cfff206ef015520c7dd47185e65b}\label{classlocal_writhe_a6c43cfff206ef015520c7dd47185e65b}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries dbold\+Lk} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List2, int size1, int size2, int i, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a8817fb9638f8b63310d1bc0a4f2d9ca1}\label{classlocal_writhe_a8817fb9638f8b63310d1bc0a4f2d9ca1}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries te} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_aa46da07ac6eedc81147d68690c417012}\label{classlocal_writhe_aa46da07ac6eedc81147d68690c417012}} 
+double {\bfseries mu} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int k, int m, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ab982b378d245973139eb49bc2e63803a}\label{classlocal_writhe_ab982b378d245973139eb49bc2e63803a}} 
+double {\bfseries wij} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a4ae5c86af3a96fdad30cd655fccdc74c}\label{classlocal_writhe_a4ae5c86af3a96fdad30cd655fccdc74c}} 
+double {\bfseries lkij} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List2, int size, int size2, int i, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a95042bd3577fa0195508156447cea78d}\label{classlocal_writhe_a95042bd3577fa0195508156447cea78d}} 
+double {\bfseries acosC} (double temp)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ab4c621f3b32f3b14e612bfca5154ee68}\label{classlocal_writhe_ab4c621f3b32f3b14e612bfca5154ee68}} 
+double {\bfseries DI} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a471569545f75ac0e84560d10b1673820}\label{classlocal_writhe_a471569545f75ac0e84560d10b1673820}} 
+double {\bfseries DIAbs} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a032ac07843298f7e122d26161af9a821}\label{classlocal_writhe_a032ac07843298f7e122d26161af9a821}} 
+double {\bfseries DIClosed} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ae147c043f253d11adaf4e0d18ea9ddf7}\label{classlocal_writhe_ae147c043f253d11adaf4e0d18ea9ddf7}} 
+double {\bfseries mu\+Link} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List2, int size, int size2, int i, int j)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_af0092fe49d5b4a1c2852ffacffc1a932}\label{classlocal_writhe_af0092fe49d5b4a1c2852ffacffc1a932}} 
+double {\bfseries DIClosed\+Lk} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List2)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a79382f3c3c4836fb4b1b0eb322e41201}\label{classlocal_writhe_a79382f3c3c4836fb4b1b0eb322e41201}} 
+std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ int, int $>$, double $>$ $>$ {\bfseries DIDown\+Sample} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&point\+List\+In)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_a461d9568f6e7b67ef222f91870dc0361}\label{classlocal_writhe_a461d9568f6e7b67ef222f91870dc0361}} 
+std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ int, int $>$, double $>$ $>$ {\bfseries DIDown\+Sample\+Abs} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&point\+List\+In)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ac4ed211f2a1a0b4340812f380260ece8}\label{classlocal_writhe_ac4ed211f2a1a0b4340812f380260ece8}} 
+void {\bfseries DIDown\+Sample\+Write} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&point\+List\+In, const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classlocal_writhe_ab4cb350ad5e431aba1e97808bc222941}\label{classlocal_writhe_ab4cb350ad5e431aba1e97808bc222941}} 
+void {\bfseries DIDown\+Sample\+Abs\+Write} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&point\+List\+In, const char $\ast$filename)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+local\+Writhe.\+h\item 
+local\+Writhe.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+\hypertarget{get_sections_8h_source}{}\doxysection{get\+Sections.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GET\_SECTIONS\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GET\_SECTIONS\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}point.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classget_sections}{getSections}}\{}
+\DoxyCodeLine{19       \textcolor{keyword}{public}:}
+\DoxyCodeLine{25          \mbox{\hyperlink{classget_sections}{getSections}}(std::vector<point>\& lst);}
+\DoxyCodeLine{36          \textcolor{keywordtype}{void} \mbox{\hyperlink{classget_sections_a90d4a5ea0d20a102925fd1d28f13f7e8}{checkTurn}}(\mbox{\hyperlink{classpoint}{point}}\& n1,\textcolor{keywordtype}{int} n1pos,\mbox{\hyperlink{classpoint}{point}}\& n2,\textcolor{keywordtype}{int} n2pos,\mbox{\hyperlink{classpoint}{point}}\& n3,\textcolor{keywordtype}{int} n3pos);}
+\DoxyCodeLine{42          std::vector<int> \mbox{\hyperlink{classget_sections_a0d8721c7496f141626b2908786b4e1e6}{getListTurnPts}}();}
+\DoxyCodeLine{43       \textcolor{keyword}{private}: }
+\DoxyCodeLine{44          std::vector<point> list;}
+\DoxyCodeLine{45          \textcolor{keywordtype}{double} dif1,dif2,prod;}
+\DoxyCodeLine{46          std::vector<int> listSections \textcolor{comment}{/*think this needs to be intialised as empty*/};}
+\DoxyCodeLine{47       \};}
+\DoxyCodeLine{48       }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

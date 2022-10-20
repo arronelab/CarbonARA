@@ -1,0 +1,51 @@
+\hypertarget{point_8h_source}{}\doxysection{point.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef PNT\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define PNT\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classpoint}{point}}\{}
+\DoxyCodeLine{25             \textcolor{keyword}{public}:}
+\DoxyCodeLine{33             \mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}}(\textcolor{keywordtype}{double} x,\textcolor{keywordtype}{double} y,\textcolor{keywordtype}{double} z);}
+\DoxyCodeLine{37             \mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}}();}
+\DoxyCodeLine{41             \mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}}(std::string\& triplet);}
+\DoxyCodeLine{47             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a599c4e97b9b8a84df3159d859d3a8c3c}{getX}}();}
+\DoxyCodeLine{53             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a02851756acd156f6bc0288d03257dcfd}{getY}}();}
+\DoxyCodeLine{59             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a50311b12deadb0cb568ebbb6a4753f3d}{getZ}}();}
+\DoxyCodeLine{65             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a27a5d4c7962be3ec96afcfdd2893e424}{setX}}(\textcolor{keywordtype}{double} xv);}
+\DoxyCodeLine{71             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a94758a74d3a63829fbedef9bc68f2e10}{setY}}(\textcolor{keywordtype}{double} yv);}
+\DoxyCodeLine{77             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a5e7ee14742a018d71fbd0debae1b2e6d}{setZ}}(\textcolor{keywordtype}{double} zv);}
+\DoxyCodeLine{83             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a4d83f0c3804d60a0193075176a1f1d8c}{length}}();}
+\DoxyCodeLine{90             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_ad74d9ccd6b19ecb39b44845ab2e7c542}{sum}}(\mbox{\hyperlink{classpoint}{point}}\& b);}
+\DoxyCodeLine{97             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_ab64269a43726581bbf1e4ea0a7dbff4d}{dif}}(\mbox{\hyperlink{classpoint}{point}}\& b);}
+\DoxyCodeLine{104             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a68b5f93d3684f57479269543518a164e}{cross}}(\mbox{\hyperlink{classpoint}{point}}\& p2);}
+\DoxyCodeLine{113             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a2350f9ad078a147242e2cb7627fc2cca}{scalarTriple}}(\mbox{\hyperlink{classpoint}{point}}\& p1,\mbox{\hyperlink{classpoint}{point}}\& p2,\mbox{\hyperlink{classpoint}{point}}\& p3);}
+\DoxyCodeLine{121             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classpoint_aab2d4b2123b2f74a6068ef6855753ab0}{checkEqual}}(\mbox{\hyperlink{classpoint}{point}}\& p2);}
+\DoxyCodeLine{127             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a713aceed43c81fbac66344c82a7acf3d}{scalarMult}}(\textcolor{keywordtype}{double} a);}
+\DoxyCodeLine{135             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a84770146f102bcc693dceb1bfc3e786f}{pairDist}}(\mbox{\hyperlink{classpoint}{point}} \&p);}
+\DoxyCodeLine{139             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a9e13e4855b8d89c50e2535ece3150b03}{normalise}}();}
+\DoxyCodeLine{144             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a7126a0c2931561eb7506fa99d3f3f8a9}{znormalise}}();}
+\DoxyCodeLine{149             \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_aa078b15c3fdcccc3093c1fb1afa9be10}{printPoint}}();}
+\DoxyCodeLine{156             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_aa96f1f1fc8af381ed715033982e8a4b2}{dotprod}}(\mbox{\hyperlink{classpoint}{point}}\& p2);}
+\DoxyCodeLine{163             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classpoint_adf950fccc0c4db363a0f889112df9f7a}{isNonzero}}();}
+\DoxyCodeLine{171             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_add2e6b129927dba1767c2eed1c8c9e15}{operator+}}(\mbox{\hyperlink{classpoint}{point}} p);}
+\DoxyCodeLine{179             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a399a9038e7715a8036dbe925e2794eda}{operator-\/}}(\mbox{\hyperlink{classpoint}{point}} p);}
+\DoxyCodeLine{187             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a3178b9728bfde69888714272f4b9b0a0}{operator*}}(\textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{194             \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classpoint_a50404e35b2fd8bd2dcda07cbb85c4856}{operator/}}(\textcolor{keywordtype}{double} d);}
+\DoxyCodeLine{201             \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_ac277834d378d603ab861622a3c1e554f}{eDist}}(\mbox{\hyperlink{classpoint}{point}} \&p2);}
+\DoxyCodeLine{202       \textcolor{keyword}{private}:}
+\DoxyCodeLine{203             \textcolor{keywordtype}{double} X,Y,Z,norm;}
+\DoxyCodeLine{204 \};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

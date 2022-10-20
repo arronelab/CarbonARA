@@ -1,0 +1,139 @@
+\hypertarget{classmolecule_fit_and_state}{}\doxysection{molecule\+Fit\+And\+State Class Reference}
+\label{classmolecule_fit_and_state}\index{moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_ad6bf237644d5b70bc898ccc10b2bc0d2}\label{classmolecule_fit_and_state_ad6bf237644d5b70bc898ccc10b2bc0d2}} 
+{\bfseries molecule\+Fit\+And\+State} (std\+::vector$<$ \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} $>$ \&mol, double \&Rin\+Sv, double \&Rout\+Sv, double \&RShell\+Sv, int \&ntrivs\+Sv, double \&closest\+Approach\+Dist\+In, int \&solvents\+Per\+Link\+In, double \&rmin\+In, double \&rmax\+In, double \&lmin\+In)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} $>$ \mbox{\hyperlink{classmolecule_fit_and_state_acfef1fe90077162b3f2b05fc9d60d2af}{get\+Molecule}} ()
+\item 
+void \mbox{\hyperlink{classmolecule_fit_and_state_a1159618e1f44e4fc08134dc86fffc62a}{update\+Molecule}} (std\+::vector$<$ \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} $>$ \&mol\+New)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_a4a047b0c5df95bcdc4273181d792457f}\label{classmolecule_fit_and_state_a4a047b0c5df95bcdc4273181d792457f}} 
+double {\bfseries calculate\+Scattering} (\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&ed, double \&kmin, double \&kmax, std\+::vector$<$ double $>$ \&mixture\+Vals)
+\item 
+void \mbox{\hyperlink{classmolecule_fit_and_state_a6fb65e1f652673dfa6eb07653695caee}{write\+Scattering\+To\+File}} (\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&ed, double \&kmin, double \&kmax, const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_a15c7f099e7bf5cfd92dcd4cea609d8b3}\label{classmolecule_fit_and_state_a15c7f099e7bf5cfd92dcd4cea609d8b3}} 
+double {\bfseries get\+Overlap\+Penalty} (double \&closest\+Approach\+Dist, std\+::vector$<$ double $>$ \&overlap\+Dists)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_afe13e7d80dbc4faf424dd46ec6b614d4}\label{classmolecule_fit_and_state_afe13e7d80dbc4faf424dd46ec6b614d4}} 
+double {\bfseries apply\+Overlap\+Penalty} ()
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_a21c9f8aa48148f27707c80b679627d58}\label{classmolecule_fit_and_state_a21c9f8aa48148f27707c80b679627d58}} 
+double {\bfseries apply\+Distance\+Constraints} ()
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_afd05cfffb1d289781b3ad66a921bb39e}\label{classmolecule_fit_and_state_afd05cfffb1d289781b3ad66a921bb39e}} 
+double {\bfseries apply\+Distance\+Constraints} (\mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} \&mol\+New, int \&i)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_ae742d8056ea58334eabd3a3664496843}\label{classmolecule_fit_and_state_ae742d8056ea58334eabd3a3664496843}} 
+void {\bfseries calculate\+Molecule\+Distances} (\mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} \&mol\+New, int \&i)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_a06b49bbcac87543c893e1ed5e686e2f8}\label{classmolecule_fit_and_state_a06b49bbcac87543c893e1ed5e686e2f8}} 
+void {\bfseries calcuate\+Hydration\+Distances} (\mbox{\hyperlink{classhydration_shell_minimal}{hydration\+Shell\+Minimal}} \&hs, int \&i)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_af265eafbcdca2c0d296b81b58482066d}\label{classmolecule_fit_and_state_af265eafbcdca2c0d296b81b58482066d}} 
+void {\bfseries apply\+Writhe\+Constraint} ()
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_a0329acfd78679b17359fc50463db904f}\label{classmolecule_fit_and_state_a0329acfd78679b17359fc50463db904f}} 
+double {\bfseries get\+Fit} ()
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_acc6a9f538a8c4930b46bfe480bcc9811}\label{classmolecule_fit_and_state_acc6a9f538a8c4930b46bfe480bcc9811}} 
+void {\bfseries alter\+Writhe\+Set} (\mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} \&mol\+New, int \&i)
+\item 
+double \mbox{\hyperlink{classmolecule_fit_and_state_a3f351e3fadb002fe42f7091c2b6cd9b3}{get\+Overall\+Fit}} (\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&ed, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&mixture\+List, std\+::vector$<$ double $>$ \&hel\+Rat\+List, double \&kmin, double \&kmax)
+\item 
+\mbox{\Hypertarget{classmolecule_fit_and_state_acdcbcdc433dff20d23f00d3691f2be31}\label{classmolecule_fit_and_state_acdcbcdc433dff20d23f00d3691f2be31}} 
+double {\bfseries get\+Overall\+Fit} (\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&ed, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&mixture\+List, std\+::vector$<$ double $>$ \&hel\+Rat\+List, \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} \&mol\+New, double \&kmin, double \&kmax, int \&i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmolecule_fit_and_state_aef7dba39a596ae64318c3df0fadd8544}{curr\+Fit}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmolecule_fit_and_state_acfef1fe90077162b3f2b05fc9d60d2af}\label{classmolecule_fit_and_state_acfef1fe90077162b3f2b05fc9d60d2af}} 
+\index{moleculeFitAndState@{moleculeFitAndState}!getMolecule@{getMolecule}}
+\index{getMolecule@{getMolecule}!moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsubsection{\texorpdfstring{getMolecule()}{getMolecule()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} $>$ molecule\+Fit\+And\+State\+::get\+Molecule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calls on the mol class from \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}}.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$ktl\+Molecule$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmolecule_fit_and_state_a3f351e3fadb002fe42f7091c2b6cd9b3}\label{classmolecule_fit_and_state_a3f351e3fadb002fe42f7091c2b6cd9b3}} 
+\index{moleculeFitAndState@{moleculeFitAndState}!getOverallFit@{getOverallFit}}
+\index{getOverallFit@{getOverallFit}!moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsubsection{\texorpdfstring{getOverallFit()}{getOverallFit()}}
+{\footnotesize\ttfamily double molecule\+Fit\+And\+State\+::get\+Overall\+Fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&}]{ed,  }\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{mixture\+List,  }\item[{std\+::vector$<$ double $>$ \&}]{hel\+Rat\+List,  }\item[{double \&}]{kmin,  }\item[{double \&}]{kmax }\end{DoxyParamCaption})}
+
+Returns the goodness of fit for the current molecule, taking into account\+: scattering data a strict overlap penalty an optional contact distance constraint penalty a topological penalty which ensures the protein remains realistically entangled
+
+
+\begin{DoxyParams}{Parameters}
+{\em ed} & Inherits the \mbox{\hyperlink{classexperimental_data}{experimental\+Data}} class, which handles scattering calculations. \\
+\hline
+{\em mixture\+List} & Describes the relative ratios of monomer to multimer in the solution. If just looking at a monomer, will be simply 1. \\
+\hline
+{\em hel\+Rat\+List} & No idea \\
+\hline
+{\em kmin} & Minimum q value of the scattering data. \\
+\hline
+{\em kmax} & Maximimum q value of the scattering data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmolecule_fit_and_state_a1159618e1f44e4fc08134dc86fffc62a}\label{classmolecule_fit_and_state_a1159618e1f44e4fc08134dc86fffc62a}} 
+\index{moleculeFitAndState@{moleculeFitAndState}!updateMolecule@{updateMolecule}}
+\index{updateMolecule@{updateMolecule}!moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsubsection{\texorpdfstring{updateMolecule()}{updateMolecule()}}
+{\footnotesize\ttfamily void molecule\+Fit\+And\+State\+::update\+Molecule (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}} $>$ \&}]{mol\+New }\end{DoxyParamCaption})}
+
+Updates the molecule to the current best fit, via \mbox{\hyperlink{classktl_molecule}{ktl\+Molecule}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mol\+New} & The current best fit molecule. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmolecule_fit_and_state_a6fb65e1f652673dfa6eb07653695caee}\label{classmolecule_fit_and_state_a6fb65e1f652673dfa6eb07653695caee}} 
+\index{moleculeFitAndState@{moleculeFitAndState}!writeScatteringToFile@{writeScatteringToFile}}
+\index{writeScatteringToFile@{writeScatteringToFile}!moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsubsection{\texorpdfstring{writeScatteringToFile()}{writeScatteringToFile()}}
+{\footnotesize\ttfamily void molecule\+Fit\+And\+State\+::write\+Scattering\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexperimental_data}{experimental\+Data}} \&}]{ed,  }\item[{double \&}]{kmin,  }\item[{double \&}]{kmax,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Writes the scattering profile to given output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ed} & Inherits the \mbox{\hyperlink{classexperimental_data}{experimental\+Data}} class, which handles scattering calculations. \\
+\hline
+{\em kmin} & Minimum q value of the scattering data. \\
+\hline
+{\em kmax} & Maximimum q value of the scattering data. \\
+\hline
+{\em filename} & Location of output file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmolecule_fit_and_state_aef7dba39a596ae64318c3df0fadd8544}\label{classmolecule_fit_and_state_aef7dba39a596ae64318c3df0fadd8544}} 
+\index{moleculeFitAndState@{moleculeFitAndState}!currFit@{currFit}}
+\index{currFit@{currFit}!moleculeFitAndState@{moleculeFitAndState}}
+\doxysubsubsection{\texorpdfstring{currFit}{currFit}}
+{\footnotesize\ttfamily double molecule\+Fit\+And\+State\+::curr\+Fit}
+
+Tracks the current fit to the scattering data 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+molecule\+Fit\+And\+State.\+h\item 
+molecule\+Fit\+And\+State.\+cpp\end{DoxyCompactItemize}
