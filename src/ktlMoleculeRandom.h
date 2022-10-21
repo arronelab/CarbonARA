@@ -37,12 +37,53 @@
 class ktlMolecule{
 public:
   ktlMolecule();
-  //ktlMolecule(ktlMolecule &ktlm);
+  /**
+   * Initialises an instance of the randomMolGen object with given parameters.
+   * 
+   * @param rminIn Minimum of interval (used in a Uniform Real Distribution)
+   * @param rmaxIn Maximum of interval (used in a Uniform Real Distribution)
+   * @param lminIn Minimum allowed distance of non neighbouring cAlphas.
+   */
   void setParams(double &rminIn,double &rmaxIn,double &lminIn);
+  /**
+   * Processes molecule file. Hard-coded to Chris' file system so can't be in use anymore?
+   * 
+   * @param filename Molecule filename
+   * @param chainNo Chain Number
+   * @param isRand Not visibly used in the function
+   */
   void readInMol(const char* filename,int chainNo,int isRand);
+  /**
+   * Processes Molecule file. Not hard-coded, but I think readInCoordinates is used instead anyway now.
+   * 
+   * @param filename File location
+   */
   void readInMolGen(const char* filename);
+  /**
+   * Hard-coded, again I believe supersede by readInCoordinates
+   * 
+   * @param filename Molecule Filename
+   * @param chainNo Chain Number
+   * @param isRand Not visibly used
+   */
   void readInMolWithBackbone(const char* filename,int chainNo,int isRand);
+  /**
+   * Hard-coded, again I believe supersede by readInCoordinates
+   * 
+   * @param filename Molecule Filename
+   * @param chainNo Chain Number
+   * @param isRand Not visibly used
+   * @param LenJFileName Lennnard Jones filename
+   */
   void readInMolWithBackboneLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
+    /**
+   * Hard-coded, again I believe supersede by readInCoordinates
+   * 
+   * @param filename Molecule Filename
+   * @param chainNo Chain Number
+   * @param isRand Not visibly used
+   * @param LenJFileName Lennnard Jones filename
+   */
   void readInMolWithSequenceLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
   std::vector<int> getUnitNos();
 /**
@@ -60,7 +101,18 @@ public:
  * 
  */
   std::vector<std::vector<point> > getBinormals();
+/**
+ * Returns coords. No idea where it gets them from
+ * 
+ * @return std::vector<std::vector<point> > 
+ */
   std::vector<std::vector<point> > getCoordinates();
+/**
+ * Returns coords of a specific section i. Again no idea where it knows coords from.
+ * 
+ * @param i Indedx of subection
+ * @return std::vector<point> 
+ */
   std::vector<point> getCoordinatesSection(int i);
 /**
 * Returns Size of Secondary Structure Element
@@ -74,9 +126,12 @@ public:
 *@param sec Index of Secondary Structure Element (Counting from 1)
 */ 
   std::vector<std::vector<point> > getSubsecCoordinates(int &sec);
+  /**
+   * No idea what it does or why
+   * 
+   * @param sec Index of subsection
+   */
   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(int &sec);
-  //std::vector<point> getEulerAngles();
-  std::vector<double> getDistChanges();
 /**
  * Assume no longer used, relates to continuous pov
  * 
@@ -87,7 +142,11 @@ public:
  * 
  */
   double getTorsionJoined(int index);
-  double getLengthJoined(int index);
+  /**
+   * Gets length of subsection
+   * 
+   * @param index Index of subsection
+   */
   int getUnitNo(int index);
   double maxNeighbourDistSec(int &sec);
 /**

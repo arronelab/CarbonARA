@@ -76,18 +76,12 @@ double ktlMolecule::maxNeighbourDistSec(int &sec){
       if(d>dmax){
 	dmax=d;
 	if(d>4.0){
-	  //std::cout<<i<<" "<<j<<"\n";
 	}
       }
     }
   }
   return dmax;
 }
-
-/*std::vector<double> ktlMolecule::getDistChanges(){
-  return distChanges;
-  }*/
-
 
 double ktlMolecule::getCurvatureJoined(int index){
   double kapval;
@@ -164,28 +158,9 @@ std::string ktlMolecule::getType(int &chainNo,int &index){
   return nameSizeList[fullIndex+index].first;
 }
 
-
-/*double ktlMolecule::getDistChange(int index){
-  return distChanges[index];
-  }*/
-
 double ktlMolecule::getMaxDistChange(){
   return maxDistChange;
 }
-
-/*double ktlMolecule::getMaxScatLength(){
-  double maxLen =0.0;
-  double len=0.0;
-  for(int i=0;i<coords.size();i++){
-    for(int j=i+1;j<coords.size();j++){
-      len = coords[i].eDist(coords[j]);
-      if(len>maxLen){
-        maxLen = len;
-      }
-    }
-  }
-  return 2.0*maxLen;
-  }*/
 
 int ktlMolecule::noSecSize(){
   return coords.size();
