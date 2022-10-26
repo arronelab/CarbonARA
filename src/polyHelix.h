@@ -3,11 +3,12 @@
 
 #include <cmath>
 #include <exception>
-#include "optimizationPoint.h"
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
 #include <string.h>
+#include "point.h"
+#include <vector>
 
 class polyHelix{
 public : 
@@ -40,7 +41,7 @@ public :
   std::vector<point> discretisePolyHelix(int npts);
   std::vector<point> discretisePolyHelixList(std::vector<double>& parameterList);
   std::vector<point> discretisePolyHelixListGen();
-  optimizationPoint discretisePolyHelixAndDerivatives(int npts);
+  //optimizationPoint discretisePolyHelixAndDerivatives(int npts);
   void writeCurrentHelix(int &open,const char* filename);
   void writeCurrentHelixDeriv(const char* filename);
 private:

@@ -3,7 +3,7 @@
 
 #include "ktlMoleculeRandom.h"
 #include "hydrationShellRandom.h"
-#include "localWrithe.h"
+#include "writhe.h"
 #include "experimentalData.h"
 
 class moleculeFitAndState{

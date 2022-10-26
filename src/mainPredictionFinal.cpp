@@ -2,7 +2,7 @@
 #include "hydrationShellRandom.h"
 #include "experimentalData.h"
 #include <string.h>
-#include "localWrithe.h"
+#include "writhe.h"
 #include "moleculeFitAndState.h"
 
 
@@ -41,17 +41,11 @@ bool checkTransition(double &chiSqVal,double &chiSqCurr,double &uniformProb,int 
   }else{
     annealProb = std::exp(-(chiSqVal-chiSqCurr)/tempFrac);
   }
-  //std::cout<<index<<" "<<maxSteps<<" "<<chiSqVal<<" "<<chiSqCurr<<" "<<annealProb<<" "<<uniformProb<<"\n";
   if(annealProb>uniformProb){
     return true;
   }else{
     return false;
   }
-  /* if(chiSqVal<chiSqCurr){
-    return true;
-  }else{
-    return false;
-    }*/
 }
 
 void sortVec(std::vector<moleculeFitAndState> &mfs){
@@ -96,7 +90,6 @@ int main( int argc, const char* argv[] )
     ktlMolecule molTmp;
     int ind1=i+1;
     ss<<ind1;
-    std::cout<<ind1<<"\n";
     const char* str = ss.str().c_str();
     char sequenceLoc[100];
     strcpy(sequenceLoc,argv[2]);
@@ -113,7 +106,6 @@ int main( int argc, const char* argv[] )
     strcat(coordinateLoc,".dat");
     molTmp.readInCoordinates(coordinateLoc);
     // fine the hydrophobic residues
-    molTmp.getHydrophobicResidues();
     mol.push_back(molTmp);
   }
 
