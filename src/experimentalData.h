@@ -1,14 +1,3 @@
-/**
- * @file experimentalData.cpp
- *
- * @brief Scattering Data Class: Reads in SAXs data, computes scattering profile for given curves, writes scattering to file.
- * @ingroup Generation
- *
- *
- * @author Chris Prior
- * Contact: christopher.prior@durham.ac.uk
- *
- */
 #ifndef EXP_DAT
 #define EXP_DAT
 

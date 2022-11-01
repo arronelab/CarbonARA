@@ -39,26 +39,9 @@ public:
   ktlMolecule();
   //ktlMolecule(ktlMolecule &ktlm);
   void setParams(double &rminIn,double &rmaxIn,double &lminIn);
-  void readInMol(const char* filename,int chainNo,int isRand);
-  void readInMolGen(const char* filename);
-  void readInMolWithBackbone(const char* filename,int chainNo,int isRand);
-  void readInMolWithBackboneLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
-  void readInMolWithSequenceLenJ(const char* filename,int chainNo,int isRand,const char* LenJFileName);
   std::vector<int> getUnitNos();
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   std::vector<std::vector<point> > getTangents();
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   std::vector<std::vector<point> > getNormals();
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   std::vector<std::vector<point> > getBinormals();
   std::vector<std::vector<point> > getCoordinates();
   std::vector<point> getCoordinatesSection(int i);
@@ -68,48 +51,22 @@ public:
 *@param sec Index of Secondary Structure Element (Counting from 1)
 */ 
   int getSubsecSize(int sec);
-/**
-* Returns Coordinates of Secondary Structure Element
-*
-*@param sec Index of Secondary Structure Element (Counting from 1)
-*/ 
   std::vector<std::vector<point> > getSubsecCoordinates(int &sec);
   std::vector<std::pair<std::string,int> > getNameSizeListOfSection(int &sec);
   //std::vector<point> getEulerAngles();
   std::vector<double> getDistChanges();
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   double getCurvatureJoined(int index);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   double getTorsionJoined(int index);
   double getLengthJoined(int index);
   int getUnitNo(int index);
   double maxNeighbourDistSec(int &sec);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   point getTangent(int mindex,int subindex);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   point getNormal(int mindex,int subindex);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   point getBinormal(int mindex,int subindex);
   point getCoordinate(int mindex,int subindex);
   double getAlbeadJoined(int index);
   std::string getType(int &index);
   std::string getType(int &chainNo,int &index);
-  //double getDistChange(int index);
   double getMaxDistChange();
   std::pair<double,double> getMaxPossibleLength();
   int molSize();
@@ -118,17 +75,7 @@ public:
 */
   int noChains();
   int noSecSize();
-/**
- * Returns the number of residues in the chain.
- */
   int getNoAminos();
-  void createSyntheticMolecule(int nLinks);
-  void readInFit(const char* filename,const char* fieldname);
-  void readInMolNmer(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin);
-  void readInMolNmerAndCoordinates(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin);
-  void readInMolNmerWithBackbone(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin);
-  void readInMolNmerWithBackboneLenJ(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin,const char* filenameLenJ);
-  void readInMolNmerWithSequenceLenJ(const char* filename,std::vector<int> &molIndicies,int isRand,double &rmin,double &rmax,double &lmin,const char* filenameLenJ);
   /** 
 * Processes Sequence File
 * 
@@ -151,98 +98,31 @@ public:
 *@param filename Location of Coordinates file
 */
   void readInCoordinates(const char* filename);
-  void readInSequenceWBackbone(const char* filename,int chainNo,const char* backbonename);
-  void readInMolNmerSequenceWBackbone(const char* filename,const char* backboneName,std::vector<int> &molIndicies,double &rmin,double &rmax,double &lmin);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
-  point binorm(point &T1,point &T2);
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
-  point parallelTransport(point &tan1,point &tan2,point &norm1);
-  /**
- * Assume no longer used, relates to continuous pov
- * 
- */
-  std::vector<std::vector<point> > updateFrame(std::vector<point> &section,point &tangent,point &normal,point &binormal);
   /**
 * Finds Hydrophobic Residues
 *
-* Stores the index of all Hydrophobic Residues (here Amino Acid Letter Code: A,I,L,M,F,V,P,G)
+* Stores the index of all Hydrophobic Residues (Amino Acids: A,I,L,M,F,V,P,G)
 */
-  void getHydrophobicResidues();
-/**
- * Checks for the average distance between a hydrophobic residue and solvent molceules (within some cut off distance)
- * 
- * @param solventList List of coordinates of all solvent molecules.
- * @param maxSolDist Cut off distance to check for solvent molecules. 
- */
   std::vector<double> getHydrophobicDistance(std::vector<std::vector<point> > &solventList,double &maxSolDist);
-/**
- * Assume no longer used, specific to coiled coil example from paper
- * 
- */
   void getCoiledCoilResidues();
-/**
- * Returns indices of positively charged residues (here Amino Acid Letter Code: K, Y, R)
- * 
- */
   void getPositiveResidues();
-/**
- * Returns indices of negatively charged residues (here Amino Acid Letter Code: D, E)
- * 
- */
   void getNegativeResidues();
-/**
- * Returns indices of polar residues (here Amino Acid Letter Code: Q, N, H, S, T, Y, C)
- * 
- */
   void getPolarResidues();
-/**
- * Assume no longer used, specific to coiled coil example from paper
- * 
- */
   double coiledCoilPotential();
-/**
- * Assume no longer used, specific to coiled coil example from paper
- * 
- */
   double coiledCoilPotentialBetween(int &secNo);
-/**
- * Assume no longer used, specific to coiled coil example from paper
- * 
- */
   double coiledCoilPotentialBetween();
-  double getGlobalRadiusOfCurvature();
-  double getGlobalRadiusOfCurvatureWithinSec(int &secNo,int &NoNeighbour);
-  double getGlobalRadiusOfCurvatureBetweenSec(int &NoNeighbour);
   point getCentreOfMass(std::vector<std::vector<point> > &cdSet);
   std::vector<int> checkOverlap(std::vector<std::vector<point> > &cdsIN);
   std::vector<double> checkOverlapWithRad(double &wRad,int &sec);
   std::vector<double> checkOverlapWithRad(double &wRad);
   std::vector<double> getDistSet();
   double compareDistances(std::vector<std::vector<point> > &coords2);
-/**
-*
-*
-*
-*/
   bool checkCalphas(std::vector<std::vector<point> > &coordsIn);
   bool checkCalphas();
   bool checkCalphas(int &index);
   int getRandomMolecule();
-  void getRandomMoleculeAllowOverlap();
   int getRandomMoleculeReset();
-  void getRandomMoleculeAllowOverlapReset();
-  void removeOverlap();
   void resetRandomMolecule();
-/**
- * Assume no longer used, relates to continuous pov
- * 
- */
   void getFrameForBackbone();
 
 /** 
@@ -257,7 +137,7 @@ public:
 
   void changeMoleculeSet(std::vector<int> &indicies);
 /** 
-* Changes single secondary structure element
+* Changes singe secondary structure element
 * 
 * Some description of how that is done...
 *
@@ -269,13 +149,9 @@ public:
   void changeMoleculeSetMulti(std::vector<int>  &indicies,int sec);
   void changeMoleculeMultiRotate(double &angle,point &k,int secIn,point &transVec);
   void replicateMolecule(int &noReplications); 
-  void changeMoleculeLocal(int &index,double variationSize);
-  void changeMoleculeLocalSet(std::vector<int> &indicies,double variationSize);
   void changeMoleculeSingle(int &index,std::vector<std::vector<point> > &cdsIn,std::vector<std::pair<std::string,int> > &nameSizeSubList);
   void rotation3D(point &p,point &centre,point &k,double &cosangle,double &sinangle);
   void rotateSection(std::vector<std::vector<point> >  &section,point &centre,point &k,double &angle,point &transVec);
-  bool checkOverlapSbond(double &minDist);
-  void changeMoleculeSingleCheckOverlap();
 /**
 * Outputs molecule as a coordinate file
 *
@@ -284,22 +160,9 @@ public:
 * @param filename Ouput coordinate file location
 */
   void writeMoleculeToFile(const char* filename);
-  void getBackboneStats();
   std::vector<std::pair<double,double> > getKapTauVals();
-  double getPairDistance(std::pair<int,int> &index1,std::pair<int,int> &index2);
   double lennardJones(double &idealDist,double &currDist,int noConPred,double &weightCoeff);
-  double getFitQualSbonds(std::vector<std::tuple<std::pair<int,int>,std::pair<int,int>,double> > &contactPairList,double weightCoeff);
-  double getFitQualSbondsNonSpecific(std::vector<std::pair<std::pair<int,int>,double >> &contactPairList,double weightCoeff);
-  std::vector<double> getExactDistSet(std::vector<std::vector<point> > &coordSet);
-  double allDists(std::vector<point> &ptSet,std::vector<double> &distSet);
   std::vector<double> solMolDists(std::vector<std::vector<point> > &pts1);
-  std::vector<double> getApproxDistSet(double &divFac);
-  std::vector<double> getApproxDistSetFixed();
-/**
- * Processes contact predictions file (optional functionality)
- * 
- * @param contactloc Location of contact predictions file.
- */
   void loadContactPredictions(const char* contactloc);
   double getLennardJonesContact();
   void loadFixedSections(const char* fixedsecloc);
@@ -314,30 +177,10 @@ private:
   std::vector<std::pair<int,int> > chainList;
   std::vector<double> distChanges;
   std::vector<std::pair<std::string,int> > nameSizeList;
-/**
- * Returns indices of hydrophobic residues (here Amino Acid Letter Code: A,I,L,M,F,V,P,G)
- * 
- */
   std::vector<std::pair<int,int> > hydroPhobicList;
-/**
- * Stores indices of polar residues (here Amino Acid Letter Code: Q, N, H, S, T, Y, C)
- * 
- */
   std::vector<std::pair<int,int> > polarList;
-/**
- * Stores indices of positively charged residues (here Amino Acid Letter Code: K, Y, R)
- * 
- */
   std::vector<std::pair<int,int> > posChargeList;
-/**
- * Stores indices of negatively charged residues (here Amino Acid Letter Code: D, E)
- * 
- */
   std::vector<std::pair<int,int> > negChargeList;
-/**
- * Assume no longer used, specific to coiled coil example from paper
- * 
- */
   std::vector<std::pair<int,int> > coiledCoilList;
   randomMol rmg;
   std::vector<std::vector<double> > distSetsSecs;

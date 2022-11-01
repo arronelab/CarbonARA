@@ -22,7 +22,7 @@ moleculeFitAndState::moleculeFitAndState(std::vector<ktlMolecule> &molin,double 
   rmin = rminIn;rmax = rmaxIn;solventsPerLink=solventsPerLinkIn;
   lmin = lminIn;
   for(int i=0;i<mol.size();i++){
-   localWrithe lw;
+   writhe lw;
    std::vector<std::vector<point> > crds =mol[i].getCoordinates();
    std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
    std::cout<<"initial abs writhe "<<wrFingerPrint[wrFingerPrint.size()-1].second<<"\n";
@@ -156,7 +156,7 @@ double moleculeFitAndState::applyDistanceConstraints(ktlMolecule &molNew,int &im
 
 
 void moleculeFitAndState::alterWritheSet(ktlMolecule &molNew,int &i){
-  localWrithe lw;
+  writhe lw;
    std::vector<std::vector<point> > crds =molNew.getCoordinates();
    std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
    currWrithes[i] = wrFingerPrint[wrFingerPrint.size()-1].second;

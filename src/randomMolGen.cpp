@@ -10,9 +10,6 @@ randomMol::randomMol(double &rminIn,double &rmaxIn,double &lminIn){
   int xindex=0;
   int n=0;
   nGridSize=100;
-  /*point tan1(10000.0,10000.0,10000.0);point norm1(10000.0,10000.0,10000.0);
-  point norm2(10000.0,10000.0,10000.0);
-  dummyFrame.push_back(tan1);dummyFrame.push_back(norm1);dummyFrame.push_back(norm2);*/
   std::vector<double> subVecMixedYFX(nGridSize,0.0);
   if (myfile.is_open()){ 
     while(!myfile.eof()){
@@ -567,9 +564,6 @@ void randomMol::setParams(double &rminIn,double &rmaxIn,double &lminIn){
   int n=0;
   nGridSize = 100;
   std::vector<double> subVecMixedYFX(nGridSize,0.0);
-  /*point tan1(10000.0,10000.0,10000.0);point norm1(10000.0,10000.0,10000.0);
-  point norm2(10000.0,10000.0,10000.0);
-  dummyFrame.push_back(tan1);dummyFrame.push_back(norm1);dummyFrame.push_back(norm2);*/
   if (myfile.is_open()){ 
     while(!myfile.eof()){
       std::getline(myfile,output);
