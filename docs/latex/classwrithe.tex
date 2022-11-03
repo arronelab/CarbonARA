@@ -1,0 +1,141 @@
+\hypertarget{classwrithe}{}\doxysection{writhe Class Reference}
+\label{classwrithe}\index{writhe@{writhe}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classwrithe_a99cd71c6a92e5a51c06387ab6520c4e9}{dbold}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int j)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classwrithe_ac93be5f9c33261c4e706dbd31ff4dcb2}{te}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i)
+\item 
+double \mbox{\hyperlink{classwrithe_a16d092cce32e44d60f303e9749bc1edc}{acosC}} (double temp)
+\item 
+\mbox{\Hypertarget{classwrithe_a9e4bbba7f6de323db7cf58c8f0b40bea}\label{classwrithe_a9e4bbba7f6de323db7cf58c8f0b40bea}} 
+double {\bfseries mu} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int k, int m, int j)
+\item 
+double \mbox{\hyperlink{classwrithe_a8dc0c3dd40aded02ed5dc60b2f17c147}{wij}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List, int size, int i, int j)
+\item 
+double \mbox{\hyperlink{classwrithe_a621630450eaa868f48cc0c8696db4bca}{DIAbs}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&point\+List)
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ int, int $>$, double $>$ $>$ \mbox{\hyperlink{classwrithe_aab9a695f7d8515ea0e8df116fc2a9fa3}{DIDown\+Sample\+Abs}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&point\+List\+In)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwrithe_a16d092cce32e44d60f303e9749bc1edc}\label{classwrithe_a16d092cce32e44d60f303e9749bc1edc}} 
+\index{writhe@{writhe}!acosC@{acosC}}
+\index{acosC@{acosC}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{acosC()}{acosC()}}
+{\footnotesize\ttfamily double writhe\+::acosC (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})}
+
+Computes inverse cosine of input. This is useful in giving the angle the between vectors, which is a component of the writhe calculation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwrithe_a99cd71c6a92e5a51c06387ab6520c4e9}\label{classwrithe_a99cd71c6a92e5a51c06387ab6520c4e9}} 
+\index{writhe@{writhe}!dbold@{dbold}}
+\index{dbold@{dbold}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{dbold()}{dbold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} writhe\+::dbold (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List,  }\item[{int}]{size,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Computes the vector between the ith and jth point of point\+List.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & List of coordinates \\
+\hline
+{\em size} & Unsure, ith and jth coordinate are taken modulo this paramater. I guess ensures we stay in the pointlist? \\
+\hline
+{\em i} & Index of start point \\
+\hline
+{\em j} & Index of end point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwrithe_a621630450eaa868f48cc0c8696db4bca}\label{classwrithe_a621630450eaa868f48cc0c8696db4bca}} 
+\index{writhe@{writhe}!DIAbs@{DIAbs}}
+\index{DIAbs@{DIAbs}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{DIAbs()}{DIAbs()}}
+{\footnotesize\ttfamily double writhe\+::\+DIAbs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List }\end{DoxyParamCaption})}
+
+Computes the Average Crossing Number (ACN) for an input curve via numerical approximation of Gauss Linking Integral.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & Coordinates of discrete curve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwrithe_aab9a695f7d8515ea0e8df116fc2a9fa3}\label{classwrithe_aab9a695f7d8515ea0e8df116fc2a9fa3}} 
+\index{writhe@{writhe}!DIDownSampleAbs@{DIDownSampleAbs}}
+\index{DIDownSampleAbs@{DIDownSampleAbs}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{DIDownSampleAbs()}{DIDownSampleAbs()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ int, int $>$, double $>$ $>$ writhe\+::\+DIDown\+Sample\+Abs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{point\+List\+In }\end{DoxyParamCaption})}
+
+Takes an input curve (should be a list of lists, where each sublist is a subsection of the curve, think secondary structural elements) Smooths the curve so that each edge represents a subsection of the input curve, Computes the ACN of this smoothed curve.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List\+In} & Input curve, should be a list of lists. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector\texorpdfstring{$<$}{<}std\+::pair\texorpdfstring{$<$}{<}std\+::pair$<$int,int$>$,double\texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwrithe_ac93be5f9c33261c4e706dbd31ff4dcb2}\label{classwrithe_ac93be5f9c33261c4e706dbd31ff4dcb2}} 
+\index{writhe@{writhe}!te@{te}}
+\index{te@{te}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{te()}{te()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} writhe\+::te (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List,  }\item[{int}]{size,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+Computes the unit vector between the ith and (i-\/1)th point of point\+List.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & List of coordinates \\
+\hline
+{\em size} & Unsure, ith and jth coordinate are taken modulo this paramater. I guess ensures we stay in the pointlist? \\
+\hline
+{\em i} & Index of end point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwrithe_a8dc0c3dd40aded02ed5dc60b2f17c147}\label{classwrithe_a8dc0c3dd40aded02ed5dc60b2f17c147}} 
+\index{writhe@{writhe}!wij@{wij}}
+\index{wij@{wij}!writhe@{writhe}}
+\doxysubsubsection{\texorpdfstring{wij()}{wij()}}
+{\footnotesize\ttfamily double writhe\+::wij (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{point\+List,  }\item[{int}]{size,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Computes Omega\+\_\+ij as per \href{https://en.wikipedia.org/wiki/Writhe}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Writhe}} subsection\+: Numerically approximating the Gauss integral for writhe of a curve in space
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+List} & List of coordinates \\
+\hline
+{\em size} & Unsure, ith and jth coordinate are taken modulo this paramater. I guess ensures we stay in the pointlist? \\
+\hline
+{\em i} & Start index \\
+\hline
+{\em j} & End index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/writhe.\+h\item 
+src/writhe.\+cpp\end{DoxyCompactItemize}

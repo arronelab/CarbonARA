@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binorm_0',['binorm',['../classktl_molecule.html#aa4ff0e335e8b8bdae36ff72e54403c21',1,'ktlMolecule']]]
+  ['acosc_0',['acosC',['../classwrithe.html#a16d092cce32e44d60f303e9749bc1edc',1,'writhe']]]
 ];

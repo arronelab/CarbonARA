@@ -24,7 +24,11 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "CARBONARA", "index.html", [
+    [ "Getting Started with CARBONARA", "index.html#autotoc_md2", null ],
+    [ "License", "index.html#autotoc_md3", null ],
+    [ "CARBONARA Git Repository Layout", "index.html#autotoc_md4", null ],
+    [ "More Information", "index.html#autotoc_md5", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['writemoleculetofile_0',['writeMoleculeToFile',['../classktl_molecule.html#a22eb1be12691ce9d37c6e80e916fa413',1,'ktlMolecule']]],
-  ['writescatteringtofile_1',['writeScatteringToFile',['../classmolecule_fit_and_state.html#a6fb65e1f652673dfa6eb07653695caee',1,'moleculeFitAndState']]]
+  ['updatemolecule_0',['updateMolecule',['../classmolecule_fit_and_state.html#a1159618e1f44e4fc08134dc86fffc62a',1,'moleculeFitAndState']]]
 ];

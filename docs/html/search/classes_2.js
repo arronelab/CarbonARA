@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getsections_0',['getSections',['../classget_sections.html',1,'']]]
+  ['ktlmolecule_0',['ktlMolecule',['../classktl_molecule.html',1,'']]]
 ];
