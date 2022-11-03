@@ -6,6 +6,12 @@
 #include "writhe.h"
 #include "experimentalData.h"
 
+
+/**
+ * 
+ * For checking structural metrics; proximity, writhe and fit to SAXS data
+ * 
+ */
 class moleculeFitAndState{
 public:
   moleculeFitAndState(std::vector<ktlMolecule> &mol,double &RinSv,double &RoutSv,double &RShellSv,int &ntrivsSv,double &closestApproachDistIn,int &solventsPerLinkIn,double &rminIn,double &rmaxIn,double &lminIn);

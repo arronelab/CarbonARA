@@ -14,14 +14,14 @@
 
  /**
  * 
- * Kappa   Tau   Length   Molecule
+ * Kappa - Tau - Length - Molecule
  *
- * Do you have a molecule?
- * Well this is the class for you!
- * Read in the CA coordinates and molecule's meta data
- * Find geometric properties of your molecule's CA backbone
- * Manipulate & DOMINATE your molecule, bend it to your will
- * it will fit that SAXS curve... one way or another.
+ * Do you have a molecule? \n
+ * Well this is the class for you! \n
+ * Read in the a molecule's coordinates and meta data. \n
+ * Find geometric properties of your molecule's CA backbone. \n
+ * Manipulate & DOMINATE your molecule, bend it to your will. \n
+ * It will fit that SAXS curve... one way or another. \n
  * 
  */
 class ktlMolecule{

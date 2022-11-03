@@ -5,7 +5,14 @@
 #include <algorithm>  
 #include <functional> 
 
-
+/**
+ * 
+ * For the generation of a hydration shell around molecules. \n
+ *
+ * Geometrically builds cyliners of solvent around protein structure to create solvated molecules. \n
+ * Very important to simulate SAXS profiles from structure!
+ * 
+ */
 class hydrationShellMinimal{
 public:
   hydrationShellMinimal(){};
