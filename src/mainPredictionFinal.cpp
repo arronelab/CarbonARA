@@ -2,7 +2,6 @@
 #include "hydrationShellRandom.h"
 #include "experimentalData.h"
 #include <string.h>
-#include "writhe.h"
 #include "moleculeFitAndState.h"
 
 
@@ -28,7 +27,7 @@
 
 
 bool checkTransition(double &chiSqVal,double &chiSqCurr,double &uniformProb,int index,int &maxSteps){
-  double tempFrac;
+  /*double tempFrac;
   if(index < maxSteps/2){
     tempFrac= 1.0-double(index)/double(maxSteps/2);
   }else{
@@ -41,7 +40,13 @@ bool checkTransition(double &chiSqVal,double &chiSqCurr,double &uniformProb,int 
   }else{
     annealProb = std::exp(-(chiSqVal-chiSqCurr)/tempFrac);
   }
+  //std::cout<<index<<" "<<maxSteps<<" "<<chiSqVal<<" "<<chiSqCurr<<" "<<annealProb<<" "<<uniformProb<<"\n";
   if(annealProb>uniformProb){
+    return true;
+  }else{
+    return false;
+  }*/
+  if(chiSqVal<chiSqCurr){
     return true;
   }else{
     return false;
@@ -90,6 +95,7 @@ int main( int argc, const char* argv[] )
     ktlMolecule molTmp;
     int ind1=i+1;
     ss<<ind1;
+    std::cout<<ind1<<"\n";
     const char* str = ss.str().c_str();
     char sequenceLoc[100];
     strcpy(sequenceLoc,argv[2]);
@@ -106,6 +112,7 @@ int main( int argc, const char* argv[] )
     strcat(coordinateLoc,".dat");
     molTmp.readInCoordinates(coordinateLoc);
     // fine the hydrophobic residues
+    molTmp.getHydrophobicResidues();
     mol.push_back(molTmp);
   }
 
@@ -249,12 +256,17 @@ int main( int argc, const char* argv[] )
 
   // initialise to the initial guess
 
-  for(int i=0;i<10;i++){
+  int noHistoricalFits =1;
+   
+  for(int i=0;i<noHistoricalFits;i++){
     molFitAndStateSet.push_back(molFit);
   }
   
   std::random_device rdev{};
   std::default_random_engine generator{rdev()};
+
+  int improvementIndex=0;
+					      
   while(k<noScatterFitSteps && scatterFit>0.00001){
 
     // loop over the molecules (e.g monomer and dimer fit
@@ -263,7 +275,7 @@ int main( int argc, const char* argv[] )
     
     //choose which fit to
     double p = 0.7-0.6*(k/noScatterFitSteps);
-    std::binomial_distribution<> changeIndexProbability(9,p);
+    std::binomial_distribution<> changeIndexProbability(noHistoricalFits-1,p);
     int index =  changeIndexProbability(generator);
     molFit = molFitAndStateSet[index];
     std::cout<<"checking mol no "<<index<<"\n";
@@ -315,6 +327,34 @@ int main( int argc, const char* argv[] )
 		scatterFit = fitTemp;
 		mol[l]=molCopy;
 		molFit= molFitTmp;
+		// to output during fitting to "show the process"
+		improvementIndex++;
+		for(int ii=0;ii<mol.size();ii++){
+		  std::stringstream ss;
+		  std::stringstream ss1;
+		  int ind1=ii+1;
+		  ss<<ind1;
+		  ss1<<improvementIndex;
+		  char outputMolLoc[100];
+		  strcpy(outputMolLoc,argv[12]);
+		  strcat(outputMolLoc,"Substep_");
+		  const char* impStr = ss1.str().c_str();
+		  strcat(outputMolLoc,impStr);
+		  strcat(outputMolLoc,"_");
+		  const char* str = ss.str().c_str(); 
+		  strcat(outputMolLoc,str);
+		  strcat(outputMolLoc,".dat");
+		  mol[ii].writeMoleculeToFile(outputMolLoc);
+		}
+		std::stringstream ss1;
+		ss1<<improvementIndex;
+		char outputMolLoc[100];
+		strcpy(outputMolLoc,argv[12]);
+		strcat(outputMolLoc,"SubstepScatter_");
+		const char* impStr = ss1.str().c_str();
+		strcat(outputMolLoc,impStr);
+		strcat(outputMolLoc,".dat");
+		molFitTmp.writeScatteringToFile(ed,kmin,kmax,outputMolLoc);
 	      }
 	    }
 	  }
@@ -324,7 +364,7 @@ int main( int argc, const char* argv[] )
     molFitAndStateSet[index] = molFit;
     molFitAndStateSet[index].updateMolecule(mol);
     sortVec(molFitAndStateSet);
-    for(int i=0;i<10;i++){
+    for(int i=0;i<noHistoricalFits;i++){
       std::cout<<"step "<<k<<" "<<i<<" "<<molFitAndStateSet[i].currFit<<"\n";
     }
     k++;

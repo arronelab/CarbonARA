@@ -76,12 +76,18 @@ double ktlMolecule::maxNeighbourDistSec(int &sec){
       if(d>dmax){
 	dmax=d;
 	if(d>4.0){
+	  //std::cout<<i<<" "<<j<<"\n";
 	}
       }
     }
   }
   return dmax;
 }
+
+/*std::vector<double> ktlMolecule::getDistChanges(){
+  return distChanges;
+  }*/
+
 
 double ktlMolecule::getCurvatureJoined(int index){
   double kapval;
@@ -158,9 +164,28 @@ std::string ktlMolecule::getType(int &chainNo,int &index){
   return nameSizeList[fullIndex+index].first;
 }
 
+
+/*double ktlMolecule::getDistChange(int index){
+  return distChanges[index];
+  }*/
+
 double ktlMolecule::getMaxDistChange(){
   return maxDistChange;
 }
+
+/*double ktlMolecule::getMaxScatLength(){
+  double maxLen =0.0;
+  double len=0.0;
+  for(int i=0;i<coords.size();i++){
+    for(int j=i+1;j<coords.size();j++){
+      len = coords[i].eDist(coords[j]);
+      if(len>maxLen){
+        maxLen = len;
+      }
+    }
+  }
+  return 2.0*maxLen;
+  }*/
 
 int ktlMolecule::noSecSize(){
   return coords.size();
@@ -212,9 +237,17 @@ std::pair<double,double> ktlMolecule::getMaxPossibleLength(){
   return mxpr;
 }
 
+
+
+
+
+
+
+
 void ktlMolecule::readInSequence(const char* filename,double &rmin,double &rmax,double &lmin){
   int npts;
   std::ifstream myfile;
+  std::cout<<"read in for whut "<<filename<<"\n";
   myfile.open(filename);
   std::string output;
   double val,prevval,X,Y,Z;
@@ -373,6 +406,7 @@ void ktlMolecule::readInCoordinates(const char* filename){
   }
 }
 
+
 std::vector<double> ktlMolecule::getHydrophobicDistance(std::vector<std::vector<point> > &solventList,double &maxSolDist){
   // maxSolDist is the size of the spehere I check for solvents in 
   std::vector<double> meanHydroAminoDists;
@@ -401,6 +435,18 @@ std::vector<double> ktlMolecule::getHydrophobicDistance(std::vector<std::vector<
 }
 
 
+void ktlMolecule::getHydrophobicResidues(){
+  for(int i=0;i<aminoList.size();i++){
+    for(int j=0;j<aminoList[i].size();j++){
+      if(aminoList[i][j]=="A"||aminoList[i][j]=="I"||aminoList[i][j]=="L"||aminoList[i][j]=="M"||aminoList[i][j]=="F"||aminoList[i][j]=="V"||aminoList[i][j]=="P"||aminoList[i][j]=="G"){
+	std::pair<int,int> pr;
+	pr.first = i;pr.second = j;
+	hydroPhobicList.push_back(pr);
+      }
+    }
+  }
+}
+
 void ktlMolecule::getCoiledCoilResidues(){
   for(int i=0;i<aminoList.size();i++){
     for(int j=0;j<aminoList[i].size();j++){
@@ -414,6 +460,11 @@ void ktlMolecule::getCoiledCoilResidues(){
       }
     }
   }
+  /* std::cout<<"in coiled coild routine "<<coiledCoilList.size()<<"\n";
+  for(int i=0;i<coiledCoilList.size();i++){
+    std::pair<int,int> pr = coiledCoilList[i];
+    std::cout<<"in section "<<pr.first<<" of type "<<nameSizeList[pr.first].first<<" at residue "<<pr.second<<"\n";
+    }*/
 }
 
 double ktlMolecule::coiledCoilPotential(){
@@ -507,6 +558,7 @@ void ktlMolecule::getPositiveResidues(){
   }
 }
 
+
 void ktlMolecule::getNegativeResidues(){
   for(int i=0;i<aminoList.size();i++){
     for(int j=0;j<aminoList[i].size();j++){
@@ -519,6 +571,8 @@ void ktlMolecule::getNegativeResidues(){
   }
 }
 
+
+    
 point ktlMolecule::getCentreOfMass(std::vector<std::vector<point> > &cdSet){
   point mean(0.0,0.0,0.0);
   int noMols=0;
@@ -556,6 +610,8 @@ std::vector<int> ktlMolecule::checkOverlap(std::vector<std::vector<point> > &cds
 }
 
 
+
+
 std::vector<double> ktlMolecule::checkOverlapWithRad(double &wRad,int &sec){
   std::vector<double> overlappedSecs;
   distSetsSecs[sec-1].clear();
@@ -579,6 +635,9 @@ std::vector<double> ktlMolecule::checkOverlapWithRad(double &wRad,int &sec){
 	}
       }
     }
+    //if(triggered==true){
+    // overlappedSecs.push_back(i);
+    //}
   }
   return overlappedSecs;
 }
@@ -609,6 +668,9 @@ std::vector<double> ktlMolecule::checkOverlapWithRad(double &wRad){
 	}
       }
     }
+    //if(triggered==true){
+    // overlappedSecs.push_back(i);
+    //}
   }
   return overlappedSecs;
 }
@@ -636,6 +698,9 @@ double ktlMolecule::compareDistances(std::vector<std::vector<point> > &coords2){
   }
   return distDifTot/n;
 }
+
+
+
 
 bool ktlMolecule::checkCalphas(std::vector<std::vector<point> > &coordsIn){
   bool violated=false;
@@ -708,6 +773,11 @@ bool ktlMolecule::checkCalphas(int &secNo){
 }
 
 
+void ktlMolecule::changeMoleculeSingle(int &index,std::vector<std::vector<point> > &cdsIn,std::vector<std::pair<std::string,int> > &nameSizeSubList){
+  point sp(0.0,0.0,0.0);
+  bool suc=true;
+  maxDistChange =rmg.reshapeMol(nameSizeSubList,cdsIn,index,sp,suc);
+}
 
 int ktlMolecule::getRandomMolecule(){
   coords.clear();
@@ -757,6 +827,10 @@ int ktlMolecule::getRandomMolecule(){
   return noOverLaps;
 }
 
+
+
+
+
 void ktlMolecule::changeMoleculeSingleMulti(int &index,int secIn){
   int sec = secIn-1;
   point sp(0.0,0.0,0.0);
@@ -797,48 +871,7 @@ void ktlMolecule::changeMoleculeSingleMulti(int &index,int secIn){
   std::copy_n(subcoords.begin(),d,&coords[chainList[sec].first]);
 }
 
-void ktlMolecule::changeMoleculeSetMulti(std::vector<int>  &indicies,int secIn){
-  point sp(0.0,0.0,0.0);
-  int sec = secIn-1;
-  std::vector<std::pair<std::string,int> >::const_iterator first =nameSizeList.begin()+chainList[sec].first;
-  std::vector<std::pair<std::string,int> >::const_iterator second =nameSizeList.begin()+chainList[sec].second+1;
-  std::vector<std::pair<std::string,int> > subns(first,second);
-  std::vector<std::vector<point> >::const_iterator firstc =coords.begin()+chainList[sec].first;
-  std::vector<std::vector<point> >::const_iterator secondc =coords.begin()+chainList[sec].second+1;
-  std::vector<std::vector<point> > subcoords(firstc,secondc);
-  bool suc=true;
-  for(int i=0;i<indicies.size();i++){
-    int index=indicies[i];
-    if(index<subcoords.size()-2){
-      // check for repeat helices
-      if(subns[index].first=="loop"&&subns[index+1].first=="Helix"&&subns[index+2].first=="Helix"){
-	//change loo then encounter repeat helices
-	//change helix and encounter repreat helices
-	int noHelices=0;int k=index+1;
-	while(k<subcoords.size()&&subns[k].first=="Helix"){
-	  noHelices++;
-	  k++;
-	}
-	maxDistChange =rmg.reshapeMolLoopThenHelixSet(subns,subcoords,index,noHelices,sp,suc);
-      }else if(subns[index].first=="Helix"&&subns[index+1].first=="Helix"&&subns[index+2].first=="Helix"){
-	//change helix and encounter repreat helices
-	int noHelices=0;int k=index+1;
-	while(k<subcoords.size()&&subns[k].first=="Helix"){
-	  noHelices++;
-	k++;
-	}
-	maxDistChange =rmg.reshapeMolHelixSet(subns,subcoords,index,noHelices,sp,suc);
-      }else{
-	maxDistChange =rmg.reshapeMol(subns,subcoords,index,sp,suc);
-      }
-    }else{
-      maxDistChange =rmg.reshapeMol(subns,subcoords,index,sp,suc);
-    }
-  }
-  // now replace the new sections into the main chain
-  int d = chainList[sec].second+1-chainList[sec].first;
-  std::copy_n(subcoords.begin(),d,&coords[chainList[sec].first]);
-}
+
 
 void ktlMolecule::changeMoleculeMultiRotate(double &angle,point &k,int secIn,point &transVec){
   point sp(0.0,0.0,0.0);
@@ -906,11 +939,7 @@ void ktlMolecule::replicateMolecule(int &noReplications){
   coords=replicatedCoords;
 }
 
-void ktlMolecule::changeMoleculeSingle(int &index,std::vector<std::vector<point> > &cdsIn,std::vector<std::pair<std::string,int> > &nameSizeSubList){
-  point sp(0.0,0.0,0.0);
-  bool suc=true;
-  maxDistChange =rmg.reshapeMol(nameSizeSubList,cdsIn,index,sp,suc);
-}
+
 
 void ktlMolecule::rotation3D(point &p,point &centre,point &k,double &cosangle,double &sinangle){
   point out;
@@ -983,6 +1012,8 @@ std::vector<std::pair<double,double> > ktlMolecule::getKapTauVals(){
   return ktllst; 
 }
 
+
+
 double ktlMolecule::lennardJones(double &idealDist,double &currDist,int noConPred,double &weightCoeff){
   //for actual Leennard jones
   /*double rat = idealDist/currDist;
@@ -1008,6 +1039,7 @@ std::vector<double> ktlMolecule::solMolDists(std::vector<std::vector<point> > &p
   }
   return distSet;
 }
+
 
 void ktlMolecule::loadContactPredictions(const char* contactloc){
   std::ifstream cpfile;
