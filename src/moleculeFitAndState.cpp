@@ -24,9 +24,9 @@ moleculeFitAndState::moleculeFitAndState(std::vector<ktlMolecule> &molin,double 
   for(int i=0;i<mol.size();i++){
    writhe lw;
    std::vector<std::vector<point> > crds =mol[i].getCoordinates();
-   std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
-   std::cout<<"initial abs writhe "<<wrFingerPrint[wrFingerPrint.size()-1].second<<"\n";
-   originalWrithes.push_back(wrFingerPrint[wrFingerPrint.size()-1].second);
+   double acn = lw.DIDownSampleAbs(crds);
+   std::cout<<"initial abs writhe "<< acn <<"\n";
+   originalWrithes.push_back(acn);
   }
   currWrithes =originalWrithes;
   for(int i=0;i<mol.size();i++){
@@ -154,11 +154,17 @@ double moleculeFitAndState::applyDistanceConstraints(ktlMolecule &molNew,int &im
   return contactPredPenTotal;
 }
 
+void moleculeFitAndState::alterWrithe(ktlMolecule &molNew,int &i){
+  writhe lw;
+   std::vector<std::vector<point> > crds =molNew.getCoordinates();
+   double acn = lw.DIDownSampleAbs(crds);
+   currWrithes[i] = acn;
+}
 
 void moleculeFitAndState::alterWritheSet(ktlMolecule &molNew,int &i){
   writhe lw;
    std::vector<std::vector<point> > crds =molNew.getCoordinates();
-   std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbs(crds);
+   std::vector<std::pair<std::pair<int,int>,double> > wrFingerPrint =lw.DIDownSampleAbsFP(crds);
    currWrithes[i] = wrFingerPrint[wrFingerPrint.size()-1].second;
 }
 
@@ -280,7 +286,7 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   std::cout<<"Overlap Penalty "<<overlapPenalty<<"\n";
    double distanceConstraints = applyDistanceConstraints(molNew,i);
    //std::cout<<"pen3 "<<distanceConstraints<<"\n";
-  alterWritheSet(molNew,i);
+  alterWrithe(molNew,i);
   applyWritheConstraint();
   std::cout<<" writhe penalty  "<<writhePenalty<<"\n";
   std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";

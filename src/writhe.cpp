@@ -2,6 +2,9 @@
 
 const double PI  =3.141592653589793238463;
 
+writhe::writhe(){
+}
+
 point writhe::dbold(std::vector<point>& pointList,int size,int i,int j){
   i = i%(size-1);
   j = j%(size-1);
@@ -73,7 +76,19 @@ double writhe::DIAbs(std::vector<point>& pointList){
   return sigsum/(2*PI);
 }
 
-std::vector<std::pair<std::pair<int,int>,double> > writhe::DIDownSampleAbs(std::vector<std::vector<point> >& pointListIn){
+double writhe::DIDownSampleAbs(std::vector<std::vector<point> >& pointListIn){
+  // first downsample
+  std::vector<point> mol;
+  for(int i=0;i<pointListIn.size();i++){
+    mol.push_back(pointListIn[i][0]);
+  }
+  std::vector<point> lastSec = pointListIn[pointListIn.size()-1];
+  mol.push_back(lastSec[lastSec.size()-1]);
+  double acn=DIAbs(mol);
+  return acn;
+}
+
+std::vector<std::pair<std::pair<int,int>,double> > writhe::DIDownSampleAbsFP(std::vector<std::vector<point> >& pointListIn){
   // first downsample
   std::vector<point> mol;
   for(int i=0;i<pointListIn.size();i++){

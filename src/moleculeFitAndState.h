@@ -45,6 +45,7 @@ public:
   void calcuateHydrationDistances(hydrationShellMinimal &hs,int &i);
   void applyWritheConstraint();
   double getFit();
+  void alterWrithe(ktlMolecule &molNew,int &i);
   void alterWritheSet(ktlMolecule &molNew,int &i);
 /**
  * Returns the goodness of fit for the current molecule, taking into account:

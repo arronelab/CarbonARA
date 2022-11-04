@@ -6,6 +6,7 @@
 
 class writhe{
 public:
+    writhe();
     /**
      * Computes the vector between the ith and jth point of pointList.
      * 
@@ -56,9 +57,18 @@ public:
      * Computes the ACN of this smoothed curve.
      * 
      * @param pointListIn Input curve, should be a list of lists.
+     * @return double 
+     */
+    double DIDownSampleAbs(std::vector<std::vector<point> >& pointListIn);
+    /**
+     * Takes an input curve (should be a list of lists, where each sublist is a subsection of the curve, think secondary structural elements)
+     * Smooths the curve so that each edge represents a subsection of the input curve,
+     * Computes the ACN FingerPrint of this smoothed curve.
+     * 
+     * @param pointListIn Input curve, should be a list of lists.
      * @return std::vector<std::pair<std::pair<int,int>,double> > 
      */
-    std::vector<std::pair<std::pair<int,int>,double> > DIDownSampleAbs(std::vector<std::vector<point> >& pointListIn);
+    std::vector<std::pair<std::pair<int,int>,double> > DIDownSampleAbsFP(std::vector<std::vector<point> >& pointListIn);
 };
 
 #endif
