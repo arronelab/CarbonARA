@@ -3,7 +3,17 @@
 #include "experimentalData.h"
 #include <string.h>
 #include "moleculeFitAndState.h"
+#include <cstdio> 
+#include <chrono>
+#include <iostream>
+#include <sys/time.h>
+#include <ctime>
 
+using std::cout; using std::endl;
+using std::chrono::duration_cast;
+using std::chrono::milliseconds;
+using std::chrono::seconds;
+using std::chrono::system_clock;
 
 /***********************************************
 
@@ -321,9 +331,15 @@ int main( int argc, const char* argv[] )
 	      //calculate all amino acid distances for changed molecule
 	      double fitTemp = molFitTmp.getOverallFit(ed,mixtureList,helRatList,molCopy,kmin,kmax,l);
 	      // check if we have imporved
-	      // std::cout<<fitTemp<<" "<<scatterFit<<"\n";
 	      double uProb = distributionR(generator);
 	      if(checkTransition(fitTemp,scatterFit,uProb,k,noScatterFitSteps)){
+    double writhePenalty = molFitTmp.applyWritheConstraint();
+    double overlapPenalty = molFitTmp.applyOverlapPenalty();
+    double distancePenalty = molFitTmp.applyDistanceConstraints();
+    //double saxsfit = molFitTmp.calculateScattering(ed,kmin,kmax,mixtureList)
+    auto millisec_since_epoch = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+    std::cout<<millisec_since_epoch<<" "<<writhePenalty<<" "<<overlapPenalty<<" "<<saxsfit<<" "<<"\n";
+    //std::fclose(stdout);
 		scatterFit = fitTemp;
 		mol[l]=molCopy;
 		molFit= molFitTmp;

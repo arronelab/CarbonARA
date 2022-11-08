@@ -234,11 +234,11 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   
   **************************************************************/
   double overlapPenalty = applyOverlapPenalty();
-  std::cout<<"pen2 "<<overlapPenalty<<"\n";
+  std::cout<<"overlap penalty "<<overlapPenalty<<"\n";
   double distanceConstraints = applyDistanceConstraints();
-  std::cout<<"pen3 "<<distanceConstraints<<"\n";
+  std::cout<<"distance constraints "<<distanceConstraints<<"\n";
   applyWritheConstraint();
-  std::cout<<"pen4 "<<writhePenalty<<"\n";
+  std::cout<<"writhe penalty "<<writhePenalty<<"\n";
   std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
   currFit = scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
   return currFit;
