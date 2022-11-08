@@ -88,6 +88,18 @@ int main( int argc, const char* argv[] )
   double rmin=3.7;double rmax=3.9; // max and min calpha-Dists
   double closestApproachDist=3.9; // closest distance two non adjactent non local moelcules (different secondary unit) can get
 
+/**************************************
+ * 
+ * Open up log file
+ * 
+**************************************/
+  char logFileLoc[100];
+  strcpy(logFileLoc,argv[12]);
+  strcat(logFileLoc,"_");
+  strcat(logFileLoc,"log");
+  strcat(logFileLoc,".txt");
+  std::freopen(logFileLoc,"a",stdout);
+
   /*************************************
   
    determine initial model: Two options no initial prediction, we must generate a structure
