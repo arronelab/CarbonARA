@@ -8,8 +8,9 @@
 #include <iostream>
 #include <sys/time.h>
 #include <ctime>
+// #include <tuple>
 
-using std::cout; using std::endl;
+// using std::cout; using std::endl;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 using std::chrono::seconds;
@@ -89,9 +90,9 @@ int main( int argc, const char* argv[] )
   double closestApproachDist=3.9; // closest distance two non adjactent non local moelcules (different secondary unit) can get
 
 /**************************************
- * 
+ 
  * Open up log file
- * 
+ 
 **************************************/
   char logFileLoc[100];
   strcpy(logFileLoc,argv[12]);
@@ -117,7 +118,7 @@ int main( int argc, const char* argv[] )
     ktlMolecule molTmp;
     int ind1=i+1;
     ss<<ind1;
-    std::cout<<ind1<<"\n";
+    // std::cout<<ind1<<"\n";
     const char* str = ss.str().c_str();
     char sequenceLoc[100];
     strcpy(sequenceLoc,argv[2]);
@@ -244,8 +245,14 @@ int main( int argc, const char* argv[] )
    
    *************************************************/
 
+
+  
+  
   moleculeFitAndState molFit(mol,Rin,Rout,RShell,ntrivs,closestApproachDist,solventsPerLink,rmin,rmax,lmin);
-  double scatterFit= molFit.getOverallFit(ed,mixtureList,helRatList,kmin,kmax);
+  double scatterFit, fitTemp, overlapPenalty, writhePenalty, scatterAndHydrationConstraint;
+  std::tie(scatterFit, overlapPenalty, writhePenalty, scatterAndHydrationConstraint) = molFit.getOverallFit(ed,mixtureList,helRatList,kmin,kmax);
+
+  // double scatterFit= molFit.getOverallFit(ed,mixtureList,helRatList,kmin,kmax);
  
   /****************************************************************************
     
@@ -300,7 +307,7 @@ int main( int argc, const char* argv[] )
     std::binomial_distribution<> changeIndexProbability(noHistoricalFits-1,p);
     int index =  changeIndexProbability(generator);
     molFit = molFitAndStateSet[index];
-    std::cout<<"checking mol no "<<index<<"\n";
+    // std::cout<<"checking mol no "<<index<<"\n";
     mol = molFit.getMolecule();
     scatterFit = molFit.currFit;
     for(int l=0;l<mol.size();l++){
@@ -340,17 +347,24 @@ int main( int argc, const char* argv[] )
 
 	      // calculate the new fit for this
 	      moleculeFitAndState molFitTmp = molFit ;
+
 	      //calculate all amino acid distances for changed molecule
-	      double fitTemp = molFitTmp.getOverallFit(ed,mixtureList,helRatList,molCopy,kmin,kmax,l);
-	      // check if we have imporved
+        // double fitTemp, overlapPenalty, writhePenalty, scatterAndHydrationConstraint;
+	      std::tie(fitTemp, overlapPenalty, writhePenalty, scatterAndHydrationConstraint) = molFitTmp.getOverallFit(ed,mixtureList,helRatList,molCopy,kmin,kmax,l);
+	      
+        // check if we have improved
 	      double uProb = distributionR(generator);
+
 	      if(checkTransition(fitTemp,scatterFit,uProb,k,noScatterFitSteps)){
-    double writhePenalty = molFitTmp.applyWritheConstraint();
-    double overlapPenalty = molFitTmp.applyOverlapPenalty();
-    double distancePenalty = molFitTmp.applyDistanceConstraints();
+
+    // double writhePenalty = molFitTmp.applyWritheConstraint();
+    // double overlapPenalty = molFitTmp.applyOverlapPenalty();
+    // double distancePenalty = molFitTmp.applyDistanceConstraints();
+
     //double saxsfit = molFitTmp.calculateScattering(ed,kmin,kmax,mixtureList)
+
     auto millisec_since_epoch = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
-    std::cout<<millisec_since_epoch<<" "<<writhePenalty<<" "<<overlapPenalty<<" "<<saxsfit<<" "<<"\n";
+    std::cout<<millisec_since_epoch<<" "<<k<<" "<<i<<" "<<writhePenalty<<" "<<overlapPenalty<<" "<<scatterAndHydrationConstraint<<" "<<"\n";
     //std::fclose(stdout);
 		scatterFit = fitTemp;
 		mol[l]=molCopy;
@@ -393,7 +407,7 @@ int main( int argc, const char* argv[] )
     molFitAndStateSet[index].updateMolecule(mol);
     sortVec(molFitAndStateSet);
     for(int i=0;i<noHistoricalFits;i++){
-      std::cout<<"step "<<k<<" "<<i<<" "<<molFitAndStateSet[i].currFit<<"\n";
+      // std::cout<<"step "<<k<<" "<<i<<" "<<molFitAndStateSet[i].currFit<<"\n";
     }
     k++;
   }
@@ -411,8 +425,8 @@ int main( int argc, const char* argv[] )
     mol[i].writeMoleculeToFile(outputMolLoc);
   }
   // regenrate molecule hydration layer to update tha fit
-  moleculeFitAndState molFitOut(mol,Rin,Rout,RShell,ntrivs,closestApproachDist,solventsPerLink,rmin,rmax,lmin);
-  double scatterFitOut= molFitOut.getOverallFit(ed,mixtureList,helRatList,kmin,kmax);
-  molFitOut.writeScatteringToFile(ed,kmin,kmax,argv[13]);
+  // moleculeFitAndState molFitOut(mol,Rin,Rout,RShell,ntrivs,closestApproachDist,solventsPerLink,rmin,rmax,lmin);
+  // double scatterFitOut= molFitOut.getOverallFit(ed,mixtureList,helRatList,kmin,kmax);
+  // molFitOut.writeScatteringToFile(ed,kmin,kmax,argv[13]);
 }
       

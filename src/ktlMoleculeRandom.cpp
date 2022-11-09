@@ -247,7 +247,7 @@ std::pair<double,double> ktlMolecule::getMaxPossibleLength(){
 void ktlMolecule::readInSequence(const char* filename,double &rmin,double &rmax,double &lmin){
   int npts;
   std::ifstream myfile;
-  std::cout<<"read in for whut "<<filename<<"\n";
+  // std::cout<<"read in for whut "<<filename<<"\n";
   myfile.open(filename);
   std::string output;
   double val,prevval,X,Y,Z;
@@ -268,7 +268,7 @@ void ktlMolecule::readInSequence(const char* filename,double &rmin,double &rmax,
     std::getline(myfile,chainNo);
     std::stringstream ss(chainNo);
     ss>>noChains;
-    std::cout<<"number of chains "<<noChains<<"\n";
+    // std::cout<<"number of chains "<<noChains<<"\n";
     distSetsSecs.resize(noChains);
     for(int i=1;i<=noChains;i++){
       std::pair<int,int> p;

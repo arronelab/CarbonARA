@@ -25,7 +25,7 @@ moleculeFitAndState::moleculeFitAndState(std::vector<ktlMolecule> &molin,double 
    writhe lw;
    std::vector<std::vector<point> > crds =mol[i].getCoordinates();
    double acn = lw.DIDownSampleAbs(crds);
-   std::cout<<"initial abs writhe "<< acn <<"\n";
+  //  std::cout<<"initial abs writhe "<< acn <<"\n";
    originalWrithes.push_back(acn);
   }
   currWrithes =originalWrithes;
@@ -185,7 +185,7 @@ double moleculeFitAndState::getFit(){
 
 
 
-double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,double &kmin,double &kmax){
+std::tuple<double, double, double, double> moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,double &kmin,double &kmax){
   double scatterAndHydrationConstraint =10000.0;
   int bestHelRatList=0;
   for(int m=0;m<mixtureList.size();m++){
@@ -234,18 +234,18 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   
   **************************************************************/
   double overlapPenalty = applyOverlapPenalty();
-  std::cout<<"overlap penalty "<<overlapPenalty<<"\n";
+  // std::cout<<"overlap penalty "<<overlapPenalty<<"\n";
   double distanceConstraints = applyDistanceConstraints();
-  std::cout<<"distance constraints "<<distanceConstraints<<"\n";
+  // std::cout<<"distance constraints "<<distanceConstraints<<"\n";
   applyWritheConstraint();
-  std::cout<<"writhe penalty "<<writhePenalty<<"\n";
-  std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
+  // std::cout<<"writhe penalty "<<writhePenalty<<"\n";
+  // std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
   currFit = scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
-  return currFit;
+  return std::make_tuple(currFit, overlapPenalty, writhePenalty, scatterAndHydrationConstraint);
 }
 
 
-double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,ktlMolecule &molNew,double &kmin,double &kmax,int &i){
+std::tuple<double, double, double, double> moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::vector<double> > &mixtureList,std::vector<double> &helRatList,ktlMolecule &molNew,double &kmin,double &kmax,int &i){
   // update the molecule distances for molecule i;
   calculateMoleculeDistances(molNew,i);
   int bestHelRatList=0;
@@ -283,13 +283,13 @@ double moleculeFitAndState::getOverallFit(experimentalData &ed,std::vector<std::
   calcuateHydrationDistances(hydrationShellTmp,i);
   // apply penalties
    double overlapPenalty = applyOverlapPenalty();
-  std::cout<<"Overlap Penalty "<<overlapPenalty<<"\n";
+  // std::cout<<"Overlap Penalty "<<overlapPenalty<<"\n";
    double distanceConstraints = applyDistanceConstraints(molNew,i);
    //std::cout<<"pen3 "<<distanceConstraints<<"\n";
   alterWrithe(molNew,i);
   applyWritheConstraint();
-  std::cout<<" writhe penalty  "<<writhePenalty<<"\n";
-  std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
+  // std::cout<<" writhe penalty  "<<writhePenalty<<"\n";
+  // std::cout<<" scattering  "<<scatterAndHydrationConstraint<<"\n";
   currFit = scatterAndHydrationConstraint +overlapPenalty +distanceConstraints + writhePenalty;
-  return currFit;
+  return std::make_tuple(currFit, overlapPenalty, writhePenalty, scatterAndHydrationConstraint);
 }
