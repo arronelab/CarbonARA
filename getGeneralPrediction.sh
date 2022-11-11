@@ -18,6 +18,6 @@ mkdir $1/$2
 
 for i in {1..5}
 do
-    predictStructure $ScatterFile $fileLocs $initialCoordsFile $pairedPredictions $fixedsections $noStructures $withinMonomerHydroCover $betweenMonomerHydroCover $kmin $kmax $maxNoFitSteps $1/$2/mol$i $1/$2/scatter$i.dat $1/mixtureFile.dat
+    ./predictStructure $ScatterFile $fileLocs $initialCoordsFile $pairedPredictions $fixedsections $noStructures $withinMonomerHydroCover $betweenMonomerHydroCover $kmin $kmax $maxNoFitSteps $1/$2/mol$i $1/$2/scatter$i.dat $1/mixtureFile.dat
 done
  
