@@ -118,7 +118,7 @@ double moleculeFitAndState::getOverlapPenalty(double &closestApproachDist,std::v
     distSumCurr = distSumCurr + std::exp(std::abs(closestApproachDist-overlapDists[l]))-1.0;
   }
   if(overlapDists.size()>0){
-    distSumCurr =0.005*distSumCurr/closestApproachDist;
+    distSumCurr =0.005*distSumCurr/overlapDists.size();
   }
   return distSumCurr;
 }
