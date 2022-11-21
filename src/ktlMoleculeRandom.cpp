@@ -872,7 +872,6 @@ void ktlMolecule::changeMoleculeSingleMulti(int &index,int secIn){
 }
 
 
-
 void ktlMolecule::changeMoleculeMultiRotate(double &angle,point &k,int secIn,point &transVec){
   point sp(0.0,0.0,0.0);
   int sec = secIn-1;

@@ -48,7 +48,8 @@ int main( int argc, const char* argv[] )
 
         // For now change section user input
         int change_section = std::atoi(argv[4]);
-        molcp.changeMoleculeSingle( change_section );
+        int chain_num = 1;
+        molcp.changeMoleculeSingleMulti( change_section, chain_num );
         // std::cout << "Number of Subsections: " << mol.getSubsecSize(1) <<"\n";
 
         // c alphas adjacent dist check! 
