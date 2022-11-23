@@ -3,3 +3,5 @@
 
 # outs
 src/*.o
+
+.DS_Store
