@@ -5,20 +5,32 @@
 #include <algorithm>  
 #include <functional> 
 
-/**
- * 
- * For the generation of a hydration shell around molecules. \n
- *
- * Geometrically builds cyliners of solvent around protein structure to create solvated molecules. \n
- * Very important to simulate SAXS profiles from structure!
- * 
- */
+
 class hydrationShellMinimal{
 public:
+  /**
+     Empty constructor
+   **/   
   hydrationShellMinimal(){};
+  /**
+     @overload
+     Constructor
+     @param molIn existing molecule for which we create the hydration shell
+     @param RinInp inner radius of hydration "shell"
+     @param RoutInp outer radius of hydration "shell"
+     @param RhyIn hydaration shell radius below which no sovent can appear
+     @param ntrivsIn, the number of solvents in a ring surroudning the section of protein (6 as standard)
+     @param helixRatioIn the number of rings of solvents as a fraction of the number of amino acids in the helical section
+     @param solventsPerLinkIn, the number of rings per linker section (basically always 1)
+     @param mutualDistCutOffIn the distance between which solvents where we class then as being in a shared space, we then choose only one of them.
+     @param rmin min calpha distance
+     @param rmax max calpha disatance
+     @param lmin is the distacne where by two moelcules are considred too close
+  **/  
   hydrationShellMinimal(ktlMolecule &molIn,double RinInp,double RoutInp,double &RhyIn,int ntrivsIn,double helixRatioIn,int solventsPerLinkIn,double &mutualDistCutOffIn,double &rmin,double &rmax,double &lmin);
+  
   void getPointAndMidlengthMulti(int i,int &hIndex);
-  void getPointAndMidlengthStraight(int &sec,int &part,int &hIndex,std::string soe);
+  void getPointAndMidlengthStraight(int &sec,int &part,int &hIndex,std::string soe,int &lenSec);
   void tubeParamList();
   void getAllHelices();
   point getDirec(int i);
@@ -31,12 +43,10 @@ public:
   point getNormal(int index,int subindex);
   point getBinormal(int index,int subindex);
   point getCentrePoint(int index,int subIndex);
-  int getNScat();
   void resetMolecule();
   int getMolSize();
   int getNoSections();
   int getNoKvals();
-  double getMaxDist();
   void makeInitialSegData(point &cp,point &T,point &N1,double &tm,int index,int &nseg);
   void constructInitialState();
   void generateHydrationLayer();
