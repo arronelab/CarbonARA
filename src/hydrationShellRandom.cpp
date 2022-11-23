@@ -41,14 +41,6 @@ point hydrationShellMinimal::getCentrePoint(int index,int subIndex){
   return mol.getCoordinate(index,subIndex);
 }
 
-int hydrationShellMinimal::getNoKvals(){
-  return nscat;
-}
-
-double hydrationShellMinimal::getMaxDist(){
-  return maxdist;
-}  
-
 
 
 /**********************************
@@ -96,32 +88,55 @@ void hydrationShellMinimal::getPointAndMidlengthMulti(int i,int &hIndex){
 }
 
 
-void hydrationShellMinimal::getPointAndMidlengthStraight(int &sec,int &part,int &hIndex,std::string soe){
+void hydrationShellMinimal::getPointAndMidlengthStraight(int &sec,int &part,int &hIndex,std::string soe,int &lenSec){
   point startPt,endPt,midPoint;
   if(soe == "start"){
     if(sec==0){
       midPoint = mol.getCoordinate(sec,part);
-      endPt = mol.getCoordinate(sec,part+1);
+      if(lenSec==1){
+	endPt = mol.getCoordinate(sec+1,0);
+      }else{
+	endPt = mol.getCoordinate(sec,part+1);
+      }
       startPt = midPoint -(endPt-midPoint);
-    }else{    
-      startPt = mol.getCoordinate(sec,-1);
-      midPoint = mol.getCoordinate(sec,part);
-      endPt = mol.getCoordinate(sec,part+1);
+    }else{
+      if(lenSec==1){
+	int noPrev =mol.getUnitNo(sec-1);
+	startPt = mol.getCoordinate(sec-1,noPrev-1);
+	midPoint = mol.getCoordinate(sec,part);
+	endPt = midPoint+(midPoint-startPt);
+      }else{
+	int noPrev =mol.getUnitNo(sec-1);
+	startPt = mol.getCoordinate(sec-1,noPrev-1);
+	midPoint = mol.getCoordinate(sec,part);
+	endPt = mol.getCoordinate(sec,part+1);
+      }
     }
   }else if(soe == "end"){
     if(sec==nSize-1){
-      startPt = mol.getCoordinate(sec,part-1);
+      if(lenSec==1){
+	int noPrev =mol.getUnitNo(sec-1);
+	startPt = mol.getCoordinate(sec-1,noPrev-1);
+      }else{
+	startPt = mol.getCoordinate(sec,-1);
+      }
       midPoint = mol.getCoordinate(sec,part);
       endPt = midPoint+(midPoint-startPt);
     }else{
-      startPt = mol.getCoordinate(sec,part-1);
-      midPoint = mol.getCoordinate(sec,part);
-      endPt = mol.getCoordinate(sec+1,0);
+       if(lenSec==1){
+	 startPt = midPoint -(endPt-midPoint);
+	 midPoint = mol.getCoordinate(sec,part);
+	 endPt = mol.getCoordinate(sec+1,0);
+       }else{
+	 startPt = mol.getCoordinate(sec,part-1);
+	 midPoint = mol.getCoordinate(sec,part);
+	 endPt = mol.getCoordinate(sec+1,0);
+       }
     }
   }else{
-    startPt = mol.getCoordinate(sec,part-1);
-    midPoint = mol.getCoordinate(sec,part);
-    endPt = mol.getCoordinate(sec,part+1);
+      startPt = mol.getCoordinate(sec,part-1);
+      midPoint = mol.getCoordinate(sec,part);
+      endPt = mol.getCoordinate(sec,part+1);
   }
   double endDist = 0.5*startPt.eDist(endPt);
   point direc = endPt-startPt;
@@ -173,15 +188,15 @@ void hydrationShellMinimal::tubeParamList(){
     }else{
       // loop over the whole section
       for(int j=0;j<mol.getUnitNo(i);j++){
-        if(j==0){
-	  getPointAndMidlengthStraight(i,j,currHIndex,"start");
-	}else if(j==mol.getUnitNo(i)-1){
-	  getPointAndMidlengthStraight(i,j,currHIndex,"end");
-	}else{
-	  getPointAndMidlengthStraight(i,j,currHIndex,"middle");
-	}
-        nameLst[currHIndex] = "loop";
+	nameLst[currHIndex] = "loop";
         lengthSec[currHIndex] = 1;
+	if(j==0){
+	  getPointAndMidlengthStraight(i,j,currHIndex,"start",lengthSec[currHIndex]);
+	}else if(j==mol.getUnitNo(i)-1){
+	  getPointAndMidlengthStraight(i,j,currHIndex,"end",lengthSec[currHIndex]);
+	}else{
+	  getPointAndMidlengthStraight(i,j,currHIndex,"middle",lengthSec[currHIndex]);
+	}
 	currHIndex++;
       }
     }
@@ -204,7 +219,7 @@ void hydrationShellMinimal::getAllHelices(){
     }else{
       // loop over the whole section
       for(int j=0;j<mol.getUnitNo(i);j++){
-	      std::vector<point> helpt;
+	std::vector<point> helpt;
       	helpt.push_back(mol.getCoordinate(i,j));
         helixpts[currHIndex] = helpt;
       	currHIndex++;
@@ -260,9 +275,6 @@ point hydrationShellMinimal::getBinormal(int secindex,int subIndex){
   return mol.getBinormal(secindex,subIndex);
 };
 
-int hydrationShellMinimal::getNScat(){
-  return nscat;
-}
 
 
 /**********************************
@@ -282,6 +294,11 @@ void hydrationShellMinimal::makeInitialSegData(point &cp,point &T,point &N1,doub
   //find the points along the "tube" axis where the hydrations discs will be centered
   cstepList[index] = cstep;
   std::vector<point> line;
+  /*if(index<4){
+    cp.printPoint();
+    T.printPoint();
+    N1.printPoint();
+    }*/
   if(nseg%2==0){
     for(int i=-nseg/2;i <= -1;i++){
       line.push_back(cp + T*(i*cstep + 0.5*cstep));
@@ -327,6 +344,7 @@ void hydrationShellMinimal::constructInitialState(){
       //int noSegs = std::max(1,int(ceil(helixRatio*noCalphas)));
       int noCalphas = lengthSec[i];
       int noSegs = std::max(1,int(round(helixRatio*noCalphas)));
+      //std::cout<<i<<" "<<noSegs<<" "<<" "<<helixRatio<<" "<<noCalphas<<"\n";
       makeInitialSegData(midPointList[i],direcList[i],outerNorm,halfLengthList[i],i,noSegs);
     }else{
       // linker
@@ -361,11 +379,20 @@ void hydrationShellMinimal::solventMoleculeDistances(std::vector<double> &molSol
 	for(int l=0;l<helixpts.size();l++){
 	  for(int m=0;m<helixpts[l].size();m++){
 	    // declare molpt
+	    /*if(k==19 && i ==0  && l ==238 && m==0){
+	       allSegments[k][0][j].printPoint();
+	       helixpts[l][m].printPoint();
+	       std::cout<<"dist check  "<<helixpts[l][m].eDist(allSegments[k][i][j])<<"\n";
+	       }*/
 	    if(k!=l){
 	      double dist =helixpts[l][m].eDist(allSegments[k][i][j]);
 	      if(dist<5.4){
 		overlapped=true;
-		//std::cout<<dist<<" "<<k<<" "<<i<<" "<<j<<" "<<l<<" "<<m<<"\n"; 
+		//noSegsTot++;
+		//brake++;
+		/*if(-1<brake && brake <10){  
+		   std::cout<<dist<<" "<<k<<" "<<i<<" "<<j<<" "<<l<<" "<<m<<"\n";
+		   }*/
 	      }else{
 		solMolPosDists.push_back(dist);
 	      }
@@ -385,9 +412,11 @@ void hydrationShellMinimal::solventMoleculeDistances(std::vector<double> &molSol
 	    molSolDistances.insert(molSolDistances.end(),solMolPosDists.begin(),solMolPosDists.end());
 	  }
 	}
+	//std::cout<<i<<" "<<j<<" "<<k<<" "<<molSolDistances.size()<<"\n";
       }
     }
   }
+  //std::cout<<" mol sol here ? "<<noSegsTot<<" "<<molSolDistances.size()<<"\n";
   for(int k=0;k<allSegments.size()-1;k++){
     for(int i=0;i<allSegments[k].size();i++){
       for(int j=0;j<allSegments[k][0].size();j++){

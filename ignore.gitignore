@@ -1,5 +1,0 @@
-# Prerequisites
-*.d
-
-# outs
-src/*.o
