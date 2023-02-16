@@ -169,14 +169,34 @@ void moleculeFitAndState::alterWritheSet(ktlMolecule &molNew,int &i){
 }
 
 // calculate writhe lists
+// void moleculeFitAndState::applyWritheConstraint(){
+//   writhePenalty=0.0;
+//   for(int i=0;i<originalWrithes.size();i++){
+//    double newWrithe =currWrithes[i];
+//    double secLen = double(mol[i].molSize());
+//    double lowerBound = std::pow((secLen/7.5),1.625);
+//    writhePenalty=  writhePenalty+1.0/(1.0+std::exp(-(newWrithe-lowerBound)));
+//   }
+// }
+
+
+
 void moleculeFitAndState::applyWritheConstraint(){
+
   writhePenalty=0.0;
+
   for(int i=0;i<originalWrithes.size();i++){
+
    double newWrithe =currWrithes[i];
-   double secLen = double(mol[i].molSize());
+
+   double secLen = double(mol[i].noSecSize());
+
    double lowerBound = std::pow((secLen/7.5),1.625);
-   writhePenalty=  writhePenalty+1.0/(1.0+std::exp(-(newWrithe-lowerBound)));
+
+   writhePenalty=  writhePenalty+1.0/(1.0+std::exp(20.0*(newWrithe-lowerBound)));
+
   }
+
 }
 
 double moleculeFitAndState::getFit(){
